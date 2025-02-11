@@ -1,10 +1,24 @@
 <template>
-<h1 class="text-amber-200">hello word</h1>
+    <NavBar />
+    <Slider />
+    <OptionsHome />
+    <Steps_Home/>
+ 
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
+import NavBar from "@/Modules/Home/Navbar.vue";
+import Slider from "@/Modules/Home/Slider.vue";
+import OptionsHome from "@/Modules/Home/OptionsHome.vue";
+import Steps_Home from "@/Modules/Home/StepsHome.vue";
 export default defineComponent({
-  name: "Home",
+    name: "Home",
+    components: {
+        NavBar,
+        Slider,
+        OptionsHome,
+        Steps_Home
+    },
 });
 
 </script>
