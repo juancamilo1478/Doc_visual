@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
-import { Autoplay } from "swiper/modules"; 
+import { Autoplay,Pagination } from "swiper/modules"; 
 </script>
 
 <template>
@@ -12,7 +12,7 @@ import { Autoplay } from "swiper/modules";
     <Swiper 
       :slides-per-view="1" 
       :autoplay="{ delay: 3000 }" 
-     :modules="[Autoplay]"
+     :modules="[Autoplay,Pagination]"
       loop
       pagination
       class="w-full h-full"
