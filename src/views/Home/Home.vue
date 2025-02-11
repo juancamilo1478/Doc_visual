@@ -6,6 +6,7 @@
     <ProfesionalTop/>
     <Histories />
     <Figures />
+    <Footer/>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
@@ -16,6 +17,7 @@ import Steps_Home from "@/Modules/Home/StepsHome.vue";
 import ProfesionalTop from "@/Modules/Home/ProfesionalsTop.vue";
 import Histories from "@/Modules/Home/Histories.vue";
 import Figures from "@/Modules/Home/Figures.vue";
+import Footer from "@/Modules/Home/Footer.vue";
 export default defineComponent({
     name: "Home",
     components: {
@@ -25,7 +27,8 @@ export default defineComponent({
         Steps_Home,
         ProfesionalTop,
         Histories,
-        Figures
+        Figures,
+        Footer
     },
 });
 
