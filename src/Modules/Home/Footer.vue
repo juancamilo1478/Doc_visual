@@ -153,7 +153,7 @@
     </footer>
     <div class="w-screen flex justify-center" style="background-color: var(--gray-2);">
         <div class="container">
-            <p class="py-6 text-2xl" style="color: var(--blue-1);">2025 DocVisual® Todos los derechos reservados</p>
+            <p class="py-6 mx-3 text-xl  md:text-2xl" style="color: var(--blue-1);">2025 DocVisual® Todos los derechos reservados</p>
         </div>
 
     </div>
