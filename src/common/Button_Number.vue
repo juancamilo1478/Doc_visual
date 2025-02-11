@@ -13,7 +13,7 @@ defineProps<{
         backgroundColor: color,
         fontSize: `${size / 3}px`
     }">
-        <h1 class="text-3xl">
+        <h1 class="text-2xl">
             {{ element }}
         </h1>
     </div>
