@@ -7,7 +7,10 @@ export default {
   },
   props: {
     title:String,
-    number:String,
+    number:{
+      type:String,
+      default: "1"
+    } , 
     text: {
       type: String,
       required: false, // Opcional
@@ -21,7 +24,7 @@ export default {
   <div class="w-full flex bg-white   items-center p-3 my-4" style="border: solid var(--gray-1); border-radius: 25px;">
     <div class="w-fit">
     <ButtonNumber  
-      :element= number  
+      :element="number"
       :size="40" 
       :color="'#769bd2'"
       class="mx-4"
