@@ -13,6 +13,7 @@ import { Autoplay,Pagination } from "swiper/modules";
       :slides-per-view="1" 
       :autoplay="{ delay: 3000 }" 
      :modules="[Autoplay,Pagination]"
+     :pagination="{ clickable: true }"
       loop
       pagination
       class="w-full h-full"
