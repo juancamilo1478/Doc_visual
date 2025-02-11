@@ -35,7 +35,7 @@ defineProps<{
                     <p class="mt-2   text-2xl font-medium text-gray-600 dark:text-gray-400">{{ Description }}</p>
                 </div>
             </div>
-            <div class="flex justify-center">
+            <div class="flex justify-center my-5">
                 <button
                     class="font-medium text-2xl font-sans my-4  w-3/5 px-6 py-2   tracking-wide text-white capitalize transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
                     Ver perfil
