@@ -27,7 +27,8 @@ export default defineComponent({
                 <CardOption 
                 :image="OptometristaSosteniendo" 
                 :option="'Optometría'" 
-                :link="'/optometria'" />
+                :link="'/optometria'"
+                 />
 
 
                 <CardOption 
