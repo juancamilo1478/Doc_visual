@@ -1,11 +1,11 @@
 <script lang="ts">
 import Card_Text from "@/common/Card_Text.vue";
-import aliances from "@/assets/images/aliance.png"
+ 
 export default {
     name: "Figures",
     components: {
         Card_Text
-    }
+    },
 }
 </script>
 
@@ -22,6 +22,7 @@ export default {
         </div>
         <h1 class="w-full py-10 text-center text-4xl" style="color: var(--blue-1);">Empresas que nos eligen para cuidar
             de sus equipos</h1>
-        <img :src="aliances" class="w-auto max-w-screen-lg mx-auto object-contain" />
+            <img class="w-full px-3" src="@/assets/images/aliance.png" alt="Imagen 2" />
     </div>
+    
 </template>
