@@ -5,7 +5,7 @@ defineProps<{
 }>();
 </script>
 <template>
-<div class="w-md  rounded-3xl "  style="background:  #d4dbe5">
+<div class="w-sm lg:w-md  rounded-3xl "  style="background:  #d4dbe5">
     <p class="text-5xl font-bold w-full text-center  pt-8   ">
         {{ data }}
     </p>

@@ -14,19 +14,29 @@ const items = ["Gracias a las nuevas lentes trifocales de Zeiss, puedo ver el mu
         </h1>
 
         <div class="w-full flex justify-center">
-            <h2 class="font-sans w-1/2   text-center py-4 text-xl md:text-3xl font-bold">
+            <h2 class="font-sans lg:w-1/2   text-center py-4 text-xl md:text-3xl font-bold">
                 Estos testimonios nos reafirman que estamos cuidando de la salud visual tanto de niños como de adultos.
             </h2>
         </div>
-        <div class="w-full  ">
-            <Swiper :slides-per-view="3" :loop="true" :space-between="20"
-                :autoplay="{ delay: 2500, disableOnInteraction: false }" :speed="1000" :modules="[Autoplay]"
-                class="w-full px-6 mt-10">
+        <div class="flex justify-center  ">
+           <Swiper 
+    :loop="true"
+    :space-between="20"
+    :autoplay="{ delay: 2500, disableOnInteraction: false }"
+    :speed="1000"
+    :modules="[Autoplay]"
+    class="   md:w-full mt-10"
+    :breakpoints="{
+        320: { slidesPerView: 1 }, // 1 slide en pantallas pequeñas
+        640: { slidesPerView: 2 }, // 2 slides en tablets
+        1024: { slidesPerView: 3 } // 3 slides en pantallas grandes
+    }"
+>
                 <SwiperSlide v-for="(item, index) in items" :key="index">
-                    <div class="p-6 py-8 bg-white text-2xl rounded-3xl   text-center   ">
+                    <div class="p-6 py-8 bg-white lg:text-2xl rounded-3xl  w-sm    text-center   mx-5 " style="border: 2px solid var(--gray-1);">
                         <span class="text-4xl" style="color: var(--blue-1);">"</span>
                         {{ item }}
-                        <span class="text-4xl" style="color: var(--blue-1);">"</span>
+                        <span class="text-3xl md:text-4xl" style="color: var(--blue-1);">"</span>
                     </div>
                 </SwiperSlide>
             </Swiper>
