@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <footer class="bg-white dark:bg-gray-900">
+    <footer class="bg-white ">
         <div class="container py-8 mx-auto">
             <div class="grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
 
@@ -23,19 +23,19 @@
                     </div>
 
                     <a href="#"
-                        class="block mt-5 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        class="block mt-5 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
                         Optómetras
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
                         Oftalmólogos
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
                         Ópticas
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
                         IPS
                     </a>
                 </div>
@@ -49,19 +49,19 @@
                     </div>
 
                     <a href="#"
-                        class="block mt-5 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        class="block mt-5 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
                         Recursos
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
                         Agende su cita
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
                         Profesionales
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
                         Pacientes
                     </a>
 
@@ -73,11 +73,11 @@
                     </div>
 
                     <a href="#"
-                        class="block mt-5 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        class="block mt-5 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
                         Blog
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
                         Preguntas frecuentes
                     </a>
 
@@ -90,15 +90,15 @@
                     </div>
 
                     <a href="#"
-                        class="block mt-5 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        class="block mt-5 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
                         Legal
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
                         Habla con soporte
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline">
+                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
                         Iniciar sesión Registrarme
                     </a>
 
@@ -112,7 +112,7 @@
 
                     <div class="flex mt-6 -mx-2">
                         <a href="#"
-                            class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                            class="mx-2 text-gray-600 transition-colors duration-300  hover:text-blue-500 "
                             aria-label="Reddit">
                             <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +123,7 @@
                         </a>
 
                         <a href="#"
-                            class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                            class="mx-2 text-gray-600 transition-colors duration-300  hover:text-blue-500 "
                             aria-label="Facebook">
                             <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -134,7 +134,7 @@
                         </a>
 
                         <a href="#"
-                            class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                            class="mx-2 text-gray-600 transition-colors duration-300  hover:text-blue-500 "
                             aria-label="Github">
                             <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
