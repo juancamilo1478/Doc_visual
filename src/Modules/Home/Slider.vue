@@ -8,7 +8,7 @@ import { Autoplay,Pagination } from "swiper/modules";
 </script>
 
 <template>
-  <div class="relative w-screen h-[400px] md:h-[700px]">
+  <div class="relative w-screen h-[400px] md:h-[500px]">
     <Swiper 
       :slides-per-view="1" 
       :autoplay="{ delay: 3000 }" 

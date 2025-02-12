@@ -9,9 +9,9 @@ defineProps<{
 }>();
 </script>
 <template>
-    <div class="w-full max-w-md    lg:max-w-lg overflow-hidden  rounded-4xl shadow-lg dark:bg-gray-800"
+    <div class="w-full max-w-md    lg:max-w-lg overflow-hidden  rounded-4xl shadow-lg  "
         style="background-color: var(--gray-1); border: 2px solid var(--gray-1);">
-        <div class="w-full overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <div class="w-full overflow-hidden bg-white rounded-lg shadow-md  ">
             <div class="m-3">
                 <div class="flex items-center">
                     <div class="flex items-center p-2 gap">
