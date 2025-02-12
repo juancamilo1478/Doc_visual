@@ -1,9 +1,14 @@
 <script setup lang="ts">
 defineProps<{
-    element: string;
+    element: number;
     size: number;
     color: string;
 }>();
+
+
+
+
+
 </script>
 
 <template>
