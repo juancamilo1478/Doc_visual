@@ -6,6 +6,7 @@
     <ProfesionalTop/>
     <Histories />
     <Figures />
+    <Bulleting/>
     <Footer/>
 </template>
 <script lang="ts">
@@ -18,6 +19,7 @@ import ProfesionalTop from "@/Modules/Home/ProfesionalsTop.vue";
 import Histories from "@/Modules/Home/Histories.vue";
 import Figures from "@/Modules/Home/Figures.vue";
 import Footer from "@/Modules/Home/Footer.vue";
+import Bulleting from "@/Modules/Home/Bulletin.vue";
 export default defineComponent({
     name: "Home",
     components: {
@@ -28,7 +30,8 @@ export default defineComponent({
         ProfesionalTop,
         Histories,
         Figures,
-        Footer
+        Footer,
+        Bulleting
     },
 });
 

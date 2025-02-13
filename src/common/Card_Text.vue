@@ -48,7 +48,7 @@ watch(isVisible, (newVal) => {
     id="animated-number"
     class="max-w-[350px] lg:w-md rounded-3xl opacity-0 transition-opacity duration-700"
     :class="isVisible ? 'opacity-100' : ''"
-    style="background: #d4dbe5"
+    style="background-color: var(--bluegray-1);"
   >
     <p class="text-5xl font-bold w-full text-center pt-8">
       {{ currentNumber }} X

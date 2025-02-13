@@ -19,15 +19,15 @@ defineProps<{
                             <img class="w-full h-full object-cover" :src="image" alt="Avatar">
                         </div>
                         <div class="text-left">
-                            <h1 class="mx-2 font-semibold   font-[Poppins] text-xl   " tabindex="0" role="link">{{ name
+                            <h1 class="mx-2 font-semibold   font-sans text-xl   " tabindex="0" role="link">{{ name
                                 }}</h1>
-                            <h2 class="mx-2 font-light   font-[Poppins] text-xl " tabindex="0" role="link">{{ rol }}
+                            <h2 class="mx-2 font-light   font-sans text-xl " tabindex="0" role="link">{{ rol }}
                             </h2>
                         </div>
                     </div>
                 </div>
                 <div class="container p-2 text-left">
-                    <h3 class=" font-[Poppins] text-2xl my-2">{{ `Experiencia ${experiece} años` }}</h3>
+                    <h3 class=" font-sans text-2xl my-2">{{ `Experiencia ${experiece} años` }}</h3>
                 </div>
             </div>
             <div class="px-6 mb-3">

@@ -8,7 +8,7 @@ export default {
   props: {
     title:String,
     number:{
-      type:String,
+      type:Number,
       default: "1"
     } , 
     text: {
@@ -26,7 +26,7 @@ export default {
     <ButtonNumber  
       :element="number"
       :size="40" 
-      :color="'#769bd2'"
+      :color="'#769bd2'"c
       class="mx-4"
     />
   </div>
