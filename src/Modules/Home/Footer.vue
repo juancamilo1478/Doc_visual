@@ -1,5 +1,11 @@
-<script setup lang="ts">
-
+<script   lang="ts">
+import FooterColor from "@/common/Footer_Color.vue";
+export default{
+    name:"Footer",
+    components:{
+        FooterColor
+    }
+}
 </script>
 
 <template>
@@ -150,30 +156,9 @@
             </div>
 
         </div>
+
     </footer>
-    <div class="w-screen flex justify-center" style="background-color: var(--gray-2);">
-        <div class="container">
-            <p class="py-6 mx-3 text-xl  md:text-2xl" style="color: var(--blue-1);">2025 DocVisual® Todos los derechos reservados</p>
-        </div>
-
-    </div>
-    <div class="w-screen flex justify-between  ">
-
-        <div class="w-1/12 h-6  " style="background-color: #e6311e;"></div>
-        <div class="w-1/12 h-6  " style="background-color: #ec661f;"></div>
-        <div class="w-1/12 h-6  " style="background-color: #f59f26;"></div>
-
-        <div class="w-1/12 h-6 " style="background-color: #fac61a;"></div>
-        <div class="w-1/12 h-6 " style="background-color: #f7e924;"></div>
-        <div class="w-1/12 h-6 " style="background-color: #8fc239;"></div>
-        <div class="w-1/12 h-6 " style="background-color: #47b145;"></div>
-        <div class="w-1/12 h-6 " style="background-color: #2bb5a8;"></div>
-        <div class="w-1/12 h-6 " style="background-color: #116db6;"></div>
-        <div class="w-1/12 h-6 " style="background-color: #3c4f9c;"></div>
-        <div class="w-1/12 h-6 " style="background-color: #643a8e;"></div>
-        <div class="w-1/12 h-6 " style="background-color: #ce2d8a;"></div>
-    </div>
-
+    <FooterColor/>
 
 
 
