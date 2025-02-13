@@ -1,0 +1,39 @@
+[
+    
+    {
+        "id":1,
+        "name": "Avances en el Control de la Miopía",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj-Qzx-TEjO_brnMgWEcis4y571X54rkXYl4cJ1mIwVjSOPCsA7OPeesTmYx93tRdgFoc&usqp=CAU",
+        "description": "Investigadores han desarrollado nuevos lentes de contacto que ralentizan la progresión de la miopía en niños, ofreciendo esperanza para un mejor cuidado visual."
+    },
+    {
+        "id":2,
+        "name": "Inteligencia Artificial en Exámenes de Vista",
+        "photo": "https://images.ctfassets.net/u4vv676b8z52/i0qOvUU53tTb44VfnWQ75/55b16db695a97ffdc75fb750c66249d8/eye_doctor_choose.jpg?fm=jpg&q=80",
+        "description": "La IA se está integrando en los exámenes de vista rutinarios, mejorando la precisión en el diagnóstico de trastornos visuales y reduciendo los tiempos de examen."
+    },
+    {
+        "id":3,
+        "name": "Luz Azul y Fatiga Visual Digital",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbHNcen_cSVmMQwiB9jEULoGwFvyfth4gA3w&s",
+        "description": "Investigadores han desarrollado nuevos lentes de contacto que ralentizan la progresión de la miopía en niños, ofreciendo esperanza para un mejor cuidado visual."
+    },
+    {
+        "id": 4,
+        "name": "Nuevas Terapias para el Glaucoma",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWYXcJfB0eGSRcgk0R--1cT5LurcKVcEzsJw&s",
+        "description": "Científicos han presentado tratamientos innovadores que reducen la presión ocular, proporcionando opciones menos invasivas para pacientes con glaucoma."
+    },
+    {
+        "id": 5,
+        "name": "Avances en Cirugía Refractiva",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx2h7nYBuTC-2c5wXd8kpnSm2op0Xl5jpmTg&s",
+        "description": "La tecnología láser de última generación promete mejorar la precisión en cirugías refractivas, aumentando las tasas de éxito en la corrección de la visión."
+    },
+    {
+        "id": 6,
+        "name": "Protección Ocular en la Era Digital",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyE5KlG6OdgpbwS-SoSeEH46UYWpxGbVqgFe_YzjNFkPgqvfVs5-xwAWMpa7atZEaB0iI&usqp=CAU",
+        "description": "Expertos destacan la importancia de proteger los ojos de la luz azul emitida por pantallas digitales para prevenir la fatiga visual y otros problemas oculares."
+    }
+]

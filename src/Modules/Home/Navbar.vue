@@ -32,7 +32,7 @@
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Profesionales</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Pacientes</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Inhouse</a>
-        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Blog</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100" @click="goToAbout('blogs')" :style="{ color: currentRoute === '/blogs' ? 'var(--blue-1)' : 'black' }">Blog</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100" @click="goToAbout('questions')">Preguntas frecuentes</a>
 
     </div>
@@ -48,7 +48,7 @@
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Profesionales</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Pacientes</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Inhouse</a>
-        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Blog</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2" @click="goToAbout('blogs')" :style="{ color: currentRoute === '/blogs' ? 'var(--blue-1)' : 'black' }"  >Blog</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100" @click="goToAbout('questions')"  :style="{ color: currentRoute === '/questions' ? 'var(--blue-1)' : 'black' }"  >Preguntas frecuentes</a>
 
     </div>
