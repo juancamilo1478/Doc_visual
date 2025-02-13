@@ -37,3 +37,27 @@ html, body {
 .poppins-thin-italic { font-family: "Poppins", sans-serif; font-weight: 100; font-style: italic; }
 .poppins-bold-italic { font-family: "Poppins", sans-serif; font-weight: 700; font-style: italic; }
 .poppins-black-italic { font-family: "Poppins", sans-serif; font-weight: 900; font-style: italic; }
+.markdown-body {
+  background-color: white;
+  color: black;
+}
+
+.markdown-body a {
+  color: #1d4ed8; /* Azul oscuro para enlaces */
+}
+
+.markdown-body pre {
+  background-color: #f3f4f6; /* Fondo claro para bloques de código */
+  color: black;
+}
+
+.markdown-body code {
+  background-color: #f3f4f6;
+  color: black;
+}
+
+.markdown-body blockquote {
+  border-left: 4px solid #d1d5db;
+  color: #4b5563;
+  background-color: #f9fafb;
+}
