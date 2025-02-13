@@ -3,6 +3,7 @@ import Home from '@/views/Home/Home.vue'
 import Frecuent_questions from '@/views/Frequent_questions/Frecuent_questions.vue';
 import Blog from '@/views/Blogs/Blog.vue';
 import Blog_Detail from '@/Modules/Blogs/Blog_Detail.vue';
+import Auth from '@/views/Auth/Auth.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -26,8 +27,14 @@ const router = createRouter({
       name: 'BlogDetail',
       component: Blog_Detail,
       props: true // Esto permite pasar el parámetro como prop
+    },
+    {
+      path: '/auth',
+      name: 'auth',
+      component: Auth,
+
     }
-  
+
   ],
 })
 

@@ -29,7 +29,7 @@
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Proposito</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Recursos</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Agende su cita</a>
-        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Profesionales</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100" @click="goToAbout('/auth')">Profesionales</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Pacientes</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Inhouse</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100" @click="goToAbout('blogs')" :style="{ color: currentRoute === '/blogs' ? 'var(--blue-1)' : 'black' }">Blog</a>
@@ -45,7 +45,7 @@
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Proposito</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Recursos</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Agende su cita</a>
-        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Profesionales</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2" @click="goToAbout('/auth')">Profesionales</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Pacientes</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Inhouse</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2" @click="goToAbout('blogs')" :style="{ color: currentRoute === '/blogs' ? 'var(--blue-1)' : 'black' }"  >Blog</a>

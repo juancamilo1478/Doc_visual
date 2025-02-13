@@ -21,28 +21,28 @@ import { Autoplay,Pagination } from "swiper/modules";
         <img 
           src="@/assets/images/slider1.jpg" 
           alt="Imagen 1" 
-           class=" object-cover w-full    h-full   "
+           class="   w-full    h-full  object-cover object-center  "
         />
       </SwiperSlide>
       <SwiperSlide>
         <img 
         src="@/assets/images/slider2.jpg" 
           alt="Imagen 2" 
-       class=" object-cover w-full    h-full   "
+       class="   w-full    h-full  object-cover object-center "
         />
       </SwiperSlide>
       <SwiperSlide>
         <img 
         src="@/assets/images/slider3.jpg" 
           alt="Imagen 3" 
-        class=" object-cover w-full    h-full   "
+        class="   w-full    h-full   object-cover object-center "
         />
       </SwiperSlide>
       <SwiperSlide>
         <img 
         src="@/assets/images/slider4.jpg" 
           alt="Imagen 3" 
-        class=" object-cover w-full   h-full   "
+        class="   w-full   h-full   object-cover object-center"
         />
       </SwiperSlide>
     </Swiper>
