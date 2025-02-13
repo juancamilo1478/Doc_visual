@@ -20,7 +20,7 @@ export default defineComponent({
 <template>
     <div class="w-screen backdrop:text-amber-200">
         <div class="w-full py-10">
-            <h1 class="w-full text-center font-[Poppins] font-semibold text-4xl " style="color: var(--blue-1);">Hacemos
+            <h1 class="w-full text-center font-sans font-bold text-4xl " style="color: var(--blue-1);">Hacemos
                 visibles a los expertos</h1>
             <div class="flex flex-wrap justify-center gap-8 mt-20">
 

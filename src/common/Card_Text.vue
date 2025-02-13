@@ -46,7 +46,7 @@ watch(isVisible, (newVal) => {
 <template>
   <div
     id="animated-number"
-    class="w-sm lg:w-md rounded-3xl opacity-0 transition-opacity duration-700"
+    class="max-w-[350px] lg:w-md rounded-3xl opacity-0 transition-opacity duration-700"
     :class="isVisible ? 'opacity-100' : ''"
     style="background: #d4dbe5"
   >
