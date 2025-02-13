@@ -25,30 +25,32 @@
        <!-- Menú móvil -->
 <div :class="['absolute inset-x-0 z-20 w-full px-2 py-4 transition-all duration-300 ease-in-out bg-white', isOpen ? 'block' : 'hidden', 'md:hidden']">
     <div class="flex flex-col px-2 -mx-4">
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Salud visual y especialistas</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Proposito</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Recursos</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Agende su cita</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Profesionales</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Pacientes</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Inhouse</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Blog</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Preguntas frecuentes</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100" @click="goToAbout('/')" :style="{ color: currentRoute === '/' ? 'var(--blue-1)' : 'black' }">Salud visual y especialistas</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Proposito</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Recursos</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Agende su cita</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Profesionales</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Pacientes</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Inhouse</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Blog</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100" @click="goToAbout('questions')">Preguntas frecuentes</a>
+
     </div>
 </div>
 
 <!-- Menú de escritorio -->
 <div class="hidden lg:flex items-center justify-between w-full px-2 py-4 bg-white">
     <div class="flex flex-row mx-10 w-full justify-between">
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2 " style="color: var(--blue-1);">Salud visual y especialistas</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Proposito</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Recursos</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Agende su cita</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Profesionales</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Pacientes</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Inhouse</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Blog</a>
-        <a href="#" class="px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Preguntas frecuentes</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2 " @click="goToAbout('/')"   :style="{ color: currentRoute === '/' ? 'var(--blue-1)' : 'black' }"  >Salud visual y especialistas</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Proposito</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Recursos</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Agende su cita</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Profesionales</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Pacientes</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Inhouse</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Blog</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100" @click="goToAbout('questions')"  :style="{ color: currentRoute === '/questions' ? 'var(--blue-1)' : 'black' }"  >Preguntas frecuentes</a>
+
     </div>
 </div>
 
@@ -61,8 +63,17 @@
   </template>
   
   <script setup lang="ts">
-  import { ref, computed } from 'vue';
-  
+  import { ref, computed,onMounted } from 'vue';
+  import { useRouter,useRoute } from 'vue-router';
+  const route = useRoute();
+  //ruta actual 
+  const currentRoute = ref('');
+  onMounted(() => {
+  currentRoute.value = route.path;
+  });
+
+
+  const router = useRouter();
   // Estado del menú
   const isOpen = ref(false);
   
@@ -71,6 +82,9 @@
     isOpen.value = !isOpen.value;
   };
   
+  const goToAbout = (rute:string) => {
+    router.push(rute);
+  }
   // Clases reactivas para el menú
   const menuClasses = computed(() => {
     return isOpen.value
