@@ -5,6 +5,7 @@ import { onMounted, ref, watch } from 'vue';
 const props = defineProps<{
   text: string;
   data: number;
+  item:string;
 }>();
 
 const currentNumber = ref(0);
@@ -50,8 +51,8 @@ watch(isVisible, (newVal) => {
     :class="isVisible ? 'opacity-100' : ''"
     style="background-color: var(--bluegray-1);"
   >
-    <p class="text-5xl font-bold w-full text-center pt-8">
-      {{ currentNumber }} X
+    <p class="font-sans text-5xl font-bold w-full text-center pt-8">
+      {{ currentNumber }}<span class="font-extrabold   text-5xl" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"> {{ item }}</span>
     </p>
     <p class="text-2xl w-full text-center p-6">
       {{ text }}

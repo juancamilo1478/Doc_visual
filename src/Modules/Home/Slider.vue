@@ -1,4 +1,4 @@
-<script setup  >
+<script setup lang="ts" >
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -10,13 +10,12 @@ import { Autoplay,Pagination } from "swiper/modules";
 <template>
   <div class="relative w-screen h-[400px] md:h-[500px]">
     <Swiper 
-      :slides-per-view="1" 
-      :autoplay="{ delay: 3000 }" 
-     :modules="[Autoplay,Pagination]"
-     :pagination="{ clickable: true }"
-      loop
-      pagination
-      class="w-full h-full"
+    :slides-per-view="1" 
+    :autoplay="{ delay: 3000 }" 
+    :modules="[Autoplay, Pagination]"
+    :pagination="{ clickable: true }" 
+    loop
+    class="w-full h-full"
     >
       <SwiperSlide>
         <img 

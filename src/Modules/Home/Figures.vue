@@ -15,10 +15,10 @@ export default {
             creido en nosotros</h1>
             <div class="flex flex-wrap justify-center gap-8 mt-20 px-5 md:px-0">
 
-                <Card_Text class="min-w-[350px]" :text="'Citas realizadas'" :data="50000" />
-                <Card_Text class="min-w-[350px]" :text="'Personas atendidas'" :data="100000" />
-                <Card_Text class="min-w-[350px]" :text="'Satisfacción'" :data="5000" />
-                <Card_Text class="min-w-[350px]" :text="'Comunidad Instagram'" :data="500" />
+                <Card_Text class="min-w-[350px]" :text="'Citas realizadas'"  item="+"  :data="50000" />
+                <Card_Text class="min-w-[350px]" :text="'Personas atendidas'" item="+" :data="100000" />
+                <Card_Text class="min-w-[350px]" :text="'Satisfacción'" item="%" :data="5000" />
+                <Card_Text class="min-w-[350px]" :text="'Comunidad Instagram'" item="+" :data="500" />
         </div>
         <h1 class="w-full py-10 text-center text-3xl md:text-4xl" style="color: var(--blue-1);">Empresas que nos eligen para cuidar
             de sus equipos</h1>

@@ -17,10 +17,10 @@ export default {
 <template>
     <div class="w-screen bg-white py-3">
         <div class="w-full">
-            <h1 class="text-center px-5 w-full font-[Poppins] text-xl md:text-2xl py-1 font-light" style="color: var(--blue-1);">
+            <h1 class="text-center px-5 w-full font-sans text-xl md:text-3xl py-1   font-semibold" style="color: var(--blue-1);">
                 Encuentra tu profesional de la salud visual con ubicación y especialidad.
             </h1>
-            <h2 class="text-center px-5 w-full font-[Poppins] text-black text-xl md:text-2xl font-bold ">Seremos tu mejor aliado en el
+            <h2 class="text-center px-5 w-full font-sans text-black text-xl md:text-3xl  font-bold ">Seremos tu mejor aliado en el
                 camino hacia tu bienestar
             </h2>
         </div>
