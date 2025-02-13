@@ -6,7 +6,7 @@ import IconsAuth from './IconsAuth.vue';
 <template>
     <div class="w-screen min-h-screen flex flex-col justify-between bg-gray-100">
         <!-- Contenido de autenticación aquí -->
-        <div class="w-full flex-grow max-h-screen  flex   lg:overflow-hidden">
+        <div class="w-full flex-grow max-h-screen  flex   lg:overflow-hidden ">
             <div class="hidden lg:block lg:w-1/2 h-full overflow-hidden">
                 <img src="@/assets/images/letters.jpg" alt="Image" class="w-full  min-h-screen object-cover " />
             </div>
