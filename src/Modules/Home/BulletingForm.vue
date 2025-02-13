@@ -15,7 +15,7 @@ export default defineComponent({
 <template>
     <div class="w-full h-full flex items-center justify-center" :style="{ background: 'linear-gradient(to right, white, #c4d1e4)' }">
         <div class="w-11/12">
-            <h1 class="w-11/12 max-w-3xl font-sans text-center sm:text-3xl lg:text-5xl font-semibold mx-auto"
+            <h1 class="w-11/12 max-w-3xl font-sans text-center text-5xl lg:text-5xl font-semibold mx-auto"
                 style="color: var(--blue-1);">Suscríbete a nuestro boletín</h1>
             <div class="flex flex-col gap-4 items-center   px-7 mt-7">
                 <input type="text" v-model="nombre" placeholder="Nombre"
