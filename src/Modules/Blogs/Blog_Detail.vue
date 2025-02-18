@@ -38,4 +38,5 @@ const markdownHtml = blogDetail ? marked(blogDetail.text) : '';
   background-color: white !important;
   color: black !important;
 }
+ 
 </style>

@@ -2,7 +2,7 @@
     <nav class="relative bg-white shadow">
       <div class="container px-6 py-3 mx-auto md:flex">
         <div class="flex items-center justify-between">
-          <a href="#">
+          <a href="#" @click="goToAbout('/')">
             <img class="w-auto h-20" src="@/assets/images/LogoPng.png" alt="Logo">
           </a>
   
@@ -25,7 +25,7 @@
        <!-- Menú móvil -->
 <div :class="['absolute inset-x-0 z-20 w-full px-2 py-4 transition-all duration-300 ease-in-out bg-white', isOpen ? 'block' : 'hidden', 'md:hidden']">
     <div class="flex flex-col px-2 -mx-4">
-        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100" @click="goToAbout('/')" :style="{ color: currentRoute === '/' ? 'var(--blue-1)' : 'black' }">Salud visual y especialistas</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Salud visual y especialistas</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Proposito</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Recursos</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100">Agende su cita</a>
@@ -41,7 +41,7 @@
 <!-- Menú de escritorio -->
 <div class="hidden lg:flex items-center justify-between w-full px-2 py-4 bg-white">
     <div class="flex flex-row mx-10 w-full justify-between">
-        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2 " @click="goToAbout('/')"   :style="{ color: currentRoute === '/' ? 'var(--blue-1)' : 'black' }"  >Salud visual y especialistas</a>
+        <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2 " >Salud visual y especialistas</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Proposito</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Recursos</a>
         <a class="cursor-pointer px-1 py-1 font-sans font-semibold text-black transition-colors duration-300 transform rounded-lg hover:bg-gray-100 md:mx-2">Agende su cita</a>

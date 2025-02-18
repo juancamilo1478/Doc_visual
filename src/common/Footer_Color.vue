@@ -5,7 +5,7 @@
     <div class="w-screen">
         <div class="w-full flex justify-center" style="background-color: var(--gray-2);">
             <div class="container">
-                <p class="py-6 mx-3 text-xl font-sans md:text-2xl font-semibold" style="color: var(--blue-1);">2025 DocVisual® Todos los
+                <p class="py-6 mx-3   font-sans   font-medium" style="color: var(--blue-1); font-size: 18px;" >2025 DocVisual® Todos los
                     derechos reservados</p>
             </div>
 
