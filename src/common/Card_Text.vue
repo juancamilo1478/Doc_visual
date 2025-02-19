@@ -51,7 +51,7 @@ watch(isVisible, (newVal) => {
     :class="isVisible ? 'opacity-100' : ''"
     style="background-color: var(--bluegray-1);"
   >
-    <p class="font-sans text-5xl font-bold w-full text-center pt-8">
+    <p class="font-poppins text-5xl font-bold w-full text-center pt-8">
       {{ currentNumber }}<span class="font-extrabold   text-5xl" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"> {{ item }}</span>
     </p>
     <p class="text-2xl w-full text-center p-6">

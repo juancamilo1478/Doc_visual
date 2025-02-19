@@ -15,7 +15,32 @@ html, body {
   color: black !important;
 }
 
- 
+@font-face {
+  font-family: 'PoppinsData';
+  src: url('@/assets/fonts/Poppins-Regular.ttl') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PoppinsData';
+  src: url('@/assets/fonts/Poppins-Medium.ttl') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PoppinsData';
+  src: url('@/assets/fonts/Poppins-SemiBold.ttl') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PoppinsData';
+  src: url('@/assets/fonts/Poppins-Bold.ttl') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
 .nunito {
   font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;

@@ -14,9 +14,9 @@ export default {
     <div class="w-screen  my-9" :style="{ background: 'linear-gradient(to right, white, #f8f9fd)' }">
         <div class="container mx-auto pt-10 flex flex-col lg:flex-row">
             <div class="w-full  lg:w-3/5 px-3 lg:px-0">
-                <h1 class="font-sans font-semibold text-2xl" style="color: var(--blue-1);">¿Cómo encontrar a tu
+                <h1 class="font-poppins font-semibold text-2xl" style="color: var(--blue-1);">¿Cómo encontrar a tu
                     especialista confiable e ideal para tu cita?</h1>
-                <h1 class="font-sans   font-medium text-2xl text-black pt-5">Haz estos simples pasos:</h1>
+                <h1 class="font-poppins   font-medium text-2xl text-black pt-5">Haz estos simples pasos:</h1>
                 <StepsItem :text='"Filtra según tus necesidades y preferencias, ubicación y encuentra tu especialista."'
                     :title='"Elige a tu especialista ideal"' :number='1' />
                 <StepsItem

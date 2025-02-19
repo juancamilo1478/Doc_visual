@@ -9,12 +9,12 @@ const items = ["Gracias a las nuevas lentes trifocales de Zeiss, puedo ver el mu
 
 <template>
     <div class="w-screen py-20 " :style="{ background: 'linear-gradient(to right, white, #c4d1e4)' }">
-        <h1 class="font-sans w-full text-center pt-9 text-2xl font-bold" style="color: var(--blue-1);">
+        <h1 class="font-poppins w-full text-center pt-9 text-2xl font-bold" style="color: var(--blue-1);">
             Historias de nuestros pacientes
         </h1>
 
         <div class="w-full flex justify-center">
-            <h2 class="font-sans lg:w-1/2   text-center py-4 text-xl md:text-3xl font-bold">
+            <h2 class="font-poppins lg:w-1/2   text-center py-4 text-xl md:text-3xl font-bold">
                 Estos testimonios nos reafirman que estamos cuidando de la salud visual tanto de niños como de adultos.
             </h2>
         </div>

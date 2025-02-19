@@ -31,9 +31,9 @@ export default {
 
 <template>
     <div class="w-screen      pt-20">
-        <h1 class="text-center font-sans text-3xl font-semibold" style="color: var(--blue-1);">Soluciones que
+        <h1 class="text-center font-poppins text-3xl font-semibold" style="color: var(--blue-1);">Soluciones que
             transforman</h1>
-        <h2 class="text-center font-sans text-4xl font-bold">Estamos aquí para ayudarte con tu bienestar visual</h2>
+        <h2 class="text-center font-poppins text-4xl font-bold">Estamos aquí para ayudarte con tu bienestar visual</h2>
         <div class="container md:flex m-auto  py-12">
             <div class="w-full md:w-1/3  md:flex md:justify-center  md:m-auto">
                 <img src="@/assets/images/wommancircle.png" alt="photo" class="w-full" />

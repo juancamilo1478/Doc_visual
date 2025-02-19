@@ -7,9 +7,9 @@
         <div class="container flex  m-auto">
             <div class="flex flex-col justify-center h-96  w-2/6  ">
                 <div class="sm:px-4">
-                    <h1 class="px-4 md:px-0  text-5xl font-sans font-bold" style="color: var(--blue-1);">Preguntas
+                    <h1 class="px-4 md:px-0  text-5xl font-poppins font-bold" style="color: var(--blue-1);">Preguntas
                     </h1>
-                    <h1 class="px-4 md:px-0 text-5xl  md:text-5xl font-sans font-bold">Frecuentes</h1>
+                    <h1 class="px-4 md:px-0 text-5xl  md:text-5xl font-poppins font-bold">Frecuentes</h1>
                 </div>
             </div>
             <div class="w-1/2  h-96  md:w-1/2 flex flex-col m-auto">
