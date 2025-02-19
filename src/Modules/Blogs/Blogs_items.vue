@@ -17,7 +17,7 @@ export default {
 <template>
     <div class="w-screen">
 
-        <div class="flex flex-wrap justify-center gap-8 mt-20 w-full my-6">
+        <div class="container px-6 flex flex-wrap justify-center gap-8 mt-20 w-full my-6">
             <Card_Blog v-for="(item, index) in items" :key="index" :name="item.name" :photo="item.photo"
                 :description="item.description" :id="item.id" />
         </div>
