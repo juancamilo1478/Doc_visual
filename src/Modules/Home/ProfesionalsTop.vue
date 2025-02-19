@@ -25,7 +25,7 @@ export default {
             </h2>
         </div>
         <div class="container m-auto flex justify-center">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-center text-center mt-20 px-6">
+            <div class="container m-auto flex flex-wrap justify-between   text-center mt-20 ">
                 <CardTopUser :image="womman" :option="'Optometría'"
                     :Description="'Evaluación optométrica integral, También mide y controla alteraciones de la agudeza visual, visión binocular, función de las vías visuales, campos visuales, movimientos oculares y presión intraocular'"
                     :name="'Daniel Gómez Reyes'" :experiece="2" :rol="'Oftalmologa'" />

@@ -25,12 +25,12 @@ import IconsAuth from './IconsAuth.vue';
                         salud visual.
                     </h2>
                     <button
-                        class="w-full  mb-5 mt-5 rounded-3xl  text-2xl cursor-pointer px-6 py-3  font-medium tracking-wide text-white   transition-colors duration-300 transform    hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+                        class="w-full  mb-5 mt-5 rounded-3xl font-poppins text-2xl cursor-pointer px-6 py-3  font-medium tracking-wide text-white   transition-colors duration-300 transform    hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
                         style="background-color: var(--blue-1);">
                         Crear una cuenta
                     </button>
                     <button
-                        class="w-full   rounded-3xl  text-2xl cursor-pointer px-6 py-3   font-medium tracking-wide     transition-colors duration-300 transform    hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+                        class="w-full  font-poppins rounded-3xl  text-2xl cursor-pointer px-6 py-3   font-medium tracking-wide     transition-colors duration-300 transform     focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
                         style="border: 3px solid var(--blue-1); color: var(--blue-1);" >
                         Iniciar sesión
                     </button>   
