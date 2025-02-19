@@ -24,7 +24,7 @@ export default defineComponent({
                     type="email" 
                     v-model="correo" 
                     placeholder="Email"
-                    class="mt-1 w-11/12 max-w-3xl p-3 rounded-2xl font-sans text-3xl border-2 border-gray-400 font-semibold"  
+                    class="mt-1 w-11/12 max-w-3xl p-3 rounded-2xl font-sans text-3xl border  border-gray-400 font-semibold"  
                     style="color: var(--blue-1);"
                 />
             </div>

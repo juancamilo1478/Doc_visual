@@ -30,9 +30,9 @@ defineProps<{
                     <h3 class=" font-sans text-2xl my-2">{{ `Experiencia ${experiece} años` }}</h3>
                 </div>
             </div>
-            <div class="px-6 mb-3">
+            <div class=" px-3 mb-3">
                 <div style="background: var(--gray-2);border-radius: 10px;" class="p-3">
-                    <p class="mt-2 text-xl   font-medium text-gray-600 dark:text-gray-400">{{ Description }}</p>
+                    <p class="mt-2 text-xl text-left  font-medium text-gray-600 dark:text-gray-400">{{ Description }}</p>
                 </div>
             </div>
             <div class="flex justify-center my-5">

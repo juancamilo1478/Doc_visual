@@ -16,7 +16,7 @@ export default {
 </script>
 <template>
     <div class="w-screen bg-white py-3">
-        <div class="w-full">
+        <div class="container m-auto">
             <h1 class="text-center px-5 w-full font-sans text-xl md:text-3xl py-1   font-semibold" style="color: var(--blue-1);">
                 Encuentra tu profesional de la salud visual con ubicación y especialidad.
             </h1>
@@ -24,7 +24,7 @@ export default {
                 camino hacia tu bienestar
             </h2>
         </div>
-        <div class="flex justify-center">
+        <div class="container m-auto flex justify-center">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-center text-center mt-20 px-6">
                 <CardTopUser :image="womman" :option="'Optometría'"
                     :Description="'Evaluación optométrica integral, También mide y controla alteraciones de la agudeza visual, visión binocular, función de las vías visuales, campos visuales, movimientos oculares y presión intraocular'"

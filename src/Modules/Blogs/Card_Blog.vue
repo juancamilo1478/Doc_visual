@@ -12,7 +12,7 @@ const goToAbout = (id: number) => {
 }
 </script>
 <template>
-    <div class="w-sm md:w-md lg:w-lg cursor-pointer" @click="goToAbout(id)">
+    <div class="w-sm md:w-md lg:w-sm cursor-pointer" @click="goToAbout(id)">
         <img :src="photo" alt="Image" class="w-full h-72 object-cover rounded-3xl mb-4" />
         <h1 class="mt-2 font-semibold">{{ description }}</h1>
     </div>
