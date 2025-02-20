@@ -91,10 +91,10 @@ export default {
         <div class="container m-auto px-2 mt-10">
             <h1 class="w-full text-center font-poppins text-2xl" style="color: var(--blue-1);">Especialistas en salud
                 visual a la mano</h1>
-            <h2 class="w-full text-center font-poppins mt-2 mb-9 text-3xl font-bold">Agenda tu sesion con alguno de
+            <h2 class="w-full text-center font-poppins mt-2 mb-9 text-xl md:text-3xl font-bold">Agenda tu sesion con alguno de
                 nuestros
                 especialistas en</h2>
-            <div class="flex flex-wrap justify-center gap-20 my-10">
+            <div class="hidden lg:flex   flex-wrap justify-center gap-20 my-10">
 
                 <div class="    rounded-2xl flex flex-col justify-center" @click="selectSpecialist('Optómetra')"
                     :class="isSpecialistSelected('Optómetra') ? 'selectCard' : 'bg-gray-200'">
