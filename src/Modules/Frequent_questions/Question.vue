@@ -17,7 +17,7 @@ const handleClick = () => {
 <template>
     <div class="w-full border p-3 rounded-2xl border-gray-300 mb-4">
         <div class="w-full flex items-center px-2">
-            <h1 class="text-2xl font-semibold font-poppins max-w-[80%]">{{ question }}</h1>
+            <h1 class="text-xl font-semibold font-poppins max-w-[80%]">{{ question }}</h1>
             <img src="@/assets/svg/arrow.svg" alt="Icono" class="w-8 h-8 transition-transform ml-auto"
                 :class="{ 'rotate-90': state }" @click="handleClick">
         </div>
