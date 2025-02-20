@@ -121,9 +121,9 @@ export default {
             </div>
         </div>
         <div class="container m-auto px-2 min-h-svh">
-            <div class="flex    ">
+            <div class="lg:flex     ">
 
-                <div class="w-3/10 mx-9 bg-white flex flex-col border h-full sticky top-10">
+                <div class="hidden lg:flex w-3/10 mx-9 bg-white   flex-col border h-full sticky top-10">
                     <!-- Contenido con scroll -->
                     <div class="overflow-y-auto p-3 max-h-[50vh] min-h-0">
 
@@ -227,7 +227,7 @@ export default {
                     </div>
                 </div>
 
-                <div class="w-7/10  ">
+                <div class="w-full lg:w-7/10  ">
                     <h1 v-if="data.length" class="font-poppins mx-2">{{ `${data.length} Especialistas disponibles para
                         ti` }}</h1>
                     <div class="flex flex-wrap justify-center gap-4 p-4">
