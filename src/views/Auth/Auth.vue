@@ -14,11 +14,11 @@ import IconsAuth from './IconsAuth.vue';
 
 
             <div class="w-full  lg:w-1/2   flex justify-center">
-                <div class=" lg:mx-20 flex flex-col h-full mx-3">
+                <div class=" lg:mx-20 flex flex-col h-fit mx-3 m-auto">
                     <img src="@/assets/images/LogoPng.png" alt="image" class="h-40 w-auto  pt-5 m-auto" />
-                    <h1 class="text-center font-sans text-4xl font-bold pt-6" style="color: var(--blue-1);">Hacemos
+                    <h1 class="text-center font-poppins text-4xl font-bold pt-6" style="color: var(--blue-1);">Hacemos
                         visibles a los expertos</h1>
-                    <h2 class=" font-sans text-xl   font-semibold w-md m-auto text-center pt-10">Únete a nuestra
+                    <h2 class=" font-poppins text-xl   font-semibold w-md m-auto text-center pt-10">Únete a nuestra
                         comunidad de
                         miembros que confían en DocVisual e
                         inicia el camino hacia una real y sana
