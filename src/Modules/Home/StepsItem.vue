@@ -31,9 +31,9 @@ export default {
     />
   </div>
     <div>
-        <h1 class="font-poppins text-xl lg:text-2xl font-normal">{{ title }}</h1>
+        <h1 class="font-poppins text-xl lg:text-xl font-semibold">{{ title }}</h1>
    
-        <h1 v-if="text !== ''" class="font-poppins text-xl font-normal mt-4">{{ text }}</h1> 
+        <h1 v-if="text !== ''" class="font-poppins text-xl font-light mt-4">{{ text }}</h1> 
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <script lang="ts">
 import Card_Text from "@/common/Card_Text.vue";
- 
+
 export default {
     name: "Figures",
     components: {
@@ -11,18 +11,20 @@ export default {
 
 <template>
     <div class="w-full">
-        <h1 class="w-full pt-10 text-center text-3xl md:text-4xl" style="color: var(--blue-1);">Cifras de los pacientes que han
+        <h1 class="w-full  my-10 text-center font-poppins  font-light  text-2xl md:text-2xl"
+            style="color: var(--blue-1);">Cifras de los pacientes que han
             creido en nosotros</h1>
-            <div class="flex flex-wrap justify-center gap-8 mt-20 px-5 md:px-0">
+        <div class="flex flex-wrap justify-center gap-8   px-5 md:px-0">
 
-                <Card_Text class="min-w-[350px]" :text="'Citas realizadas'"  item="+"  :data="50000" />
-                <Card_Text class="min-w-[350px]" :text="'Personas atendidas'" item="+" :data="100000" />
-                <Card_Text class="min-w-[350px]" :text="'Satisfacción'" item="%" :data="5000" />
-                <Card_Text class="min-w-[350px]" :text="'Comunidad Instagram'" item="+" :data="500" />
+            <Card_Text class="min-w-[350px]  min-h-[200px]" :text="'Citas realizadas'" item="+" :data="50000" />
+            <Card_Text class="min-w-[350px]  min-h-[200px]" :text="'Personas atendidas'" item="+" :data="100000" />
+            <Card_Text class="min-w-[350px]  min-h-[200px]" :text="'Satisfacción'" item="%" :data="5000" />
+            <Card_Text class="min-w-[350px]  min-h-[200px]" :text="'Comunidad Instagram'" item="+" :data="500" />
         </div>
-        <h1 class="w-full py-10 text-center text-3xl md:text-4xl" style="color: var(--blue-1);">Empresas que nos eligen para cuidar
+        <h1 class="w-full py-10 font-poppins font-light text-center text-2xl md:text-2xl" style="color: var(--blue-1);">Empresas que nos eligen
+            para cuidar
             de sus equipos</h1>
-            <img class="w-full px-3" src="@/assets/images/aliance.png" alt="Imagen 2" />
+        <img class="w-full px-3" src="@/assets/images/aliance.png" alt="Imagen 2" />
     </div>
-    
+
 </template>

@@ -45,17 +45,23 @@ watch(isVisible, (newVal) => {
 </script>
 
 <template>
-  <div
-    id="animated-number"
-    class="max-w-[350px] lg:w-md rounded-3xl opacity-0 transition-opacity duration-700"
-    :class="isVisible ? 'opacity-100' : ''"
-    style="background-color: var(--bluegray-1);"
-  >
-    <p class="font-poppins text-5xl font-bold w-full text-center pt-8">
-      {{ currentNumber }}<span class="font-extrabold   text-5xl" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"> {{ item }}</span>
-    </p>
-    <p class="text-2xl w-full text-center p-6">
-      {{ text }}
-    </p>
+  <div class="flex justify-center items-center h-full">
+    <div
+      id="animated-number"
+      class="max-w-[350px] lg:w-md rounded-3xl opacity-0 transition-opacity duration-700 flex flex-col justify-center items-center text-center p-6"
+      :class="isVisible ? 'opacity-100' : ''"
+      style="background-color: var(--bluegray-1); min-height: 300px;"
+    >
+      <p class="font-poppins text-5xl font-bold w-full pt-8">
+        {{ currentNumber }}
+        <span class="font-extrabold text-5xl" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"> 
+          {{ item }}
+        </span>
+      </p>
+      <p class="text-2xl w-full p-6">
+        {{ text }}
+      </p>
+    </div>
   </div>
+  
 </template>

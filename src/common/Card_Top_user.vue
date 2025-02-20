@@ -18,26 +18,26 @@ defineProps<{
                         <div class="w-32 h-32 overflow-hidden rounded-full">
                             <img class="w-full h-full object-cover" :src="image" alt="Avatar">
                         </div>
-                        <div class="text-left">
-                            <h1 class="mx-2 font-semibold   font-poppins text-xl   " tabindex="0" role="link">{{ name
+                        <div class="text-left mx-2">
+                            <h1 class="mx-2 font-semibold   font-poppins text-lg   " tabindex="0" role="link">{{ name
                                 }}</h1>
-                            <h2 class="mx-2 font-light   font-poppins text-xl " tabindex="0" role="link">{{ rol }}
+                            <h2 class="mx-2 font-light   font-poppins text-lg " tabindex="0" role="link">{{ rol }}
                             </h2>
                         </div>
                     </div>
                 </div>
                 <div class="container p-2 text-left">
-                    <h3 class=" font-poppins text-xl  ">{{ `Experiencia ${experiece} años` }}</h3>
+                    <h3 class=" font-poppins text-lg  ">{{ `Experiencia ${experiece} años` }}</h3>
                 </div>
             </div>
-            <div class=" px-3 mb-3">
+            <div class=" px-5 mb-3">
                 <div style="background: var(--gray-2);border-radius: 10px;" class="p-3">
-                    <p class="m-3 text-xl text-left  font-medium text-gray-600 dark:text-gray-400">{{ Description }}</p>
+                    <p class="m-3 text-lg text-left  font-poppins  font-light text-gray-600 dark:text-gray-400">{{ Description }}</p>
                 </div>
             </div>
             <div class="flex justify-center my-5">
                 <button
-                    class="cursor-pointer font-medium text-2xl font-poppins my-4    w-3/5 px-6 py-2   tracking-wide text-white capitalize transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
+                    class="cursor-pointer font-medium text-xl font-poppins my-4    w-3/5 px-6 py-2   tracking-wide text-white capitalize transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
                     Ver perfil
                 </button>
             </div>
