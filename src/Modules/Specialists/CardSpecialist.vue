@@ -1,10 +1,22 @@
 <script setup lang="ts">
 import type { Specialist } from './Specialist';
 import { defineProps } from 'vue';
-
-defineProps<{
+import { useRouter } from 'vue-router';
+const router = useRouter();
+const props = defineProps<{
     specialist: Specialist;
 }>();
+
+
+
+
+
+const goToProfile = () => {
+
+    router.push(`/specialist/${props.specialist.id}`);
+};
+
+
 </script>
 
 <template>
@@ -20,8 +32,9 @@ defineProps<{
                         <div class="text-left">
                             <h1 class="mx-2 font-semibold   font-poppins text-xl   " tabindex="0" role="link">{{
                                 specialist.name
-                                }}</h1>
-                            <h2 class="mx-2 font-light   font-poppins text-xl " tabindex="0" role="link">{{ specialist.title }}
+                            }}</h1>
+                            <h2 class="mx-2 font-light   font-poppins text-xl " tabindex="0" role="link">{{
+                                specialist.title }}
                             </h2>
                         </div>
                     </div>
@@ -32,16 +45,17 @@ defineProps<{
             </div>
             <div class=" px-3 mb-3">
                 <div style="background: var(--gray-2);border-radius: 10px;" class="p-3">
-                    <p class="m-3 text-xl text-left  font-medium text-gray-600 dark:text-gray-400">{{ specialist.description }}</p>
+                    <p class="m-3 text-xl text-left  font-medium text-gray-600 dark:text-gray-400">{{
+                        specialist.description }}</p>
                 </div>
             </div>
-            <div class="flex justify-center my-8">
-                <button
-                    class="cursor-pointer font-medium text-2xl font-poppins mx-4    w-3/5 px-6 py-2   tracking-wide text-white capitalize transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
+            <div class="flex justify-center my-5 px-4">
+                <button @click="goToProfile()"
+                    class="cursor-pointer font-medium text-2xl font-poppins   py-1   w-3/5 px-6    tracking-wide text-white   transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
                     Ver perfil
                 </button>
                 <button
-                    class="cursor-pointer font-medium text-2xl font-poppins mx-4    w-3/5 px-6 py-2   tracking-wide text-white capitalize transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
+                    class="cursor-pointer font-medium text-2xl font-poppins mx-4  py-1  w-3/5 px-6     tracking-wide text-white   transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
                     Agendar
                 </button>
             </div>

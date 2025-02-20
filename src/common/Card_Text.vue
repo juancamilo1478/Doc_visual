@@ -48,17 +48,17 @@ watch(isVisible, (newVal) => {
   <div class="flex justify-center items-center h-full">
     <div
       id="animated-number"
-      class="max-w-[350px] lg:w-md rounded-3xl opacity-0 transition-opacity duration-700 flex flex-col justify-center items-center text-center p-6"
+      class="max-w-[350px] md:w-[250px] lg:w-md rounded-3xl opacity-0 transition-opacity duration-700 flex flex-col justify-center items-center text-center p-6"
       :class="isVisible ? 'opacity-100' : ''"
-      style="background-color: var(--bluegray-1); min-height: 300px;"
+      style="background-color: var(--bluegray-1);  "
     >
-      <p class="font-poppins text-5xl font-bold w-full pt-8">
+      <p class="font-poppins md:text-4xl text-5xl font-bold w-full pt-8">
         {{ currentNumber }}
-        <span class="font-extrabold text-5xl" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"> 
+        <span class="font-extrabold text-3xl md:text-3xl" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"> 
           {{ item }}
         </span>
       </p>
-      <p class="text-2xl w-full p-6">
+      <p class="text-xl md:text-xl w-full p-6 md:p-3">
         {{ text }}
       </p>
     </div>

@@ -5,6 +5,7 @@ import { locations } from './DataFilters/locations';
 import SpecialistDataMock from './Mocks/SpecialistDataMock.json'
 import type { Specialist } from './Specialist';
 import CardSpecialist from './CardSpecialist.vue';
+
 export default {
     name: 'Search_Soecialist',
     components: {
@@ -75,15 +76,18 @@ export default {
                     this.filterLocation.includes(item.location)
                 );
             }
-
+        
             this.data = itemsFull; // Actualiza el estado de `data`
+        },
+        goToSpecialist(id:string){
+            
         }
 
     }
 }
 </script>
 <template>
-    <div class="w-screen">
+    <div class="w-screen bg-gradient-to-r from-gray-100 to-gray-50">
         <div class="container m-auto px-2 mt-10">
             <h1 class="w-full text-center font-poppins text-2xl" style="color: var(--blue-1);">Especialistas en salud
                 visual a la mano</h1>

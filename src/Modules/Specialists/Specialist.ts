@@ -9,4 +9,11 @@ export interface Specialist {
     description: string;
     location: string;
     specialist: string[];
+    latitude: number;
+    longitude: number;
+    direction:string;
+    gallery:string[]; 
+    servicesCost:{ nameService: string; price: number }[];
+    opinions:{text:string,score:number,user:string,fecha:string,lugar:string}[];
 }
+

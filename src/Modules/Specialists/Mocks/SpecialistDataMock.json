@@ -3,7 +3,6 @@
         "id": 1,
         "name": "Juan Pérez",
         "title": "Oftalmologa",
-        "title": "Oftalmologa",
         "perfilPhoto": "https://nazaroftalmologos.com/wp-content/uploads/2022/05/doctora-maria-fernada-perez-bio-1.jpg",
         "expetience": 8,
         "point": 4.7,
@@ -18,6 +17,66 @@
             "Optómetra",
             "Contactología",
             "Terapia Visual (Ortóptica)"
+        ],
+        "direction": "Carrera 7 #32-16, Bogotá, Colombia",
+        "longitude": -74.0817,
+        "latitude": 4.6097,
+        "servicesCost": [
+            {
+                "nameService": "Consulta médica",
+                "price": 100000
+            },
+            {
+                "nameService": "Electrocardiograma",
+                "price": 50000
+            },
+            {
+                "nameService": "Ecocardiografía",
+                "price": 120000
+            }
+        ],
+        "gallery": [
+            "https://previews.123rf.com/images/dezay/dezay1703/dezay170300029/74294429-ophthalmology-oculus-primer-plano-de-la-muestra-oftalmolog%C3%ADa-primer-plano-del-modelo-del-ojo-el.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl92veCBd8GWk5snPRykMNQ-qCLQ-ERDE_CpXrds5yOMPZCsTaIL30QkzixoS_A5rJlMc&usqp=CAU",
+            "https://www.aboutti.com/wp-content/uploads/2019/11/consulta-optometria.jpg",
+            "https://www.cedco.com.co/fotospages/min_thu_consulta_de_optometria_1697667767.jpg"
+        ],
+        "opinions": [
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Excelente profesional, me explicó todo con detalle y resolvió mis dudas.",
+                "score": 5
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Muy buen servicio, aunque el tiempo de espera fue un poco largo.",
+                "score": 4
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Atención adecuada, pero esperaba más opciones de tratamiento.",
+                "score": 3
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "No me sentí bien atendido, el médico no fue muy empático.",
+                "score": 2
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Mala experiencia, la atención fue apresurada y poco clara.",
+                "score": 1
+            }
         ]
     },
     {
@@ -38,6 +97,66 @@
             "Oftalmología",
             "Neuro oftalmología",
             "Catarata & Córnea"
+        ],
+        "direction": "Carrera 7 #32-16, Bogotá, Colombia",
+        "longitude": -74.0817,
+        "latitude": 4.6097,
+        "servicesCost": [
+            {
+                "nameService": "Consulta médica",
+                "price": 100000
+            },
+            {
+                "nameService": "Electrocardiograma",
+                "price": 50000
+            },
+            {
+                "nameService": "Ecocardiografía",
+                "price": 120000
+            }
+        ],
+        "gallery": [
+            "https://previews.123rf.com/images/dezay/dezay1703/dezay170300029/74294429-ophthalmology-oculus-primer-plano-de-la-muestra-oftalmolog%C3%ADa-primer-plano-del-modelo-del-ojo-el.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl92veCBd8GWk5snPRykMNQ-qCLQ-ERDE_CpXrds5yOMPZCsTaIL30QkzixoS_A5rJlMc&usqp=CAU",
+            "https://www.aboutti.com/wp-content/uploads/2019/11/consulta-optometria.jpg",
+            "https://www.cedco.com.co/fotospages/min_thu_consulta_de_optometria_1697667767.jpg"
+        ],
+        "opinions": [
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Excelente profesional, me explicó todo con detalle y resolvió mis dudas.",
+                "score": 5
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Muy buen servicio, aunque el tiempo de espera fue un poco largo.",
+                "score": 4
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Atención adecuada, pero esperaba más opciones de tratamiento.",
+                "score": 3
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "No me sentí bien atendido, el médico no fue muy empático.",
+                "score": 2
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Mala experiencia, la atención fue apresurada y poco clara.",
+                "score": 1
+            }
         ]
     },
     {
@@ -58,6 +177,66 @@
             "Pediátrica",
             "Geriatría",
             "Rehabilitación en baja visión"
+        ],
+        "direction": "Carrera 7 #32-16, Bogotá, Colombia",
+        "longitude": -74.0817,
+        "latitude": 4.6097,
+        "servicesCost": [
+            {
+                "nameService": "Consulta médica",
+                "price": 100000
+            },
+            {
+                "nameService": "Electrocardiograma",
+                "price": 50000
+            },
+            {
+                "nameService": "Ecocardiografía",
+                "price": 120000
+            }
+        ],
+        "gallery": [
+            "https://previews.123rf.com/images/dezay/dezay1703/dezay170300029/74294429-ophthalmology-oculus-primer-plano-de-la-muestra-oftalmolog%C3%ADa-primer-plano-del-modelo-del-ojo-el.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl92veCBd8GWk5snPRykMNQ-qCLQ-ERDE_CpXrds5yOMPZCsTaIL30QkzixoS_A5rJlMc&usqp=CAU",
+            "https://www.aboutti.com/wp-content/uploads/2019/11/consulta-optometria.jpg",
+            "https://www.cedco.com.co/fotospages/min_thu_consulta_de_optometria_1697667767.jpg"
+        ],
+        "opinions": [
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Excelente profesional, me explicó todo con detalle y resolvió mis dudas.",
+                "score": 5
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Muy buen servicio, aunque el tiempo de espera fue un poco largo.",
+                "score": 4
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Atención adecuada, pero esperaba más opciones de tratamiento.",
+                "score": 3
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "No me sentí bien atendido, el médico no fue muy empático.",
+                "score": 2
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Mala experiencia, la atención fue apresurada y poco clara.",
+                "score": 1
+            }
         ]
     },
     {
@@ -78,6 +257,66 @@
             "Glaucomatólogo",
             "Retinólogo",
             "Plástica ocular"
+        ],
+        "direction": "Carrera 7 #32-16, Bogotá, Colombia",
+        "longitude": -74.0817,
+        "latitude": 4.6097,
+        "servicesCost": [
+            {
+                "nameService": "Consulta médica",
+                "price": 100000
+            },
+            {
+                "nameService": "Electrocardiograma",
+                "price": 50000
+            },
+            {
+                "nameService": "Ecocardiografía",
+                "price": 120000
+            }
+        ],
+        "gallery": [
+            "https://previews.123rf.com/images/dezay/dezay1703/dezay170300029/74294429-ophthalmology-oculus-primer-plano-de-la-muestra-oftalmolog%C3%ADa-primer-plano-del-modelo-del-ojo-el.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl92veCBd8GWk5snPRykMNQ-qCLQ-ERDE_CpXrds5yOMPZCsTaIL30QkzixoS_A5rJlMc&usqp=CAU",
+            "https://www.aboutti.com/wp-content/uploads/2019/11/consulta-optometria.jpg",
+            "https://www.cedco.com.co/fotospages/min_thu_consulta_de_optometria_1697667767.jpg"
+        ],
+        "opinions": [
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Excelente profesional, me explicó todo con detalle y resolvió mis dudas.",
+                "score": 5
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Muy buen servicio, aunque el tiempo de espera fue un poco largo.",
+                "score": 4
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Atención adecuada, pero esperaba más opciones de tratamiento.",
+                "score": 3
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "No me sentí bien atendido, el médico no fue muy empático.",
+                "score": 2
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Mala experiencia, la atención fue apresurada y poco clara.",
+                "score": 1
+            }
         ]
     },
     {
@@ -98,6 +337,66 @@
             "Superficie ocular",
             "Optometría Deportiva (Entrenamiento Visual)",
             "Seguridad y salud en el trabajo"
+        ],
+        "direction": "Carrera 7 #32-16, Bogotá, Colombia",
+        "longitude": -74.0817,
+        "latitude": 4.6097,
+        "servicesCost": [
+            {
+                "nameService": "Consulta médica",
+                "price": 100000
+            },
+            {
+                "nameService": "Electrocardiograma",
+                "price": 50000
+            },
+            {
+                "nameService": "Ecocardiografía",
+                "price": 120000
+            }
+        ],
+        "gallery": [
+            "https://previews.123rf.com/images/dezay/dezay1703/dezay170300029/74294429-ophthalmology-oculus-primer-plano-de-la-muestra-oftalmolog%C3%ADa-primer-plano-del-modelo-del-ojo-el.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl92veCBd8GWk5snPRykMNQ-qCLQ-ERDE_CpXrds5yOMPZCsTaIL30QkzixoS_A5rJlMc&usqp=CAU",
+            "https://www.aboutti.com/wp-content/uploads/2019/11/consulta-optometria.jpg",
+            "https://www.cedco.com.co/fotospages/min_thu_consulta_de_optometria_1697667767.jpg"
+        ],
+        "opinions": [
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Excelente profesional, me explicó todo con detalle y resolvió mis dudas.",
+                "score": 5
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Muy buen servicio, aunque el tiempo de espera fue un poco largo.",
+                "score": 4
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Atención adecuada, pero esperaba más opciones de tratamiento.",
+                "score": 3
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "No me sentí bien atendido, el médico no fue muy empático.",
+                "score": 2
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Mala experiencia, la atención fue apresurada y poco clara.",
+                "score": 1
+            }
         ]
     },
     {
@@ -118,6 +417,66 @@
             "Cirugía refractiva",
             "Neuro oftalmología",
             "Oftalmología"
+        ],
+        "direction": "Carrera 7 #32-16, Bogotá, Colombia",
+        "longitude": -74.0817,
+        "latitude": 4.6097,
+        "servicesCost": [
+            {
+                "nameService": "Consulta médica",
+                "price": 100000
+            },
+            {
+                "nameService": "Electrocardiograma",
+                "price": 50000
+            },
+            {
+                "nameService": "Ecocardiografía",
+                "price": 120000
+            }
+        ],
+        "gallery": [
+            "https://previews.123rf.com/images/dezay/dezay1703/dezay170300029/74294429-ophthalmology-oculus-primer-plano-de-la-muestra-oftalmolog%C3%ADa-primer-plano-del-modelo-del-ojo-el.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl92veCBd8GWk5snPRykMNQ-qCLQ-ERDE_CpXrds5yOMPZCsTaIL30QkzixoS_A5rJlMc&usqp=CAU",
+            "https://www.aboutti.com/wp-content/uploads/2019/11/consulta-optometria.jpg",
+            "https://www.cedco.com.co/fotospages/min_thu_consulta_de_optometria_1697667767.jpg"
+        ],
+        "opinions": [
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Excelente profesional, me explicó todo con detalle y resolvió mis dudas.",
+                "score": 5
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Muy buen servicio, aunque el tiempo de espera fue un poco largo.",
+                "score": 4
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Atención adecuada, pero esperaba más opciones de tratamiento.",
+                "score": 3
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "No me sentí bien atendido, el médico no fue muy empático.",
+                "score": 2
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Mala experiencia, la atención fue apresurada y poco clara.",
+                "score": 1
+            }
         ]
     },
     {
@@ -138,6 +497,66 @@
             "Optómetra",
             "Terapia Visual (Ortóptica)",
             "Rehabilitación en baja visión"
+        ],
+        "direction": "Carrera 7 #32-16, Bogotá, Colombia",
+        "longitude": -74.0817,
+        "latitude": 4.6097,
+        "servicesCost": [
+            {
+                "nameService": "Consulta médica",
+                "price": 100000
+            },
+            {
+                "nameService": "Electrocardiograma",
+                "price": 50000
+            },
+            {
+                "nameService": "Ecocardiografía",
+                "price": 120000
+            }
+        ],
+        "gallery": [
+            "https://previews.123rf.com/images/dezay/dezay1703/dezay170300029/74294429-ophthalmology-oculus-primer-plano-de-la-muestra-oftalmolog%C3%ADa-primer-plano-del-modelo-del-ojo-el.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl92veCBd8GWk5snPRykMNQ-qCLQ-ERDE_CpXrds5yOMPZCsTaIL30QkzixoS_A5rJlMc&usqp=CAU",
+            "https://www.aboutti.com/wp-content/uploads/2019/11/consulta-optometria.jpg",
+            "https://www.cedco.com.co/fotospages/min_thu_consulta_de_optometria_1697667767.jpg"
+        ],
+        "opinions": [
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Excelente profesional, me explicó todo con detalle y resolvió mis dudas.",
+                "score": 5
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Muy buen servicio, aunque el tiempo de espera fue un poco largo.",
+                "score": 4
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Atención adecuada, pero esperaba más opciones de tratamiento.",
+                "score": 3
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "No me sentí bien atendido, el médico no fue muy empático.",
+                "score": 2
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Mala experiencia, la atención fue apresurada y poco clara.",
+                "score": 1
+            }
         ]
     },
     {
@@ -158,6 +577,66 @@
             "Oftalmología",
             "Pediatría",
             "Oncología Ocular"
+        ],
+        "direction": "Carrera 7 #32-16, Bogotá, Colombia",
+        "longitude": -74.0817,
+        "latitude": 4.6097,
+        "servicesCost": [
+            {
+                "nameService": "Consulta médica",
+                "price": 100000
+            },
+            {
+                "nameService": "Electrocardiograma",
+                "price": 50000
+            },
+            {
+                "nameService": "Ecocardiografía",
+                "price": 120000
+            }
+        ],
+        "gallery": [
+            "https://previews.123rf.com/images/dezay/dezay1703/dezay170300029/74294429-ophthalmology-oculus-primer-plano-de-la-muestra-oftalmolog%C3%ADa-primer-plano-del-modelo-del-ojo-el.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl92veCBd8GWk5snPRykMNQ-qCLQ-ERDE_CpXrds5yOMPZCsTaIL30QkzixoS_A5rJlMc&usqp=CAU",
+            "https://www.aboutti.com/wp-content/uploads/2019/11/consulta-optometria.jpg",
+            "https://www.cedco.com.co/fotospages/min_thu_consulta_de_optometria_1697667767.jpg"
+        ],
+        "opinions": [
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Excelente profesional, me explicó todo con detalle y resolvió mis dudas.",
+                "score": 5
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Muy buen servicio, aunque el tiempo de espera fue un poco largo.",
+                "score": 4
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Atención adecuada, pero esperaba más opciones de tratamiento.",
+                "score": 3
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "No me sentí bien atendido, el médico no fue muy empático.",
+                "score": 2
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Mala experiencia, la atención fue apresurada y poco clara.",
+                "score": 1
+            }
         ]
     },
     {
@@ -178,6 +657,66 @@
             "Optometría Integral",
             "Seguridad y salud en el trabajo",
             "Geriatría"
+        ],
+        "direction": "Carrera 7 #32-16, Bogotá, Colombia",
+        "longitude": -74.0817,
+        "latitude": 4.6097,
+        "servicesCost": [
+            {
+                "nameService": "Consulta médica",
+                "price": 100000
+            },
+            {
+                "nameService": "Electrocardiograma",
+                "price": 50000
+            },
+            {
+                "nameService": "Ecocardiografía",
+                "price": 120000
+            }
+        ],
+        "gallery": [
+            "https://previews.123rf.com/images/dezay/dezay1703/dezay170300029/74294429-ophthalmology-oculus-primer-plano-de-la-muestra-oftalmolog%C3%ADa-primer-plano-del-modelo-del-ojo-el.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl92veCBd8GWk5snPRykMNQ-qCLQ-ERDE_CpXrds5yOMPZCsTaIL30QkzixoS_A5rJlMc&usqp=CAU",
+            "https://www.aboutti.com/wp-content/uploads/2019/11/consulta-optometria.jpg",
+            "https://www.cedco.com.co/fotospages/min_thu_consulta_de_optometria_1697667767.jpg"
+        ],
+        "opinions": [
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Excelente profesional, me explicó todo con detalle y resolvió mis dudas.",
+                "score": 5
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Muy buen servicio, aunque el tiempo de espera fue un poco largo.",
+                "score": 4
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Atención adecuada, pero esperaba más opciones de tratamiento.",
+                "score": 3
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "No me sentí bien atendido, el médico no fue muy empático.",
+                "score": 2
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Mala experiencia, la atención fue apresurada y poco clara.",
+                "score": 1
+            }
         ]
     },
     {
@@ -198,6 +737,66 @@
             "Plástica ocular",
             "Glaucomatólogo",
             "Catarata & Córnea"
+        ],
+        "direction": "Carrera 7 #32-16, Bogotá, Colombia",
+        "longitude": -74.0817,
+        "latitude": 4.6097,
+        "servicesCost": [
+            {
+                "nameService": "Consulta médica",
+                "price": 100000
+            },
+            {
+                "nameService": "Electrocardiograma",
+                "price": 50000
+            },
+            {
+                "nameService": "Ecocardiografía",
+                "price": 120000
+            }
+        ],
+        "gallery": [
+            "https://previews.123rf.com/images/dezay/dezay1703/dezay170300029/74294429-ophthalmology-oculus-primer-plano-de-la-muestra-oftalmolog%C3%ADa-primer-plano-del-modelo-del-ojo-el.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl92veCBd8GWk5snPRykMNQ-qCLQ-ERDE_CpXrds5yOMPZCsTaIL30QkzixoS_A5rJlMc&usqp=CAU",
+            "https://www.aboutti.com/wp-content/uploads/2019/11/consulta-optometria.jpg",
+            "https://www.cedco.com.co/fotospages/min_thu_consulta_de_optometria_1697667767.jpg"
+        ],
+        "opinions": [
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Excelente profesional, me explicó todo con detalle y resolvió mis dudas.",
+                "score": 5
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Muy buen servicio, aunque el tiempo de espera fue un poco largo.",
+                "score": 4
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Atención adecuada, pero esperaba más opciones de tratamiento.",
+                "score": 3
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "No me sentí bien atendido, el médico no fue muy empático.",
+                "score": 2
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Mala experiencia, la atención fue apresurada y poco clara.",
+                "score": 1
+            }
         ]
     },
     {
@@ -218,6 +817,66 @@
             "Pediátrica",
             "Contactología",
             "Superficie ocular"
+        ],
+        "direction": "Carrera 7 #32-16, Bogotá, Colombia",
+        "longitude": -74.0817,
+        "latitude": 4.6097,
+        "servicesCost": [
+            {
+                "nameService": "Consulta médica",
+                "price": 100000
+            },
+            {
+                "nameService": "Electrocardiograma",
+                "price": 50000
+            },
+            {
+                "nameService": "Ecocardiografía",
+                "price": 120000
+            }
+        ],
+        "gallery": [
+            "https://previews.123rf.com/images/dezay/dezay1703/dezay170300029/74294429-ophthalmology-oculus-primer-plano-de-la-muestra-oftalmolog%C3%ADa-primer-plano-del-modelo-del-ojo-el.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl92veCBd8GWk5snPRykMNQ-qCLQ-ERDE_CpXrds5yOMPZCsTaIL30QkzixoS_A5rJlMc&usqp=CAU",
+            "https://www.aboutti.com/wp-content/uploads/2019/11/consulta-optometria.jpg",
+            "https://www.cedco.com.co/fotospages/min_thu_consulta_de_optometria_1697667767.jpg"
+        ],
+        "opinions": [
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Excelente profesional, me explicó todo con detalle y resolvió mis dudas.",
+                "score": 5
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Muy buen servicio, aunque el tiempo de espera fue un poco largo.",
+                "score": 4
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Atención adecuada, pero esperaba más opciones de tratamiento.",
+                "score": 3
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "No me sentí bien atendido, el médico no fue muy empático.",
+                "score": 2
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Mala experiencia, la atención fue apresurada y poco clara.",
+                "score": 1
+            }
         ]
     },
     {
@@ -238,6 +897,66 @@
             "Retinólogo",
             "Neuro oftalmología",
             "Cirugía refractiva"
+        ],
+        "direction": "Carrera 7 #32-16, Bogotá, Colombia",
+        "longitude": -74.0817,
+        "latitude": 4.6097,
+        "servicesCost": [
+            {
+                "nameService": "Consulta médica",
+                "price": 100000
+            },
+            {
+                "nameService": "Electrocardiograma",
+                "price": 50000
+            },
+            {
+                "nameService": "Ecocardiografía",
+                "price": 120000
+            }
+        ],
+        "gallery": [
+            "https://previews.123rf.com/images/dezay/dezay1703/dezay170300029/74294429-ophthalmology-oculus-primer-plano-de-la-muestra-oftalmolog%C3%ADa-primer-plano-del-modelo-del-ojo-el.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl92veCBd8GWk5snPRykMNQ-qCLQ-ERDE_CpXrds5yOMPZCsTaIL30QkzixoS_A5rJlMc&usqp=CAU",
+            "https://www.aboutti.com/wp-content/uploads/2019/11/consulta-optometria.jpg",
+            "https://www.cedco.com.co/fotospages/min_thu_consulta_de_optometria_1697667767.jpg"
+        ],
+        "opinions": [
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Excelente profesional, me explicó todo con detalle y resolvió mis dudas.",
+                "score": 5
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Muy buen servicio, aunque el tiempo de espera fue un poco largo.",
+                "score": 4
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Atención adecuada, pero esperaba más opciones de tratamiento.",
+                "score": 3
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "No me sentí bien atendido, el médico no fue muy empático.",
+                "score": 2
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Mala experiencia, la atención fue apresurada y poco clara.",
+                "score": 1
+            }
         ]
     },
     {
@@ -258,6 +977,66 @@
             "Optometría Deportiva (Entrenamiento Visual)",
             "Terapia Visual (Ortóptica)",
             "Rehabilitación en baja visión"
+        ],
+        "direction": "Carrera 7 #32-16, Bogotá, Colombia",
+        "longitude": -74.0817,
+        "latitude": 4.6097,
+        "servicesCost": [
+            {
+                "nameService": "Consulta médica",
+                "price": 100000
+            },
+            {
+                "nameService": "Electrocardiograma",
+                "price": 50000
+            },
+            {
+                "nameService": "Ecocardiografía",
+                "price": 120000
+            }
+        ],
+        "gallery": [
+            "https://previews.123rf.com/images/dezay/dezay1703/dezay170300029/74294429-ophthalmology-oculus-primer-plano-de-la-muestra-oftalmolog%C3%ADa-primer-plano-del-modelo-del-ojo-el.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl92veCBd8GWk5snPRykMNQ-qCLQ-ERDE_CpXrds5yOMPZCsTaIL30QkzixoS_A5rJlMc&usqp=CAU",
+            "https://www.aboutti.com/wp-content/uploads/2019/11/consulta-optometria.jpg",
+            "https://www.cedco.com.co/fotospages/min_thu_consulta_de_optometria_1697667767.jpg"
+        ],
+        "opinions": [
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Excelente profesional, me explicó todo con detalle y resolvió mis dudas.",
+                "score": 5
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Muy buen servicio, aunque el tiempo de espera fue un poco largo.",
+                "score": 4
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Atención adecuada, pero esperaba más opciones de tratamiento.",
+                "score": 3
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "No me sentí bien atendido, el médico no fue muy empático.",
+                "score": 2
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Mala experiencia, la atención fue apresurada y poco clara.",
+                "score": 1
+            }
         ]
     },
     {
@@ -278,6 +1057,66 @@
             "Geriatría",
             "Optometría Integral",
             "Superficie ocular"
+        ],
+        "direction": "Carrera 7 #32-16, Bogotá, Colombia",
+        "longitude": -74.0817,
+        "latitude": 4.6097,
+        "servicesCost": [
+            {
+                "nameService": "Consulta médica",
+                "price": 100000
+            },
+            {
+                "nameService": "Electrocardiograma",
+                "price": 50000
+            },
+            {
+                "nameService": "Ecocardiografía",
+                "price": 120000
+            }
+        ],
+        "gallery": [
+            "https://previews.123rf.com/images/dezay/dezay1703/dezay170300029/74294429-ophthalmology-oculus-primer-plano-de-la-muestra-oftalmolog%C3%ADa-primer-plano-del-modelo-del-ojo-el.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl92veCBd8GWk5snPRykMNQ-qCLQ-ERDE_CpXrds5yOMPZCsTaIL30QkzixoS_A5rJlMc&usqp=CAU",
+            "https://www.aboutti.com/wp-content/uploads/2019/11/consulta-optometria.jpg",
+            "https://www.cedco.com.co/fotospages/min_thu_consulta_de_optometria_1697667767.jpg"
+        ],
+        "opinions": [
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Excelente profesional, me explicó todo con detalle y resolvió mis dudas.",
+                "score": 5
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Muy buen servicio, aunque el tiempo de espera fue un poco largo.",
+                "score": 4
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Atención adecuada, pero esperaba más opciones de tratamiento.",
+                "score": 3
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "No me sentí bien atendido, el médico no fue muy empático.",
+                "score": 2
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Mala experiencia, la atención fue apresurada y poco clara.",
+                "score": 1
+            }
         ]
     },
     {
@@ -298,6 +1137,67 @@
             "Oncología Ocular",
             "Catarata & Córnea",
             "Tratamiento de estrabismo"
+        ],
+        "direction": "Carrera 7 #32-16, Bogotá, Colombia",
+        "longitude": -74.0817,
+        "latitude": 4.6097,
+        "servicesCost": [
+            {
+                "nameService": "Consulta médica",
+                "price": 100000
+            },
+            {
+                "nameService": "Electrocardiograma",
+                "price": 50000
+            },
+            {
+                "nameService": "Ecocardiografía",
+                "price": 120000
+            }
+        ],
+        "gallery": [
+            "https://previews.123rf.com/images/dezay/dezay1703/dezay170300029/74294429-ophthalmology-oculus-primer-plano-de-la-muestra-oftalmolog%C3%ADa-primer-plano-del-modelo-del-ojo-el.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl92veCBd8GWk5snPRykMNQ-qCLQ-ERDE_CpXrds5yOMPZCsTaIL30QkzixoS_A5rJlMc&usqp=CAU",
+            "https://www.aboutti.com/wp-content/uploads/2019/11/consulta-optometria.jpg",
+            "https://www.cedco.com.co/fotospages/min_thu_consulta_de_optometria_1697667767.jpg"
+        ],
+        "opinions": [
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Excelente profesional, me explicó todo con detalle y resolvió mis dudas.",
+                "score": 5
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Muy buen servicio, aunque el tiempo de espera fue un poco largo.",
+                "score": 4
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Atención adecuada, pero esperaba más opciones de tratamiento.",
+                "score": 3
+            },
+            {
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "No me sentí bien atendido, el médico no fue muy empático.",
+                "score": 2
+            },
+            {
+               
+                "user": "juan mendez",
+                "fecha": "28 de enero de 2025",
+                "lugar": "Altos del Bosque",
+                "text": "Mala experiencia, la atención fue apresurada y poco clara.",
+                "score": 1
+            }
         ]
     }
 ]

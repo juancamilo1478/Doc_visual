@@ -5,6 +5,7 @@ import Blog from '@/views/Blogs/Blog.vue';
 import Blog_Detail from '@/Modules/Blogs/Blog_Detail.vue';
 import Auth from '@/views/Auth/Auth.vue';
 import Specialists from '@/views/specialists/Specialists.vue';
+import SpecialistDetail from '@/Modules/Specialists/SpecialistDetail.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -34,10 +35,15 @@ const router = createRouter({
       name: 'auth',
       component: Auth,
 
-    },{
+    }, {
       path: '/specialists',
       name: 'specialists',
       component: Specialists,
+    }, {
+      path: '/specialist/:id',
+      name: 'specialistdetail',
+      component: SpecialistDetail,
+      props: true // Esto permite pasar el parámetro como prop
     }
 
   ],
