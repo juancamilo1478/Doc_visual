@@ -98,7 +98,7 @@ export default {
                 especialistas en</h2>
 
             <!-- filterMovile and tablet -->
-            <div class="flex flex-wrap lg:hidden  w-full">
+            <div class="flex flex-wrap gap-3 lg:hidden  w-full">
                 <div class="flex p-3 text-white rounded-full bg-[var(--blue-1)]/70" @click="setPanel('panelService')">
                     <h1 class="font-poppins">servicios</h1>
                     <div class="  flex items-center  ">
@@ -108,7 +108,26 @@ export default {
                         </svg>
                     </div>
                 </div>
+                <div class="flex p-3 text-white rounded-full bg-[var(--blue-1)]/70" @click="setPanel('panelSpecialty')">
+                    <h1 class="font-poppins">Especialidad</h1>
+                    <div class="  flex items-center  ">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                            class="mx-1 w-5 h-5 transition-transform rotate-90" fill="var(--blue-1)">
+                            <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex p-3 text-white rounded-full bg-[var(--blue-1)]/70" @click="setPanel('panelLocation')">
+                    <h1 class="font-poppins">Ubicación</h1>
+                    <div class="  flex items-center  ">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                            class="mx-1 w-5 h-5 transition-transform rotate-90" fill="var(--blue-1)">
+                            <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                        </svg>
+                    </div>
+                </div>
             </div>
+
 
             <!-- pantallas menor a grandes -->
             <div v-if="panels.panelService"
@@ -122,7 +141,7 @@ export default {
                             <button @click="setPanel('panelService')"
                                 class="p-2 text-lg font-poppins font-bold cursor-pointer">X</button>
                             <h3 class="flex-1 text-center font-poppins">Servicio</h3>
-                            <h3 class="p-2 font-poppins" style="color: var(--blue-1);">Limpiar</h3>
+                        <h3 class="p-2 font-poppins cursor-pointer" style="color: var(--blue-1);">Limpiar</h3>
                         </div>
                         <hr class="text-gray-200" />
                     </div>
@@ -130,24 +149,101 @@ export default {
                     <!-- Contenido desplazable -->
                     <div class="flex-1 overflow-auto p-4">
                         <div v-if="panels.panelService">
-                            <div v-for="(option, index) in optionsServices" :key="index"
-                                class="flex w-full my-2"  @click="selectSpecialist(option)">
-                                <input type="checkbox" :id="'checkbox-' + index"
-                                    :checked="isSpecialistSelected(option)" :value="option"
+                            <div v-for="(option, index) in optionsServices" :key="index" class="flex w-full my-2"
+                                @click="selectSpecialist(option)">
+                                <input type="checkbox" :id="'checkbox-' + index" :checked="isSpecialistSelected(option)"
+                                    :value="option"
                                     class="w-5 h-5 mx-2 colorvar pointer-events-none accent-[var(--blue-1)]">
                                 <h1 class="mt-auto cursor-pointer">{{ option
-                                }}</h1>
+                                    }}</h1>
                             </div>
                         </div>
                     </div>
 
                     <!-- Botón fijo en la parte inferior -->
                     <div class="w-full p-4 bg-white shadow-md rounded-2xl">
-                        <button class="w-full bg-[var(--blue-1)] text-white py-2 rounded-lg font-poppins" @click="searchItems();setPanel('panelService')">Aplicar filtros</button>
+                        <button class="w-full bg-[var(--blue-1)] text-white py-2 rounded-lg font-poppins"
+                            @click="searchItems(); setPanel('panelService')">Aplicar filtros</button>
+                    </div>
+                </div>
+            </div>
+
+            <div v-if="panels.panelSpecialty"
+                class="fixed inset-0 z-50 bg-black/50    flex justify-center items-center sm:flex md:flex lg:hidden"
+                @click.self="setPanel('panelSpecialty')">
+                <!-- Contenedor del modal -->
+                <div class="bg-white w-11/12 max-w-md min-h-[60vh] max-h-[60vh]  rounded-2xl shadow-lg flex flex-col">
+                    <!-- Encabezado -->
+                    <div class="w-full">
+                        <div class="w-full flex items-center px-2">
+                            <button @click="setPanel('panelSpecialty')"
+                                class="p-2 text-lg font-poppins font-bold cursor-pointer">X</button>
+                            <h3 class="flex-1 text-center font-poppins">Especialidad</h3>
+                        <h3 class="p-2 font-poppins cursor-pointer" style="color: var(--blue-1);">Limpiar</h3>
+                        </div>
+                        <hr class="text-gray-200" />
+                    </div>
+
+                    <!-- Contenido desplazable -->
+                    <div class="flex-1 overflow-auto p-4">
+                        <div v-if="panels.panelSpecialty">
+                            <div v-for="(option, index) in optionsSpecialist" :key="index" class="flex w-full my-2"
+                                @click="selectSpecialist(option)">
+                                <input type="checkbox" :id="'checkbox-' + index" :checked="isSpecialistSelected(option)"
+                                    :value="option"
+                                    class="w-5 h-5 mx-2 colorvar pointer-events-none accent-[var(--blue-1)]">
+                                <h1 class="mt-auto cursor-pointer">{{ option
+                                    }}</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botón fijo en la parte inferior -->
+                    <div class="w-full p-4 bg-white shadow-md rounded-2xl">
+                        <button class="w-full bg-[var(--blue-1)] text-white py-2 rounded-lg font-poppins"
+                            @click="searchItems(); setPanel('panelSpecialty')">Aplicar filtros</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div v-if="panels.panelLocation"
+            class="fixed inset-0 z-50 bg-black/50    flex justify-center items-center sm:flex md:flex lg:hidden"
+            @click.self="setPanel('panelLocation')">
+            <!-- Contenedor del modal -->
+            <div class="bg-white w-11/12 max-w-md min-h-[60vh] max-h-[60vh]  rounded-2xl shadow-lg flex flex-col">
+                <!-- Encabezado -->
+                <div class="w-full">
+                    <div class="w-full flex items-center px-2">
+                        <button @click="setPanel('panelLocation')"
+                            class="p-2 text-lg font-poppins font-bold cursor-pointer">X</button>
+                        <h3 class="flex-1 text-center font-poppins">Especialidad</h3>
+                    <h3 class="p-2 font-poppins cursor-pointer" style="color: var(--blue-1);">Limpiar</h3>
+                    </div>
+                    <hr class="text-gray-200" />
+                </div>
+
+                <!-- Contenido desplazable -->
+                <div class="flex-1 overflow-auto p-4">
+                    <div v-if="panels.panelLocation">
+                        <div v-for="(option, index) in optionsLocaltion" :key="index" class="flex w-full my-2"
+                            @click="selectSpecialist(option)">
+                            <input type="checkbox" :id="'checkbox-' + index" :checked="isSpecialistSelected(option)"
+                                :value="option"
+                                class="w-5 h-5 mx-2 colorvar pointer-events-none accent-[var(--blue-1)]">
+                            <h1 class="mt-auto cursor-pointer">{{ option
+                                }}</h1>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Botón fijo en la parte inferior -->
+                <div class="w-full p-4 bg-white shadow-md rounded-2xl">
+                    <button class="w-full bg-[var(--blue-1)] text-white py-2 rounded-lg font-poppins"
+                        @click="searchItems(); setPanel('panelLocation')">Aplicar filtros</button>
+                </div>
             </div>
+        </div>
 
 
 
@@ -220,7 +316,7 @@ export default {
                                             :checked="isSpecialistSelected(option)" :value="option"
                                             class="w-5 h-5 mx-2 colorvar pointer-events-none">
                                         <h1 class="mt-auto cursor-pointer" @click="selectSpecialist(option)">{{ option
-                                        }}</h1>
+                                            }}</h1>
                                     </div>
                                 </div>
                             </Transition>
@@ -243,7 +339,7 @@ export default {
                                             :checked="isSpecialistSelected(option)" :value="option"
                                             class="w-5 h-5 mx-2 colorvar pointer-events-none">
                                         <h1 class="mt-auto cursor-pointer" @click="selectSpecialist(option)">{{ option
-                                        }}</h1>
+                                            }}</h1>
                                     </div>
                                 </div>
                             </Transition>
@@ -266,7 +362,7 @@ export default {
                                             :checked="isSpecialistSelected(option)" :value="option"
                                             class="w-5 h-5 mx-2 colorvar pointer-events-none">
                                         <h1 class="mt-auto cursor-pointer" @click="selectSpecialist(option)">{{ option
-                                        }}</h1>
+                                            }}</h1>
                                     </div>
                                 </div>
                             </Transition>
