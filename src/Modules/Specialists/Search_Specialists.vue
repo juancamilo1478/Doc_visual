@@ -4,8 +4,12 @@ import { specialists } from './DataFilters/specialist';
 import { locations } from './DataFilters/locations';
 import SpecialistDataMock from './Mocks/SpecialistDataMock.json'
 import type { Specialist } from './Specialist';
+import CardSpecialist from './CardSpecialist.vue';
 export default {
     name: 'Search_Soecialist',
+    components: {
+        CardSpecialist
+    },
     data() {
         return {
             items: SpecialistDataMock as Specialist[],
@@ -53,13 +57,13 @@ export default {
 
             if (this.filterService.length > 0) {
                 itemsFull = itemsFull.filter(item =>
-                    item.services.some(service => this.filterService.includes(service)) 
+                    item.services.some(service => this.filterService.includes(service))
                 );
             }
 
             if (this.filterLocation.length > 0) {
                 itemsFull = itemsFull.filter(item =>
-                    this.filterLocation.includes(item.location) 
+                    this.filterLocation.includes(item.location)
                 );
             }
 
@@ -72,40 +76,40 @@ export default {
 <template>
     <div class="w-screen">
         <div class="container m-auto px-2 mt-10">
-            <h1 class="w-full text-center font-poppins text-3xl" style="color: var(--blue-1);">Especialistas en salud
+            <h1 class="w-full text-center font-poppins text-2xl" style="color: var(--blue-1);">Especialistas en salud
                 visual a la mano</h1>
-            <h2 class="w-full text-center font-poppins mt-2  text-4xl font-bold">Agenda tu sesion con alguno de nuestros
+            <h2 class="w-full text-center font-poppins mt-2 mb-9 text-3xl font-bold">Agenda tu sesion con alguno de nuestros
                 especialistas en</h2>
-            <div class="flex flex-wrap justify-between my-10">
+            <div class="flex flex-wrap justify-center gap-20 my-10">
 
-                <div class="p-3   rounded-2xl flex flex-col justify-center" @click="selectSpecialist('Optómetra')"
+                <div class="    rounded-2xl flex flex-col justify-center" @click="selectSpecialist('Optómetra')"
                     :class="isSpecialistSelected('Optómetra') ? 'selectCard' : 'bg-gray-200'">
-                    <h1 class="font-poppins text-2xl mx-2 font-semibold">Optometría</h1>
+                    <h1 class="font-poppins text-xl mx-2 font-semibold">Optometría</h1>
                 </div>
 
-                <div class="p-3 bg-gray-200 rounded-2xl flex flex-col justify-center"
+                <div class="  bg-gray-200 rounded-2xl flex flex-col justify-center"
                     @click="selectSpecialist('Oftalmología')"
                     :class="isSpecialistSelected('Oftalmología') ? 'selectCard' : 'bg-gray-200'">
-                    <h1 class="font-poppins text-2xl mx-2 font-semibold">Oftalmología</h1>
+                    <h1 class="font-poppins text-xl mx-2 font-semibold">Oftalmología</h1>
                 </div>
 
-                <div class="p-3 bg-gray-200 rounded-2xl flex flex-col justify-center "
+                <div class="  bg-gray-200 rounded-2xl flex flex-col justify-center "
                     @click="selectSpecialist('Terapia Visual (Ortóptica)')"
                     :class="isSpecialistSelected('Terapia Visual (Ortóptica)') ? 'selectCard' : 'bg-gray-200'">
-                    <h1 class="font-poppins text-2xl mx-2 font-semibold">Terapia Visual</h1>
+                    <h1 class="font-poppins text-xl mx-2 font-semibold">Terapia Visual</h1>
                 </div>
-                <div class="p-3 bg-gray-200 rounded-2xl flex flex-col justify-center"
+                <div class="p-1  bg-gray-200 rounded-2xl flex flex-col justify-center"
                     @click="selectSpecialist('Optometría Integral')"
                     :class="isSpecialistSelected('Optometría Integral') ? 'selectCard' : 'bg-gray-200'">
-                    <h1 class="font-poppins text-2xl mx-2 font-semibold">Optometría</h1>
-                    <h1 class="font-poppins text-2xl mx-2 font-semibold">Pediátrica</h1>
+                    <h1 class="font-poppins text-xl mx-2 font-semibold">Optometría</h1>
+                    <h1 class="font-poppins text-xl mx-2 font-semibold">Pediátrica</h1>
                 </div>
             </div>
         </div>
         <div class="container m-auto px-2 min-h-svh">
             <div class="flex    ">
 
-                <div class="w-3/10 mx-9 bg-white flex flex-col border h-full ">
+                <div class="w-3/10 mx-9 bg-white flex flex-col border h-full sticky top-10">
                     <!-- Contenido con scroll -->
                     <div class="overflow-y-auto p-3 max-h-[50vh] min-h-0">
                         <div class="w-full ">
@@ -191,12 +195,14 @@ export default {
                     </div>
                 </div>
 
-                <div class="w-7/10 bg-blue-500 h-32">
-
-                    <div v-for="(option, index) in data" :key="index">
-                        <h1>{{option.name}}</h1>
+                <div class="w-7/10  ">
+                    <h1 v-if="data.length" class="font-poppins mx-2">{{ `${data.length} Especialistas disponibles para ti` }}</h1>
+                    <div class="flex flex-wrap justify-center gap-4 p-4">
+                        <div v-for="(option, index) in data" :key="index"
+                            class="flex flex-col items-center   p-4 rounded-lg">
+                            <CardSpecialist :specialist="option" />
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -2,6 +2,8 @@
     {
         "id": 1,
         "name": "Juan Pérez",
+        "title": "Oftalmologa",
+        "title": "Oftalmologa",
         "perfilPhoto": "https://nazaroftalmologos.com/wp-content/uploads/2022/05/doctora-maria-fernada-perez-bio-1.jpg",
         "expetience": 8,
         "point": 4.7,
@@ -21,6 +23,7 @@
     {
         "id": 2,
         "name": "María González",
+        "title": "Oftalmologa",
         "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0AAIyXtLcUipwCjqctY0-6v1L2np1jiZsnA&s",
         "expetience": 12,
         "point": 4.9,
@@ -40,6 +43,7 @@
     {
         "id": 3,
         "name": "Carlos Ramírez",
+        "title": "Oftalmologa",
         "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzurNphCv05wYjnm9EyDN8Gp81HsJDJxNkRg&s",
         "expetience": 6,
         "point": 4.5,
@@ -59,6 +63,7 @@
     {
         "id": 4,
         "name": "Ana López",
+        "title": "Oftalmologa",
         "perfilPhoto": "https://nazaroftalmologos.com/wp-content/uploads/2022/06/adriana-solano.jpg",
         "expetience": 10,
         "point": 4.8,
@@ -78,6 +83,7 @@
     {
         "id": 5,
         "name": "David Herrera",
+        "title": "Oftalmologa",
         "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYRBWDFXminC_DIVQIyDf-n2tRkupCJaO42BP77ZNdT3z_fFlwcUphL6rDgLskhTEnfUg&usqp=CAU",
         "expetience": 7,
         "point": 4.6,
@@ -97,6 +103,7 @@
     {
         "id": 6,
         "name": "Laura Méndez",
+        "title": "Oftalmologa",
         "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPaJxqmwrWwECsSXDO0L03h-nmFt3-g5uGBi4-YYZqPcYOS6rQ7cU7axwUeJsAStIgheA&usqp=CAU",
         "expetience": 15,
         "point": 4.9,
@@ -116,6 +123,7 @@
     {
         "id": 7,
         "name": "Ricardo Gómez",
+        "title": "Oftalmologa",
         "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsR2SLJP_vzWa7WgiDpgtJAQM9fU-ZnnpKnTFNnTlhtAOqsxih39p3lL3wfx3uE1DcA14&usqp=CAU",
         "expetience": 9,
         "point": 4.7,
@@ -135,6 +143,7 @@
     {
         "id": 8,
         "name": "Sofía Torres",
+        "title": "Oftalmologa",
         "perfilPhoto": "",
         "expetience": 11,
         "point": 4.8,
@@ -154,6 +163,7 @@
     {
         "id": 9,
         "name": "Fernando Ríos",
+        "title": "Oftalmologa",
         "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ67ugbWzCx6jJvI-vDdRmmtdBPOKBOqZHeMQ&s",
         "expetience": 7,
         "point": 4.6,
@@ -173,6 +183,7 @@
     {
         "id": 10,
         "name": "Patricia Salazar",
+        "title": "Oftalmologa",
         "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmWqmOG3azO8CcuOGCJPxQsFMOYxQ7E9gXGbv5ORKDfUe12rvJDf1TMwCIoMWyFYKiPj8&usqp=CAU",
         "expetience": 14,
         "point": 4.9,
@@ -192,6 +203,7 @@
     {
         "id": 11,
         "name": "Javier Mendoza",
+        "title": "Oftalmologa",
         "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7kSbfPHhg-nT8Ufdnd2Vn_-RgW_1bff4k-c4Hyf0evzDYDUNsO0qN53MlqdFTkadRmsg&usqp=CAU",
         "expetience": 10,
         "point": 4.7,
@@ -211,6 +223,7 @@
     {
         "id": 12,
         "name": "Camila Herrera",
+        "title": "Oftalmologa",
         "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ckWxx-dMwbh-pTVZDlAKi0gydlagU-CYkNLYamtq923smJ2BUg9-9bC7maiJ2l6Xm1w&usqp=CAU",
         "expetience": 13,
         "point": 4.8,
@@ -230,6 +243,7 @@
     {
         "id": 13,
         "name": "Esteban Vargas",
+        "title": "Oftalmologa",
         "perfilPhoto": "https://www.circulolaser.com.uy/wp-content/uploads/2014/11/Cecilia-Santurio-290x360.jpg",
         "expetience": 6,
         "point": 4.5,
@@ -249,6 +263,7 @@
     {
         "id": 14,
         "name": "Gabriela Ospina",
+        "title": "Oftalmologa",
         "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGtOI6toVH542tUfhO-s8mLU8QR-D3lu-TYRu0QkIjW6HhimRewgI_UkaSV2hW3cNT-14&usqp=CAU",
         "expetience": 8,
         "point": 4.7,
@@ -268,6 +283,7 @@
     {
         "id": 15,
         "name": "Andrés Castillo",
+        "title": "Oftalmologa",
         "perfilPhoto": "https://www.oftalmovision.com.uy/assets/images/rosario-varallo-web-2-596x600.jpg",
         "expetience": 12,
         "point": 4.9,

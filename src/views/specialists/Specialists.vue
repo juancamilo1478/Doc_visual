@@ -15,7 +15,7 @@ export default {
 <div class="w-screen">
 <Navbar/>
 <Search_Specialists/>
-<Footer_Color/>
+<Footer_Color/> 
 </div>
 
 </template>
