@@ -25,7 +25,7 @@ export default {
                 panelSpecialty: false,
                 panelLocation: false
             },
-             
+
             name: '',
             data: SpecialistDataMock as Specialist[]
         };
@@ -77,11 +77,11 @@ export default {
                     this.filterLocation.includes(item.location)
                 );
             }
-        
+
             this.data = itemsFull; // Actualiza el estado de `data`
         },
-        goToSpecialist(id:string){
-            
+        goToSpecialist(id: string) {
+
         }
 
     }
@@ -92,24 +92,67 @@ export default {
         <div class="container m-auto px-2 pt-10">
             <h1 class="w-full text-center font-poppins text-2xl" style="color: var(--blue-1);">Especialistas en salud
                 visual a la mano</h1>
-            <h2 class="w-full text-center font-poppins mt-2 mb-9 text-xl md:text-3xl font-bold">Agenda tu sesion con alguno de
+            <h2 class="w-full text-center font-poppins mt-2 mb-9 text-xl md:text-3xl font-bold">Agenda tu sesion con
+                alguno de
                 nuestros
                 especialistas en</h2>
 
-                <!-- filterMovile and tablet -->
-                <div class="flex flex-wrap lg:hidden  w-full">
-                    <div class="flex">
+            <!-- filterMovile and tablet -->
+            <div class="flex flex-wrap lg:hidden  w-full">
+                <div class="flex p-3 text-white rounded-full bg-[var(--blue-1)]/70" @click="setPanel('panelService')">
+                    <h1 class="font-poppins">servicios</h1>
+                    <div class="  flex items-center  ">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                            class="mx-1 w-5 h-5 transition-transform rotate-90" fill="var(--blue-1)">
+                            <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
 
-                        <h1>servicios</h1>
-                        <div class="  flex items-center">
-                            <img src="@/assets/svg/arrow.svg" alt="Icono" 
-                                 class="w-5 h-5 transition-transform rotate-[90] ml-auto  " />
-                          </div>
-                          
+            <!-- pantallas menor a grandes -->
+            <div v-if="panels.panelService"
+                class="fixed inset-0 z-50 bg-black/50    flex justify-center items-center sm:flex md:flex lg:hidden"
+                @click.self="setPanel('panelService')">
+                <!-- Contenedor del modal -->
+                <div class="bg-white w-11/12 max-w-md min-h-[60vh] max-h-[60vh]  rounded-2xl shadow-lg flex flex-col">
+                    <!-- Encabezado -->
+                    <div class="w-full">
+                        <div class="w-full flex items-center px-2">
+                            <button @click="setPanel('panelService')"
+                                class="p-2 text-lg font-poppins font-bold cursor-pointer">X</button>
+                            <h3 class="flex-1 text-center font-poppins">Servicio</h3>
+                            <h3 class="p-2 font-poppins" style="color: var(--blue-1);">Limpiar</h3>
+                        </div>
+                        <hr class="text-gray-200" />
+                    </div>
+
+                    <!-- Contenido desplazable -->
+                    <div class="flex-1 overflow-auto p-4">
+                        <div v-if="panels.panelService">
+                            <div v-for="(option, index) in optionsServices" :key="index"
+                                class="flex w-full my-2"  @click="selectSpecialist(option)">
+                                <input type="checkbox" :id="'checkbox-' + index"
+                                    :checked="isSpecialistSelected(option)" :value="option"
+                                    class="w-5 h-5 mx-2 colorvar pointer-events-none accent-[var(--blue-1)]">
+                                <h1 class="mt-auto cursor-pointer">{{ option
+                                }}</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botón fijo en la parte inferior -->
+                    <div class="w-full p-4 bg-white shadow-md rounded-2xl">
+                        <button class="w-full bg-[var(--blue-1)] text-white py-2 rounded-lg font-poppins" @click="searchItems();setPanel('panelService')">Aplicar filtros</button>
                     </div>
                 </div>
 
+            </div>
 
+
+
+
+            <!-- ------- -->
             <div class="hidden lg:flex   flex-wrap justify-center gap-20 my-10">
 
                 <div class="    rounded-2xl flex flex-col justify-center" @click="selectSpecialist('Optómetra')"
@@ -177,7 +220,7 @@ export default {
                                             :checked="isSpecialistSelected(option)" :value="option"
                                             class="w-5 h-5 mx-2 colorvar pointer-events-none">
                                         <h1 class="mt-auto cursor-pointer" @click="selectSpecialist(option)">{{ option
-                                            }}</h1>
+                                        }}</h1>
                                     </div>
                                 </div>
                             </Transition>
@@ -200,7 +243,7 @@ export default {
                                             :checked="isSpecialistSelected(option)" :value="option"
                                             class="w-5 h-5 mx-2 colorvar pointer-events-none">
                                         <h1 class="mt-auto cursor-pointer" @click="selectSpecialist(option)">{{ option
-                                            }}</h1>
+                                        }}</h1>
                                     </div>
                                 </div>
                             </Transition>
@@ -223,7 +266,7 @@ export default {
                                             :checked="isSpecialistSelected(option)" :value="option"
                                             class="w-5 h-5 mx-2 colorvar pointer-events-none">
                                         <h1 class="mt-auto cursor-pointer" @click="selectSpecialist(option)">{{ option
-                                            }}</h1>
+                                        }}</h1>
                                     </div>
                                 </div>
                             </Transition>
@@ -266,6 +309,10 @@ export default {
 
 .colorvar {
     color: var(--blue-1);
+}
+
+.bagroudVar {
+    background: var(--blue-1);
 }
 
 .fade-enter-active,
