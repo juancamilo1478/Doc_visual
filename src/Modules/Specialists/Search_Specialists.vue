@@ -26,7 +26,7 @@ export default {
                 panelLocation: false
             },
             name: '',
-            data: [] as Specialist[]
+            data: SpecialistDataMock as Specialist[]
         };
     },
     methods: {
@@ -88,7 +88,7 @@ export default {
 </script>
 <template>
     <div class="w-screen bg-gradient-to-r from-gray-100 to-gray-50">
-        <div class="container m-auto px-2 mt-10">
+        <div class="container m-auto px-2 pt-10">
             <h1 class="w-full text-center font-poppins text-2xl" style="color: var(--blue-1);">Especialistas en salud
                 visual a la mano</h1>
             <h2 class="w-full text-center font-poppins mt-2 mb-9 text-xl md:text-3xl font-bold">Agenda tu sesion con alguno de
