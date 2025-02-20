@@ -25,6 +25,7 @@ export default {
                 panelSpecialty: false,
                 panelLocation: false
             },
+             
             name: '',
             data: SpecialistDataMock as Specialist[]
         };
@@ -94,6 +95,21 @@ export default {
             <h2 class="w-full text-center font-poppins mt-2 mb-9 text-xl md:text-3xl font-bold">Agenda tu sesion con alguno de
                 nuestros
                 especialistas en</h2>
+
+                <!-- filterMovile and tablet -->
+                <div class="flex flex-wrap lg:hidden  w-full">
+                    <div class="flex">
+
+                        <h1>servicios</h1>
+                        <div class="  flex items-center">
+                            <img src="@/assets/svg/arrow.svg" alt="Icono" 
+                                 class="w-5 h-5 transition-transform rotate-[90] ml-auto  " />
+                          </div>
+                          
+                    </div>
+                </div>
+
+
             <div class="hidden lg:flex   flex-wrap justify-center gap-20 my-10">
 
                 <div class="    rounded-2xl flex flex-col justify-center" @click="selectSpecialist('Optómetra')"

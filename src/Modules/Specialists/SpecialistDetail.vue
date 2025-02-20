@@ -3,13 +3,13 @@ import SpecialistData from './Mocks/SpecialistDataMock.json'
 import type { Specialist } from './Specialist';
 import Navbar from '../Home/Navbar.vue';
 import Footer_Color from '@/common/Footer_Color.vue';
-
+ 
 export default {
     name: "specialist_detail",
     components: {
         Navbar,
         Footer_Color,
-
+       
     },
     data() {
         return {
