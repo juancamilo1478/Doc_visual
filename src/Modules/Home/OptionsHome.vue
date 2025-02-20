@@ -22,7 +22,7 @@ export default defineComponent({
         <div class="w-full py-10">
             <h1 class="w-full text-center font-poppins font-bold text-3xl " style="color: var(--blue-1);">Hacemos
                 visibles a los expertos</h1>
-            <div class="container m-auto flex flex-wrap justify-between gap-8 mt-20">
+            <div class="container m-auto flex flex-wrap justify-center md:justify-between gap-8 mt-20">
 
                 <CardOption 
                 :image="OptometristaSosteniendo" 

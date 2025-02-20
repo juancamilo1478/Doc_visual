@@ -17,28 +17,32 @@ export default {
 <template>
     <div class="w-screen bg-white py-3">
         <div class="container m-auto">
-            <h1 class="text-center px-5 w-full font-poppins text-xl md:text-2xl py-1   font-semibold" style="color: var(--blue-1);">
+            <h1 class="text-center px-5 w-full font-poppins text-xl md:text-2xl py-1   font-semibold"
+                style="color: var(--blue-1);">
                 Encuentra tu profesional de la salud visual con ubicación y especialidad.
             </h1>
-            <h2 class="text-center px-5 w-full font-poppins text-black text-xl md:text-2xl  font-bold ">Seremos tu mejor aliado en el
+            <h2 class="text-center px-5 w-full font-poppins text-black text-xl md:text-2xl  font-bold ">Seremos tu mejor
+                aliado en el
                 camino hacia tu bienestar
             </h2>
         </div>
         <div class="container m-auto flex justify-center">
-            <div class="container m-auto flex flex-wrap justify-between   text-center mt-20 ">
+            <div class="container mx-auto grid gap-4 text-center mt-20 
+            grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
+
                 <CardTopUser :image="womman" :option="'Optometría'"
                     :Description="'Evaluación optométrica integral, También mide y controla alteraciones de la agudeza visual, visión binocular, función de las vías visuales, campos visuales, movimientos oculares y presión intraocular'"
-                    :name="'Daniel Gómez Reyes'" :experiece="2" :rol="'Oftalmologa'" />
-                <CardTopUser
-                class="hidden md:block"
-                
-                :image="womman2" :option="'Optometría'"
+                    :name="'Daniel Gómez Reyes'" :experiece="2" :rol="'Oftalmóloga'" />
+
+                <CardTopUser class="hidden md:block" :image="womman2" :option="'Optometría'"
                     :Description="'Evaluación optométrica integral, También mide y controla alteraciones de la agudeza visual, visión binocular, función de las vías visuales, campos visuales, movimientos oculares y presión intraocular'"
                     :name="'María Gómez Reyes'" :experiece="5" :rol="'Optómetra'" />
+
                 <CardTopUser class="hidden lg:block" :image="womman3" :option="'Optometría'"
                     :Description="'Evaluación optométrica integral, También mide y controla alteraciones de la agudeza visual, visión binocular, función de las vías visuales, campos visuales, movimientos oculares y presión intraocular'"
-                    :name="'Manuela García Gómez'" :experiece="2" :rol="'Oftalmologa'" />
+                    :name="'Manuela García Gómez'" :experiece="2" :rol="'Oftalmóloga'" />
             </div>
+
         </div>
         <div class="flex justify-center my-20">
             <button
