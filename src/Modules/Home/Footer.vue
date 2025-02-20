@@ -26,24 +26,24 @@ export default{
 
                 </div>
                 <div>
-                    <div class="text-xs font-medium   uppercase" style="color: var(--blue-1);">
+                    <div class="text-xs font-poppins font-semibold  uppercase" style="color: var(--blue-1);">
                         Salud visual y especialistas
                     </div>
 
                     <a href="#"
-                        class="block mt-5 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-5 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Optómetras
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Oftalmólogos
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Ópticas
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         IPS
                     </a>
                 </div>
@@ -52,40 +52,40 @@ export default{
 
 
                 <div   class="hidden md:block">
-                    <div class="text-xs font-medium   uppercase " style="color: var(--blue-1);">
+                    <div class="text-xs font-poppins font-semibold  uppercase " style="color: var(--blue-1);">
                         Propósito
                     </div>
 
                     <a href="#"
-                        class="block mt-5 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-5 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Recursos
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Agende su cita
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Profesionales
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Pacientes
                     </a>
 
                 </div>
 
                 <div   class="hidden md:block">
-                    <div class="text-xs font-medium   uppercase" style="color: var(--blue-1);">
+                    <div class="text-xs font-poppins font-semibold  uppercase" style="color: var(--blue-1);">
                         Inhouse
                     </div>
 
                     <a href="#"
-                        class="block mt-5 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-5 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Blog
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Preguntas frecuentes
                     </a>
 
@@ -93,20 +93,20 @@ export default{
 
                 </div>
                 <div   class="hidden md:block">
-                    <div class="text-xs font-medium   uppercase" style="color: var(--blue-1);">
+                    <div class="text-xs font-poppins font-semibold  uppercase" style="color: var(--blue-1);">
                         Doc Visual
                     </div>
 
                     <a href="#"
-                        class="block mt-5 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-5 text-sm font-poppins text-black   duration-700  hover:text-gray-400  hover:underline">
                         Legal
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Habla con soporte
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-medium text-gray-500 duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Iniciar sesión Registrarme
                     </a>
 

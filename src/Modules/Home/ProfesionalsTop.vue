@@ -42,7 +42,7 @@ export default {
         </div>
         <div class="flex justify-center my-20">
             <button
-                class="cursor-pointer font-medium text-2xl font-poppins my-4    px-6 py-3 tracking-wide text-white capitalize transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
+                class="cursor-pointer font-medium text-xl font-poppins my-1    px-6 py-3 tracking-wide text-white capitalize transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
                 Descubre más especialistas
 
             </button>

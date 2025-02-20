@@ -14,7 +14,7 @@ defineProps<{
         <div class="w-full overflow-hidden bg-white rounded-lg shadow-md  ">
             <div class="m-3">
                 <div class="flex items-center">
-                    <div class="flex items-center p-2 gap">
+                    <div class="flex items-center   gap">
                         <div class="w-32 h-32 overflow-hidden rounded-full">
                             <img class="w-full h-full object-cover" :src="image" alt="Avatar">
                         </div>
@@ -27,12 +27,12 @@ defineProps<{
                     </div>
                 </div>
                 <div class="container p-2 text-left">
-                    <h3 class=" font-poppins text-2xl my-2">{{ `Experiencia ${experiece} años` }}</h3>
+                    <h3 class=" font-poppins text-xl  ">{{ `Experiencia ${experiece} años` }}</h3>
                 </div>
             </div>
             <div class=" px-3 mb-3">
                 <div style="background: var(--gray-2);border-radius: 10px;" class="p-3">
-                    <p class="mt-2 text-xl text-left  font-medium text-gray-600 dark:text-gray-400">{{ Description }}</p>
+                    <p class="m-3 text-xl text-left  font-medium text-gray-600 dark:text-gray-400">{{ Description }}</p>
                 </div>
             </div>
             <div class="flex justify-center my-5">

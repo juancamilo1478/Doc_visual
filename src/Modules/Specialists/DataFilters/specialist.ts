@@ -1,0 +1,21 @@
+export const specialists: string[] = [
+    "Optómetra",
+    "Terapia Visual (Ortóptica)",
+    "Contactología",
+    "Pediátrica",
+    "Geriatría",
+    "Rehabilitación en baja visión",
+    "Superficie ocular",
+    "Optometría Deportiva (Entrenamiento Visual)",
+    "Optometría Integral",
+    "Seguridad y salud en el trabajo",
+    "Oftalmología",
+    "Retinólogo",
+    "Glaucomatólogo",
+    "Cirugía refractiva",
+    "Pediatría",
+    "Neuro oftalmología",
+    "Plástica ocular",
+    "Catarata & Córnea",
+    "Oncología Ocular"
+]

@@ -1,0 +1,226 @@
+<script lang="ts">
+import { services } from './DataFilters/services';
+import { specialists } from './DataFilters/specialist';
+import { locations } from './DataFilters/locations';
+import SpecialistDataMock from './Mocks/SpecialistDataMock.json'
+import type { Specialist } from './Specialist';
+export default {
+    name: 'Search_Soecialist',
+    data() {
+        return {
+            items: SpecialistDataMock as Specialist[],
+            optionsServices: services,
+            optionsSpecialist: specialists,
+            optionsLocaltion: locations,
+            filterSpecialty: [] as string[],
+            filterService: [] as string[],
+            filterLocation: [] as string[],
+            panels: {
+                panelService: false,
+                panelSpecialty: false,
+                panelLocation: false
+            },
+            name: '',
+            data: [] as Specialist[]
+        };
+    },
+    methods: {
+        selectSpecialist(specialist: string) {
+            const index = this.filterSpecialty.indexOf(specialist);
+
+            if (index === -1) {
+                // No está en la lista, lo agregamos
+                this.filterSpecialty.push(specialist);
+            } else {
+                // Ya está en la lista, lo eliminamos
+                this.filterSpecialty.splice(index, 1);
+            }
+        },
+        isSpecialistSelected(specialist: string): boolean {
+            return this.filterSpecialty.includes(specialist);
+        },
+        setPanel(name: keyof typeof this.panels) {
+            this.panels[name] = !this.panels[name];
+        },
+        searchItems() {
+            let itemsFull = [...this.items]; // Clonamos para evitar mutaciones inesperadas
+
+            if (this.filterSpecialty.length > 0) {
+                itemsFull = itemsFull.filter(item =>
+                    item.specialist.some(specialty => this.filterSpecialty.includes(specialty))
+                );
+            }
+
+            if (this.filterService.length > 0) {
+                itemsFull = itemsFull.filter(item =>
+                    item.services.some(service => this.filterService.includes(service)) 
+                );
+            }
+
+            if (this.filterLocation.length > 0) {
+                itemsFull = itemsFull.filter(item =>
+                    this.filterLocation.includes(item.location) 
+                );
+            }
+
+            this.data = itemsFull; // Actualiza el estado de `data`
+        }
+
+    }
+}
+</script>
+<template>
+    <div class="w-screen">
+        <div class="container m-auto px-2 mt-10">
+            <h1 class="w-full text-center font-poppins text-3xl" style="color: var(--blue-1);">Especialistas en salud
+                visual a la mano</h1>
+            <h2 class="w-full text-center font-poppins mt-2  text-4xl font-bold">Agenda tu sesion con alguno de nuestros
+                especialistas en</h2>
+            <div class="flex flex-wrap justify-between my-10">
+
+                <div class="p-3   rounded-2xl flex flex-col justify-center" @click="selectSpecialist('Optómetra')"
+                    :class="isSpecialistSelected('Optómetra') ? 'selectCard' : 'bg-gray-200'">
+                    <h1 class="font-poppins text-2xl mx-2 font-semibold">Optometría</h1>
+                </div>
+
+                <div class="p-3 bg-gray-200 rounded-2xl flex flex-col justify-center"
+                    @click="selectSpecialist('Oftalmología')"
+                    :class="isSpecialistSelected('Oftalmología') ? 'selectCard' : 'bg-gray-200'">
+                    <h1 class="font-poppins text-2xl mx-2 font-semibold">Oftalmología</h1>
+                </div>
+
+                <div class="p-3 bg-gray-200 rounded-2xl flex flex-col justify-center "
+                    @click="selectSpecialist('Terapia Visual (Ortóptica)')"
+                    :class="isSpecialistSelected('Terapia Visual (Ortóptica)') ? 'selectCard' : 'bg-gray-200'">
+                    <h1 class="font-poppins text-2xl mx-2 font-semibold">Terapia Visual</h1>
+                </div>
+                <div class="p-3 bg-gray-200 rounded-2xl flex flex-col justify-center"
+                    @click="selectSpecialist('Optometría Integral')"
+                    :class="isSpecialistSelected('Optometría Integral') ? 'selectCard' : 'bg-gray-200'">
+                    <h1 class="font-poppins text-2xl mx-2 font-semibold">Optometría</h1>
+                    <h1 class="font-poppins text-2xl mx-2 font-semibold">Pediátrica</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container m-auto px-2 min-h-svh">
+            <div class="flex    ">
+
+                <div class="w-3/10 mx-9 bg-white flex flex-col border h-full ">
+                    <!-- Contenido con scroll -->
+                    <div class="overflow-y-auto p-3 max-h-[50vh] min-h-0">
+                        <div class="w-full ">
+                            <div class="w-full flex items-center px-2" @click="setPanel('panelService')">
+                                <h1 class="text-xl font-medium font-poppins ">Servicio</h1>
+                                <img src="@/assets/svg/arrow.svg" alt="Icono"
+                                    class="w-8 h-8 transition-transform ml-auto"
+                                    :class="{ 'rotate-90': panels.panelService }">
+                            </div>
+                            <hr class="my-4 px-3 text-gray-400" />
+                            <Transition name="fade">
+                                <div v-if="panels.panelService">
+
+                                    <div v-for="(option, index) in optionsServices" :key="index"
+                                        class="flex w-full my-2">
+                                        <input type="checkbox" :id="'checkbox-' + index"
+                                            :checked="isSpecialistSelected(option)" :value="option"
+                                            class="w-5 h-5 mx-2 colorvar pointer-events-none">
+                                        <h1 class="mt-auto cursor-pointer" @click="selectSpecialist(option)">{{ option
+                                        }}</h1>
+                                    </div>
+                                </div>
+                            </Transition>
+                        </div>
+
+                        <div class="w-full">
+                            <div class="w-full flex items-center px-2" @click="setPanel('panelSpecialty')">
+                                <h1 class="text-xl font-medium font-poppins max-w-[80%]">Especialidad</h1>
+                                <img src="@/assets/svg/arrow.svg" alt="Icono"
+                                    class="w-8 h-8 transition-transform ml-auto"
+                                    :class="{ 'rotate-90': panels.panelSpecialty }">
+                            </div>
+                            <hr class="my-4 px-3 text-gray-400" />
+                            <Transition name="fade">
+                                <div v-if="panels.panelSpecialty">
+
+                                    <div v-for="(option, index) in optionsSpecialist" :key="index"
+                                        class="flex w-full my-2">
+                                        <input type="checkbox" :id="'checkbox-' + index"
+                                            :checked="isSpecialistSelected(option)" :value="option"
+                                            class="w-5 h-5 mx-2 colorvar pointer-events-none">
+                                        <h1 class="mt-auto cursor-pointer" @click="selectSpecialist(option)">{{ option
+                                        }}</h1>
+                                    </div>
+                                </div>
+                            </Transition>
+                        </div>
+
+                        <div class="w-full">
+                            <div class="w-full flex items-center px-2" @click="setPanel('panelLocation')">
+                                <h1 class="text-xl font-medium font-poppins max-w-[80%]">Ubicación</h1>
+                                <img src="@/assets/svg/arrow.svg" alt="Icono"
+                                    class="w-8 h-8 transition-transform ml-auto"
+                                    :class="{ 'rotate-90': panels.panelLocation }">
+                            </div>
+                            <hr class="my-4 px-3 text-gray-400" />
+                            <Transition name="fade">
+                                <div v-if="panels.panelLocation">
+
+                                    <div v-for="(option, index) in optionsLocaltion" :key="index"
+                                        class="flex w-full my-2">
+                                        <input type="checkbox" :id="'checkbox-' + index"
+                                            :checked="isSpecialistSelected(option)" :value="option"
+                                            class="w-5 h-5 mx-2 colorvar pointer-events-none">
+                                        <h1 class="mt-auto cursor-pointer" @click="selectSpecialist(option)">{{ option
+                                        }}</h1>
+                                    </div>
+                                </div>
+                            </Transition>
+                        </div>
+
+                    </div>
+
+                    <!-- Botones fijos abajo -->
+                    <div class="w-full  ">
+
+                        <div class="flex justify-between px-3 py-5">
+                            <button class="bg-transparent px-4 py-2 rounded font-poppins text-2xl font-semibold"
+                                style="color: var(--blue-1);">Limpiar</button>
+                            <button class="w-full mx-2  text-2xl font-semibold   text-white px-4 py-2 rounded-2xl"
+                                style="background-color: var(--blue-1);" @click="searchItems">Aplicar filtros</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-7/10 bg-blue-500 h-32">
+
+                    <div v-for="(option, index) in data" :key="index">
+                        <h1>{{option.name}}</h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
+<style>
+.selectCard {
+    background-color: var(--blue-1);
+    color: white;
+}
+
+.colorvar {
+    color: var(--blue-1);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+</style>

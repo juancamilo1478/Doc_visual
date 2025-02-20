@@ -1,0 +1,287 @@
+[
+    {
+        "id": 1,
+        "name": "Juan Pérez",
+        "perfilPhoto": "https://nazaroftalmologos.com/wp-content/uploads/2022/05/doctora-maria-fernada-perez-bio-1.jpg",
+        "expetience": 8,
+        "point": 4.7,
+        "services": [
+            "Examen visual y refracción",
+            "Adaptación de lentes de contacto",
+            "Terapia visual (Ortóptica)"
+        ],
+        "description": "Optometrista con experiencia en adaptación de lentes de contacto y terapia visual.",
+        "location": "Tolima",
+        "specialist": [
+            "Optómetra",
+            "Contactología",
+            "Terapia Visual (Ortóptica)"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "María González",
+        "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0AAIyXtLcUipwCjqctY0-6v1L2np1jiZsnA&s",
+        "expetience": 12,
+        "point": 4.9,
+        "services": [
+            "Diagnóstico y tratamiento de enfermedades oculares",
+            "Cirugía de cataratas y córnea",
+            "Neurooftalmología"
+        ],
+        "description": "Especialista en cirugía de cataratas y neurooftalmología con más de una década de experiencia.",
+        "location": "Tolima",
+        "specialist": [
+            "Oftalmología",
+            "Neuro oftalmología",
+            "Catarata & Córnea"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Carlos Ramírez",
+        "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzurNphCv05wYjnm9EyDN8Gp81HsJDJxNkRg&s",
+        "expetience": 6,
+        "point": 4.5,
+        "services": [
+            "Optometría pediátrica",
+            "Optometría geriátrica",
+            "Rehabilitación en baja visión"
+        ],
+        "description": "Optometrista especializado en atención pediátrica y geriátrica, brindando rehabilitación visual.",
+        "location": "",
+        "specialist": [
+            "Pediátrica",
+            "Geriatría",
+            "Rehabilitación en baja visión"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Ana López",
+        "perfilPhoto": "https://nazaroftalmologos.com/wp-content/uploads/2022/06/adriana-solano.jpg",
+        "expetience": 10,
+        "point": 4.8,
+        "services": [
+            "Glaucomatología",
+            "Tratamiento de enfermedades de la retina",
+            "Plástica ocular"
+        ],
+        "description": "Especialista en glaucoma y enfermedades de la retina, con experiencia en plástica ocular.",
+        "location": "",
+        "specialist": [
+            "Glaucomatólogo",
+            "Retinólogo",
+            "Plástica ocular"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "David Herrera",
+        "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYRBWDFXminC_DIVQIyDf-n2tRkupCJaO42BP77ZNdT3z_fFlwcUphL6rDgLskhTEnfUg&usqp=CAU",
+        "expetience": 7,
+        "point": 4.6,
+        "services": [
+            "Manejo de ojo seco y superficie ocular",
+            "Optometría deportiva",
+            "Seguridad y salud en el trabajo"
+        ],
+        "description": "Optometrista con enfoque en el manejo del ojo seco y entrenamiento visual deportivo.",
+        "location": "",
+        "specialist": [
+            "Superficie ocular",
+            "Optometría Deportiva (Entrenamiento Visual)",
+            "Seguridad y salud en el trabajo"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Laura Méndez",
+        "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPaJxqmwrWwECsSXDO0L03h-nmFt3-g5uGBi4-YYZqPcYOS6rQ7cU7axwUeJsAStIgheA&usqp=CAU",
+        "expetience": 15,
+        "point": 4.9,
+        "services": [
+            "Cirugía refractiva (LASIK, PRK)",
+            "Diagnóstico y tratamiento de enfermedades oculares",
+            "Neurooftalmología"
+        ],
+        "description": "Oftalmóloga especializada en cirugía refractiva y diagnóstico de enfermedades visuales.",
+        "location": "",
+        "specialist": [
+            "Cirugía refractiva",
+            "Neuro oftalmología",
+            "Oftalmología"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Ricardo Gómez",
+        "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsR2SLJP_vzWa7WgiDpgtJAQM9fU-ZnnpKnTFNnTlhtAOqsxih39p3lL3wfx3uE1DcA14&usqp=CAU",
+        "expetience": 9,
+        "point": 4.7,
+        "services": [
+            "Terapia visual (Ortóptica)",
+            "Optometría integral",
+            "Rehabilitación en baja visión"
+        ],
+        "description": "Optometrista con experiencia en terapia visual y rehabilitación para baja visión.",
+        "location": "",
+        "specialist": [
+            "Optómetra",
+            "Terapia Visual (Ortóptica)",
+            "Rehabilitación en baja visión"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Sofía Torres",
+        "perfilPhoto": "",
+        "expetience": 11,
+        "point": 4.8,
+        "services": [
+            "Tratamiento de estrabismo",
+            "Oftalmología pediátrica",
+            "Oncología ocular"
+        ],
+        "description": "Oftalmóloga pediátrica con enfoque en el tratamiento del estrabismo y oncología ocular.",
+        "location": "",
+        "specialist": [
+            "Oftalmología",
+            "Pediatría",
+            "Oncología Ocular"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Fernando Ríos",
+        "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ67ugbWzCx6jJvI-vDdRmmtdBPOKBOqZHeMQ&s",
+        "expetience": 7,
+        "point": 4.6,
+        "services": [
+            "Examen visual y refracción",
+            "Seguridad y salud en el trabajo",
+            "Optometría geriátrica"
+        ],
+        "description": "Optometrista con experiencia en salud ocupacional y atención geriátrica.",
+        "location": "",
+        "specialist": [
+            "Optometría Integral",
+            "Seguridad y salud en el trabajo",
+            "Geriatría"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Patricia Salazar",
+        "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmWqmOG3azO8CcuOGCJPxQsFMOYxQ7E9gXGbv5ORKDfUe12rvJDf1TMwCIoMWyFYKiPj8&usqp=CAU",
+        "expetience": 14,
+        "point": 4.9,
+        "services": [
+            "Plástica ocular",
+            "Glaucomatología",
+            "Cirugía de cataratas y córnea"
+        ],
+        "description": "Oftalmóloga especializada en cirugía plástica ocular y tratamiento de glaucoma.",
+        "location": "",
+        "specialist": [
+            "Plástica ocular",
+            "Glaucomatólogo",
+            "Catarata & Córnea"
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Javier Mendoza",
+        "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7kSbfPHhg-nT8Ufdnd2Vn_-RgW_1bff4k-c4Hyf0evzDYDUNsO0qN53MlqdFTkadRmsg&usqp=CAU",
+        "expetience": 10,
+        "point": 4.7,
+        "services": [
+            "Optometría pediátrica",
+            "Adaptación de lentes de contacto",
+            "Manejo de ojo seco y superficie ocular"
+        ],
+        "description": "Optometrista pediátrico con experiencia en adaptación de lentes y manejo de ojo seco.",
+        "location": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVaEcA5fvy0urP20qz84nNAoIzxtKIeBO39xahnAlg7OGSVjZ1tQcojzR73G7ibqcBuUI&usqp=CAU",
+        "specialist": [
+            "Pediátrica",
+            "Contactología",
+            "Superficie ocular"
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Camila Herrera",
+        "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ckWxx-dMwbh-pTVZDlAKi0gydlagU-CYkNLYamtq923smJ2BUg9-9bC7maiJ2l6Xm1w&usqp=CAU",
+        "expetience": 13,
+        "point": 4.8,
+        "services": [
+            "Tratamiento de enfermedades de la retina",
+            "Neurooftalmología",
+            "Cirugía refractiva (LASIK, PRK)"
+        ],
+        "description": "Oftalmóloga con especialidad en retina y neurooftalmología, con experiencia en cirugía refractiva.",
+        "location": "",
+        "specialist": [
+            "Retinólogo",
+            "Neuro oftalmología",
+            "Cirugía refractiva"
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Esteban Vargas",
+        "perfilPhoto": "https://www.circulolaser.com.uy/wp-content/uploads/2014/11/Cecilia-Santurio-290x360.jpg",
+        "expetience": 6,
+        "point": 4.5,
+        "services": [
+            "Optometría deportiva",
+            "Terapia visual (Ortóptica)",
+            "Rehabilitación en baja visión"
+        ],
+        "description": "Optometrista con enfoque en terapia visual y entrenamiento deportivo.",
+        "location": "",
+        "specialist": [
+            "Optometría Deportiva (Entrenamiento Visual)",
+            "Terapia Visual (Ortóptica)",
+            "Rehabilitación en baja visión"
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Gabriela Ospina",
+        "perfilPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGtOI6toVH542tUfhO-s8mLU8QR-D3lu-TYRu0QkIjW6HhimRewgI_UkaSV2hW3cNT-14&usqp=CAU",
+        "expetience": 8,
+        "point": 4.7,
+        "services": [
+            "Examen visual y refracción",
+            "Optometría geriátrica",
+            "Manejo de ojo seco y superficie ocular"
+        ],
+        "description": "Optometrista con experiencia en optometría geriátrica y manejo de ojo seco.",
+        "location": "",
+        "specialist": [
+            "Geriatría",
+            "Optometría Integral",
+            "Superficie ocular"
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Andrés Castillo",
+        "perfilPhoto": "https://www.oftalmovision.com.uy/assets/images/rosario-varallo-web-2-596x600.jpg",
+        "expetience": 12,
+        "point": 4.9,
+        "services": [
+            "Oncología ocular",
+            "Cirugía de cataratas y córnea",
+            "Tratamiento de estrabismo"
+        ],
+        "description": "Oftalmólogo con amplia experiencia en oncología ocular y tratamiento de estrabismo.",
+        "location": "",
+        "specialist": [
+            "Oncología Ocular",
+            "Catarata & Córnea",
+            "Tratamiento de estrabismo"
+        ]
+    }
+]
