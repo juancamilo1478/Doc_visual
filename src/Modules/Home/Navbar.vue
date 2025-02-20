@@ -29,7 +29,8 @@
       <!-- Menú móvil -->
       <div
         :class="['absolute inset-x-0 z-20 w-full   py-4 transition-all duration-300 ease-in-out bg-white', isOpen ? 'block' : 'hidden', 'md:hidden']">
-        <div class="flex flex-col px-2 -mx-4">
+        <div class="flex flex-col items-center justify-center px-2 -mx-4">
+
           <a class="cursor-pointer px-1 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
             @click="goToAbout('specialists')"
             :style="{ color: currentRoute === '/specialists' ? 'var(--blue-1)' : 'black' }">Salud visual y
