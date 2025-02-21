@@ -103,7 +103,7 @@ export default {
                 especialistas en</h2>
 
             <!-- filterMovile and tablet -->
-            <div class="flex flex-wrap justify-between mb-3 gap-3 lg:hidden  w-full">
+            <div class="flex flex-wrap justify-center mb-3 gap-3 lg:hidden  w-full">
                 <div class="flex p-3 text-white rounded-full bg-[var(--blue-1)]/70" @click="setPanel('panelService')">
                     <h1 class="font-poppins">servicios</h1>
                     <div class="  flex items-center  ">
