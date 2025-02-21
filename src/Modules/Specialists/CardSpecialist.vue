@@ -20,7 +20,7 @@ const goToProfile = () => {
 </script>
 
 <template>
-    <div class="w-full max-w-sm    lg:max-w-md overflow-hidden  rounded-4xl shadow-lg  "
+    <div class="w-full max-w-lg    lg:max-w-lg overflow-hidden  rounded-4xl shadow-lg  "
         style="background-color: var(--gray-1); border: 2px solid var(--gray-1);">
         <div class="w-full overflow-hidden bg-white rounded-lg shadow-md  ">
             <div class="m-3">

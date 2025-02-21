@@ -17,5 +17,6 @@ export const specialists: string[] = [
     "Neuro oftalmología",
     "Plástica ocular",
     "Catarata & Córnea",
-    "Oncología Ocular"
+    "Oncología Ocular",
+    "Lentes de Contacto"
 ]

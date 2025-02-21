@@ -1,9 +1,9 @@
 [
     {
         "id": 1,
-        "name": "Juan Pérez",
+        "name": "Norma Contreras",
         "title": "Oftalmologa",
-        "perfilPhoto": "https://nazaroftalmologos.com/wp-content/uploads/2022/05/doctora-maria-fernada-perez-bio-1.jpg",
+        "perfilPhoto": "https://res.cloudinary.com/dirsusbyy/image/upload/v1740107868/abgx2rrq8lptrrrg5uda.jpg",
         "expetience": 8,
         "point": 4.7,
         "services": [
@@ -11,11 +11,11 @@
             "Adaptación de lentes de contacto",
             "Terapia visual (Ortóptica)"
         ],
-        "description": "Optometrista con experiencia en adaptación de lentes de contacto y terapia visual.",
+        "description": "Optometra con amplia experiencia en adaptación especializada de lentes de contacto para córneas irregulares, incluyendo queratocono, post-cirugía refractiva, trasplante de córnea y anillos intraestromales. Tratamientos de ortoqueratología y control de miopía.",
         "location": "Tolima",
         "specialist": [
             "Optómetra",
-            "Contactología",
+            "Lentes de Contacto",
             "Terapia Visual (Ortóptica)"
         ],
         "direction": "Carrera 7 #32-16, Bogotá, Colombia",
@@ -23,15 +23,15 @@
         "latitude": 4.6097,
         "servicesCost": [
             {
-                "nameService": "Consulta médica",
+                "nameService": "Diagnóstico de precisión con tecnología de última generación: Pentacam",
                 "price": 100000
             },
             {
-                "nameService": "Electrocardiograma",
+                "nameService": "Biometría",
                 "price": 50000
             },
             {
-                "nameService": "Ecocardiografía",
+                "nameService": "Tomografía de Coherencia Óptica (OCT)",
                 "price": 120000
             }
         ],
