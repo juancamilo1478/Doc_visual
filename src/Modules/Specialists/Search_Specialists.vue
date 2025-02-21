@@ -257,7 +257,7 @@ export default {
 
 
             <!-- ------- -->
-            <div class="hidden lg:flex  mx-28  flex-wrap justify-between gap-20 my-10">
+            <div class="hidden lg:flex  mx-28  flex-wrap justify-between   my-10">
 
                 <div class="px-6    rounded-2xl flex flex-col justify-center" @click="selectSpecialist('Optómetra')"
                     :class="isSpecialistSelected('Optómetra') ? 'selectCard' : 'bg-gray-200'">
