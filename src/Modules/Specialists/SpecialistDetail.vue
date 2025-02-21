@@ -3,23 +3,38 @@ import SpecialistData from './Mocks/SpecialistDataMock.json'
 import type { Specialist } from './Specialist';
 import Navbar from '../Home/Navbar.vue';
 import Footer_Color from '@/common/Footer_Color.vue';
- 
+
 export default {
     name: "specialist_detail",
     components: {
         Navbar,
         Footer_Color,
-       
+
     },
     data() {
         return {
             id: Number(this.$route.params.id),
             specialist: null as Specialist | null,
-            groupedImages: [] as string[][]
+            groupedImages: [] as string[][],
+            service: null as { nameService: string; price: number } | null,
+            panels: {
+                opinionsData: false
+            },
+            currentDay: null as number | null,
+            currentMonth: null as number | null,
+            currentYear: null as number | null,
+            
+
         };
     }, created() {
         this.getSpecialistById();
         this.groupImages();
+    },
+    mounted() {
+        const today = new Date();
+        this.currentDay = today.getDate();
+        this.currentMonth = today.getMonth() + 1; // Meses en JS empiezan en 0
+        this.currentYear = today.getFullYear();
     },
     methods: {
         getSpecialistById() {
@@ -33,7 +48,9 @@ export default {
                     this.groupedImages.push(this.specialist.gallery.slice(i, i + 3));
                 }
             }
-        }
+        }, setPanel(name: keyof typeof this.panels) {
+            this.panels[name] = !this.panels[name];
+        },
     }
 }
 
@@ -186,8 +203,45 @@ export default {
                                     </svg>
                                 </div>
                                 <hr class="text-gray-300 my-3" />
+                                <!-- first data opinions -->
+                                <div class="font-poppins">
+                                    <h1 class="font-bold">{{ specialist?.opinions?.length ? specialist.opinions[0].user
+                                        : 'Usuario desconocido' }}</h1>
+                                    <div class="flex">
+                                        <svg v-for="n in (parseInt(specialist?.opinions[0].score.toString() || '0', 10))"
+                                            class="ml-1 h-3 w-3 text-amber-200" viewBox="0 0 32 32" version="1.1"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
 
-                                <div v-for="(data, index) in specialist?.opinions" :key="index" class="font-poppins">
+                                            <title>start-favorite</title>
+                                            <desc>Created with Sketch Beta.</desc>
+                                            <defs>
+
+                                            </defs>
+                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                fill-rule="evenodd" sketch:type="MSPage">
+                                                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
+                                                    transform="translate(-154.000000, -881.000000)" fill="#000000">
+                                                    <path fill="#e89f20"
+                                                        d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
+                                                        id="start-favorite" sketch:type="MSShapeGroup">
+
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </svg>
+
+
+                                    </div>
+                                    <p>Localización: {{ specialist?.opinions[0].lugar }}</p>
+                                    <p>Localización: {{ specialist?.opinions[0].text }}</p>
+                                    <hr class="text-gray-300" v-if="panels.opinionsData" />
+                                </div>
+
+
+                                <div v-for="(data, index) in specialist?.opinions?.slice(1)" :key="index + 1"
+                                    class="font-poppins" v-if="panels.opinionsData">
                                     <h1 class="font-bold">{{ data.user }}</h1>
                                     <div class="flex">
                                         <svg v-for="n in (parseInt(data.score?.toString() || '0', 10))"
@@ -214,12 +268,20 @@ export default {
                                             </g>
                                         </svg>
 
-                                      
+
                                     </div>
-                                    <p>Localización: {{data.lugar }}</p>
-                                    <p>Localización: {{data.text }}</p>
+                                    <p>Localización: {{ data.lugar }}</p>
+                                    <p>Localización: {{ data.text }}</p>
                                     <hr class="text-gray-300" />
                                 </div>
+                                <button @click="setPanel('opinionsData')" v-if="!panels.opinionsData"
+                                    class="w-full border border-[var(--blue-1)] font-poppins font-semibold p-2 rounded-2xl text-[var(--blue-1)] mt-4 ">
+                                    Ver más opiniones
+                                </button>
+                                <button @click="setPanel('opinionsData')" v-else
+                                    class="w-full border border-[var(--blue-1)] font-poppins font-semibold p-2 rounded-2xl text-[var(--blue-1)] mt-4 ">
+                                    Ver menos
+                                </button>
 
 
                             </div>
@@ -230,9 +292,19 @@ export default {
 
 
                 </div>
-
-                <div class="w-1/2 bg-amber-700 h-12">
-
+                <!-- derecho -->
+                <div class="w-[50%]">
+                    <div class="w-[95%]  ml-auto   min-h-[60vh] border border-gray-300 bg-white rounded-2xl">
+                        <h1 class="font-poppins font-bold m-6">{{ `Agendar tu cita con ${specialist?.name?.split(' ')[0]}` }}</h1>
+                        <h2 class="font-poppins text-base mx-6">Servicio</h2>
+                        <select v-model="service" id="specialist" class="border p-2 rounded-xl mx-6 mt-2 ">
+                            <option disabled :value="null" class="mx-6">Selecciona un servicio</option>
+                            <option v-for="(data, index) in specialist?.servicesCost" :key="index" :value="data"
+                                class="mx-6">
+                                {{ data.nameService }} ${{ data.price }}
+                            </option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -251,3 +323,11 @@ export default {
 
     </div>
 </template>
+<style>
+#specialist {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: none;
+}
+</style>
