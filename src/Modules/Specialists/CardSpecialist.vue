@@ -20,42 +20,42 @@ const goToProfile = () => {
 </script>
 
 <template>
-    <div class="w-full max-w-md    lg:max-w-xl overflow-hidden  rounded-4xl shadow-lg  "
+    <div class="w-full max-w-sm    lg:max-w-md overflow-hidden  rounded-4xl shadow-lg  "
         style="background-color: var(--gray-1); border: 2px solid var(--gray-1);">
         <div class="w-full overflow-hidden bg-white rounded-lg shadow-md  ">
             <div class="m-3">
                 <div class="flex items-center">
                     <div class="flex items-center   gap">
-                        <div class="w-32 h-32 overflow-hidden rounded-full">
+                        <div class="w-24 h-24 overflow-hidden rounded-full mx-5 mt-7">
                             <img class="w-full h-full object-cover" :src="specialist.perfilPhoto" alt="Avatar">
                         </div>
-                        <div class="text-left">
-                            <h1 class="mx-2 font-semibold   font-poppins text-xl   " tabindex="0" role="link">{{
+                        <div class="text-left mt-6">
+                            <h1 class="mx-2 font-semibold   font-poppins text-base   " tabindex="0" role="link">{{
                                 specialist.name
                             }}</h1>
-                            <h2 class="mx-2 font-light   font-poppins text-xl " tabindex="0" role="link">{{
+                            <h2 class="mx-2 font-light   font-poppins text-sm " tabindex="0" role="link">{{
                                 specialist.title }}
                             </h2>
                         </div>
                     </div>
                 </div>
-                <div class="container p-2 text-left">
-                    <h3 class=" font-poppins text-xl  ">{{ `Experiencia ${specialist.expetience} años` }}</h3>
+                <div class="container p-2 text-left mx-5 mt-2">
+                    <h3 class=" font-poppins text-sm ">{{ `Experiencia ${specialist.expetience} años` }}</h3>
                 </div>
             </div>
             <div class=" px-3 mb-3">
                 <div style="background: var(--gray-2);border-radius: 10px;" class="p-3">
-                    <p class="m-3 text-xl text-left  font-medium text-gray-600 dark:text-gray-400">{{
+                    <p class="m-3 text-sm text-left min-h-[90px] font-medium text-gray-600 dark:text-gray-400">{{
                         specialist.description }}</p>
                 </div>
             </div>
             <div class="flex justify-center my-5 px-4">
                 <button @click="goToProfile()"
-                    class="cursor-pointer font-medium text-xl lg:text-2xl font-poppins   py-1   w-3/5 px-6    tracking-wide text-white   transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
+                    class="cursor-pointer font-medium text-base lg:text-base font-poppins   py-1   w-3/5 px-6    tracking-wide text-white   transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
                     Ver perfil
                 </button>
                 <button
-                    class="cursor-pointer font-medium  text-xl lg:text-2xl font-poppins mx-4  py-1  w-3/5 px-6     tracking-wide text-white   transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
+                    class="cursor-pointer font-medium  text-base lg:text-base font-poppins mx-4  py-1  w-3/5 px-6     tracking-wide text-white   transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
                     Agendar
                 </button>
             </div>

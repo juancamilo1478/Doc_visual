@@ -1,11 +1,11 @@
 <template>
   <nav class="w-screen relative bg-white shadow">
     
-    <div class="container     py-3 mx-auto md:flex">
+    <div class="container     py-2 mx-auto md:flex">
 
       <div class="flex items-center justify-between">
         <a href="#" @click="goToAbout('/')">
-          <img class="w-auto h-8 md:h-13 " src="@/assets/images/LogoPng.png" alt="Logo">
+          <img class="w-auto h-6 md:h-10 " src="@/assets/images/LogoPng.png" alt="Logo">
         </a>
 
         <!-- Mobile menu button -->
@@ -32,27 +32,27 @@
         :class="['absolute inset-x-0 z-20 w-full   py-4 transition-all duration-300 ease-in-out bg-white', isOpen ? 'block' : 'hidden', 'md:hidden']">
         <div class="flex flex-col items-center justify-center px-2 -mx-4">
 
-          <a class="cursor-pointer   py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
+          <a class="cursor-pointer   py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
             @click="goToAbout('specialists')"
             :style="{ color: currentRoute === '/specialists' ? 'var(--blue-1)' : 'black' }">Salud visual y
             especialistas</a>
           <a
-            class="cursor-pointer px-2 py-1 text-base font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Proposito</a>
+            class="cursor-pointer px-2 py-1 text-base font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Proposito</a>
           <a
-            class="cursor-pointer px-2 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Recursos</a>
+            class="cursor-pointer px-2 py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Recursos</a>
           <a
-            class="cursor-pointer px-2 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Agende
+            class="cursor-pointer px-2 py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Agende
             su cita</a>
-          <a class="cursor-pointer px-2 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
+          <a class="cursor-pointer px-2 py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
             @click="goToAbout('/auth')">Profesionales</a>
           <a
-            class="cursor-pointer px-2 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Pacientes</a>
+            class="cursor-pointer px-2 py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Pacientes</a>
           <a
-            class="cursor-pointer px-2 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Inhouse</a>
-          <a class="cursor-pointer px-2 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
+            class="cursor-pointer px-2 py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Inhouse</a>
+          <a class="cursor-pointer px-2 py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
             @click="goToAbout('blogs')"
             :style="{ color: currentRoute === '/blogs' ? 'var(--blue-1)' : 'black' }">Blog</a>
-          <a class="cursor-pointer px-2 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
+          <a class="cursor-pointer px-2 py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
             @click="goToAbout('questions')">Preguntas frecuentes</a>
 
         </div>
@@ -61,27 +61,27 @@
       <!-- Menú de escritorio -->
       <div class="hidden lg:flex items-center justify-between w-full py-4 bg-white">
         <div class="flex w-full max-w-screen-xl mx-auto justify-between px-4">
-          <a class="cursor-pointer px-2 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]  "
+          <a class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]  "
             @click="goToAbout('specialists')"
             :style="{ color: currentRoute === '/specialists' ? 'var(--blue-1)' : 'black' }">Salud visual y
             especialistas</a>
           <a
-            class="cursor-pointer px-2 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Proposito</a>
+            class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Proposito</a>
           <a
-            class="cursor-pointer px-2 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Recursos</a>
+            class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Recursos</a>
           <a
-            class="cursor-pointer px-2 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Agende
+            class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Agende
             su cita</a>
-          <a class="cursor-pointer px-2 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] "
+          <a class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] "
             @click="goToAbout('/auth')">Profesionales</a>
           <a
-            class="cursor-pointer px-2 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Pacientes</a>
+            class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Pacientes</a>
           <a
-            class="cursor-pointer px-2 py-1 font-poppins   font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Inhouse</a>
-          <a class="cursor-pointer px-2 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] "
+            class="text-sm cursor-pointer px-2 py-1 font-poppins   font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Inhouse</a>
+          <a class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] "
             @click="goToAbout('blogs')"
             :style="{ color: currentRoute === '/blogs' ? 'var(--blue-1)' : 'black' }">Blog</a>
-          <a class="cursor-pointer px-2 py-1 font-poppins font-light text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
+          <a class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
             @click="goToAbout('questions')"
             :style="{ color: currentRoute === '/questions' ? 'var(--blue-1)' : 'black' }">Preguntas frecuentes</a>
 
