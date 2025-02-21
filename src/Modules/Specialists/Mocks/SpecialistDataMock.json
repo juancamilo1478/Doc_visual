@@ -79,7 +79,37 @@
                 "text": "Mala experiencia, no resolvieron mis dudas y me dejaron esperando mucho tiempo.",
                 "score": 1
             }
-        ]
+        ],
+        "schedule": {
+            "Monday": [
+                "08:00",
+                "14:00",
+                "18:30"
+            ],
+            "Tuesday": [
+                "09:00",
+                "12:00",
+                "17:45"
+            ],
+            "Wednesday": [
+                "07:30",
+                "13:00"
+            ],
+            "Thursday": [
+                "10:00",
+                "15:30"
+            ],
+            "Friday": [
+                "08:45",
+                "14:15",
+                "19:00"
+            ],
+            "Saturday": [
+                "09:00",
+                "11:00"
+            ],
+            "Sunday": []
+        }
     },
     {
         "id": 2,
@@ -159,7 +189,37 @@
                 "text": "Mala experiencia, no resolvieron mis dudas y me dejaron esperando mucho tiempo.",
                 "score": 1
             }
-        ]
+        ],
+        "schedule": {
+            "Monday": [
+                "08:00",
+                "14:00",
+                "18:30"
+            ],
+            "Tuesday": [
+                "09:00",
+                "12:00",
+                "17:45"
+            ],
+            "Wednesday": [
+                "07:30",
+                "13:00"
+            ],
+            "Thursday": [
+                "10:00",
+                "15:30"
+            ],
+            "Friday": [
+                "08:45",
+                "14:15",
+                "19:00"
+            ],
+            "Saturday": [
+                "09:00",
+                "11:00"
+            ],
+            "Sunday": []
+        }
     },
     {
         "id": 3,
@@ -239,7 +299,37 @@
                 "text": "Mala experiencia, no resolvieron mis dudas y me dejaron esperando mucho tiempo.",
                 "score": 1
             }
-        ]
+        ],
+        "schedule": {
+            "Monday": [
+                "08:00",
+                "14:00",
+                "18:30"
+            ],
+            "Tuesday": [
+                "09:00",
+                "12:00",
+                "17:45"
+            ],
+            "Wednesday": [
+                "07:30",
+                "13:00"
+            ],
+            "Thursday": [
+                "10:00",
+                "15:30"
+            ],
+            "Friday": [
+                "08:45",
+                "14:15",
+                "19:00"
+            ],
+            "Saturday": [
+                "09:00",
+                "11:00"
+            ],
+            "Sunday": []
+        }
     },
     {
         "id": 4,
@@ -319,7 +409,37 @@
                 "text": "Mala experiencia, no resolvieron mis dudas y me dejaron esperando mucho tiempo.",
                 "score": 1
             }
-        ]
+        ],
+        "schedule": {
+            "Monday": [
+                "08:00",
+                "14:00",
+                "18:30"
+            ],
+            "Tuesday": [
+                "09:00",
+                "12:00",
+                "17:45"
+            ],
+            "Wednesday": [
+                "07:30",
+                "13:00"
+            ],
+            "Thursday": [
+                "10:00",
+                "15:30"
+            ],
+            "Friday": [
+                "08:45",
+                "14:15",
+                "19:00"
+            ],
+            "Saturday": [
+                "09:00",
+                "11:00"
+            ],
+            "Sunday": []
+        }
     },
     {
         "id": 5,
@@ -399,7 +519,37 @@
                 "text": "Mala experiencia, no resolvieron mis dudas y me dejaron esperando mucho tiempo.",
                 "score": 1
             }
-        ]
+        ],
+        "schedule": {
+            "Monday": [
+                "08:00",
+                "14:00",
+                "18:30"
+            ],
+            "Tuesday": [
+                "09:00",
+                "12:00",
+                "17:45"
+            ],
+            "Wednesday": [
+                "07:30",
+                "13:00"
+            ],
+            "Thursday": [
+                "10:00",
+                "15:30"
+            ],
+            "Friday": [
+                "08:45",
+                "14:15",
+                "19:00"
+            ],
+            "Saturday": [
+                "09:00",
+                "11:00"
+            ],
+            "Sunday": []
+        }
     },
     {
         "id": 6,
@@ -479,7 +629,37 @@
                 "text": "Mala experiencia, no resolvieron mis dudas y me dejaron esperando mucho tiempo.",
                 "score": 1
             }
-        ]
+        ],
+        "schedule": {
+            "Monday": [
+                "08:00",
+                "14:00",
+                "18:30"
+            ],
+            "Tuesday": [
+                "09:00",
+                "12:00",
+                "17:45"
+            ],
+            "Wednesday": [
+                "07:30",
+                "13:00"
+            ],
+            "Thursday": [
+                "10:00",
+                "15:30"
+            ],
+            "Friday": [
+                "08:45",
+                "14:15",
+                "19:00"
+            ],
+            "Saturday": [
+                "09:00",
+                "11:00"
+            ],
+            "Sunday": []
+        }
     },
     {
         "id": 7,
@@ -559,7 +739,37 @@
                 "text": "Mala experiencia, no resolvieron mis dudas y me dejaron esperando mucho tiempo.",
                 "score": 1
             }
-        ]
+        ],
+        "schedule": {
+            "Monday": [
+                "08:00",
+                "14:00",
+                "18:30"
+            ],
+            "Tuesday": [
+                "09:00",
+                "12:00",
+                "17:45"
+            ],
+            "Wednesday": [
+                "07:30",
+                "13:00"
+            ],
+            "Thursday": [
+                "10:00",
+                "15:30"
+            ],
+            "Friday": [
+                "08:45",
+                "14:15",
+                "19:00"
+            ],
+            "Saturday": [
+                "09:00",
+                "11:00"
+            ],
+            "Sunday": []
+        }
     },
     {
         "id": 8,
@@ -639,7 +849,37 @@
                 "text": "Mala experiencia, la atención fue apresurada y poco clara.",
                 "score": 1
             }
-        ]
+        ],
+        "schedule": {
+            "Monday": [
+                "08:00",
+                "14:00",
+                "18:30"
+            ],
+            "Tuesday": [
+                "09:00",
+                "12:00",
+                "17:45"
+            ],
+            "Wednesday": [
+                "07:30",
+                "13:00"
+            ],
+            "Thursday": [
+                "10:00",
+                "15:30"
+            ],
+            "Friday": [
+                "08:45",
+                "14:15",
+                "19:00"
+            ],
+            "Saturday": [
+                "09:00",
+                "11:00"
+            ],
+            "Sunday": []
+        }
     },
     {
         "id": 9,
@@ -719,7 +959,37 @@
                 "text": "Mala experiencia, la atención fue apresurada y poco clara.",
                 "score": 1
             }
-        ]
+        ],
+        "schedule": {
+            "Monday": [
+                "08:00",
+                "14:00",
+                "18:30"
+            ],
+            "Tuesday": [
+                "09:00",
+                "12:00",
+                "17:45"
+            ],
+            "Wednesday": [
+                "07:30",
+                "13:00"
+            ],
+            "Thursday": [
+                "10:00",
+                "15:30"
+            ],
+            "Friday": [
+                "08:45",
+                "14:15",
+                "19:00"
+            ],
+            "Saturday": [
+                "09:00",
+                "11:00"
+            ],
+            "Sunday": []
+        }
     },
     {
         "id": 10,
@@ -799,7 +1069,37 @@
                 "text": "Mala experiencia, la atención fue apresurada y poco clara.",
                 "score": 1
             }
-        ]
+        ],
+        "schedule": {
+            "Monday": [
+                "08:00",
+                "14:00",
+                "18:30"
+            ],
+            "Tuesday": [
+                "09:00",
+                "12:00",
+                "17:45"
+            ],
+            "Wednesday": [
+                "07:30",
+                "13:00"
+            ],
+            "Thursday": [
+                "10:00",
+                "15:30"
+            ],
+            "Friday": [
+                "08:45",
+                "14:15",
+                "19:00"
+            ],
+            "Saturday": [
+                "09:00",
+                "11:00"
+            ],
+            "Sunday": []
+        }
     },
     {
         "id": 11,
@@ -879,7 +1179,37 @@
                 "text": "Mala experiencia, la atención fue apresurada y poco clara.",
                 "score": 1
             }
-        ]
+        ],
+        "schedule": {
+            "Monday": [
+                "08:00",
+                "14:00",
+                "18:30"
+            ],
+            "Tuesday": [
+                "09:00",
+                "12:00",
+                "17:45"
+            ],
+            "Wednesday": [
+                "07:30",
+                "13:00"
+            ],
+            "Thursday": [
+                "10:00",
+                "15:30"
+            ],
+            "Friday": [
+                "08:45",
+                "14:15",
+                "19:00"
+            ],
+            "Saturday": [
+                "09:00",
+                "11:00"
+            ],
+            "Sunday": []
+        }
     },
     {
         "id": 12,
@@ -959,7 +1289,37 @@
                 "text": "Mala experiencia, la atención fue apresurada y poco clara.",
                 "score": 1
             }
-        ]
+        ],
+        "schedule": {
+            "Monday": [
+                "08:00",
+                "14:00",
+                "18:30"
+            ],
+            "Tuesday": [
+                "09:00",
+                "12:00",
+                "17:45"
+            ],
+            "Wednesday": [
+                "07:30",
+                "13:00"
+            ],
+            "Thursday": [
+                "10:00",
+                "15:30"
+            ],
+            "Friday": [
+                "08:45",
+                "14:15",
+                "19:00"
+            ],
+            "Saturday": [
+                "09:00",
+                "11:00"
+            ],
+            "Sunday": []
+        }
     },
     {
         "id": 13,
@@ -1039,7 +1399,37 @@
                 "text": "Mala experiencia, la atención fue apresurada y poco clara.",
                 "score": 1
             }
-        ]
+        ],
+        "schedule": {
+            "Monday": [
+                "08:00",
+                "14:00",
+                "18:30"
+            ],
+            "Tuesday": [
+                "09:00",
+                "12:00",
+                "17:45"
+            ],
+            "Wednesday": [
+                "07:30",
+                "13:00"
+            ],
+            "Thursday": [
+                "10:00",
+                "15:30"
+            ],
+            "Friday": [
+                "08:45",
+                "14:15",
+                "19:00"
+            ],
+            "Saturday": [
+                "09:00",
+                "11:00"
+            ],
+            "Sunday": []
+        }
     },
     {
         "id": 14,
@@ -1119,7 +1509,37 @@
                 "text": "Mala experiencia, la atención fue apresurada y poco clara.",
                 "score": 1
             }
-        ]
+        ],
+        "schedule": {
+            "Monday": [
+                "08:00",
+                "14:00",
+                "18:30"
+            ],
+            "Tuesday": [
+                "09:00",
+                "12:00",
+                "17:45"
+            ],
+            "Wednesday": [
+                "07:30",
+                "13:00"
+            ],
+            "Thursday": [
+                "10:00",
+                "15:30"
+            ],
+            "Friday": [
+                "08:45",
+                "14:15",
+                "19:00"
+            ],
+            "Saturday": [
+                "09:00",
+                "11:00"
+            ],
+            "Sunday": []
+        }
     },
     {
         "id": 15,
@@ -1199,6 +1619,36 @@
                 "text": "Mala experiencia, la atención fue apresurada y poco clara.",
                 "score": 1
             }
-        ]
+        ],
+        "schedule": {
+            "Monday": [
+                "08:00",
+                "14:00",
+                "18:30"
+            ],
+            "Tuesday": [
+                "09:00",
+                "12:00",
+                "17:45"
+            ],
+            "Wednesday": [
+                "07:30",
+                "13:00"
+            ],
+            "Thursday": [
+                "10:00",
+                "15:30"
+            ],
+            "Friday": [
+                "08:45",
+                "14:15",
+                "19:00"
+            ],
+            "Saturday": [
+                "09:00",
+                "11:00"
+            ],
+            "Sunday": []
+        }
     }
 ]
