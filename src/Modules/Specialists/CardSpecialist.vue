@@ -51,11 +51,11 @@ const goToProfile = () => {
             </div>
             <div class="flex justify-center my-5 px-4">
                 <button @click="goToProfile()"
-                    class="cursor-pointer font-medium text-base lg:text-base font-poppins   py-2   w-3/5 px-6    tracking-wide text-white   transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
+                    class="cursor-pointer font-medium text-xs lg:text-base font-poppins   py-2   w-3/5 px-6    tracking-wide text-white   transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
                     Ver perfil
                 </button>
                 <button
-                    class="cursor-pointer font-medium  text-base lg:text-base font-poppins mx-4  py-2  w-3/5 px-6     tracking-wide text-white   transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
+                    class="cursor-pointer font-medium  text-xs lg:text-base font-poppins mx-4  py-2  w-3/5  px-2  md:px-6     tracking-wide text-white   transition-colors duration-300 transform bg-[var(--blue-1)] hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-[10px]">
                     Agendar
                 </button>
             </div>

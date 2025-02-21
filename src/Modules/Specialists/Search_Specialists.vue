@@ -318,11 +318,11 @@ export default {
                             <Transition name="fade">
                                 <div v-if="panels.panelService">
 
-                                    <div v-for="(option, index) in optionsServices" :key="index"
-                                        class="flex w-full my-2">
+                                    <div v-for="(option, index) in optionsServices" :key="index" @click="selectSpecialist(option)"
+                                        class="flex w-full my-2 text-base">
                                         <input type="checkbox" :id="'checkbox-' + index"
                                             :checked="isSpecialistSelected(option)" :value="option"
-                                            class="w-5 h-5 mx-2 colorvar pointer-events-none">
+                                            class="w-5 h-5 mx-2 colorvar pointer-events-none accent-[var(--blue-1)]">
                                         <h1 class="mt-auto cursor-pointer" @click="selectSpecialist(option)">{{ option
                                         }}</h1>
                                     </div>
@@ -341,12 +341,12 @@ export default {
                             <Transition name="fade">
                                 <div v-if="panels.panelSpecialty">
 
-                                    <div v-for="(option, index) in optionsSpecialist" :key="index"
+                                    <div v-for="(option, index) in optionsSpecialist" :key="index" @click="selectSpecialist(option)"
                                         class="flex w-full my-2">
                                         <input type="checkbox" :id="'checkbox-' + index"
                                             :checked="isSpecialistSelected(option)" :value="option"
-                                            class="w-5 h-5 mx-2 colorvar pointer-events-none">
-                                        <h1 class="mt-auto cursor-pointer" @click="selectSpecialist(option)">{{ option
+                                            class="w-5 h-5 mx-2 colorvar pointer-events-none accent-[var(--blue-1)]">
+                                        <h1 class="mt-auto cursor-pointer" >{{ option
                                         }}</h1>
                                     </div>
                                 </div>
@@ -365,11 +365,11 @@ export default {
                                 <div v-if="panels.panelLocation">
 
                                     <div v-for="(option, index) in optionsLocaltion" :key="index"
-                                        class="flex w-full my-2">
+                                        class="flex w-full my-2" @click="selectSpecialist(option)">
                                         <input type="checkbox" :id="'checkbox-' + index"
                                             :checked="isSpecialistSelected(option)" :value="option"
-                                            class="w-5 h-5 mx-2 colorvar pointer-events-none">
-                                        <h1 class="mt-auto cursor-pointer" @click="selectSpecialist(option)">{{ option
+                                            class="w-5 h-5 mx-2 colorvar pointer-events-none accent-[var(--blue-1)]">
+                                        <h1 class="mt-auto cursor-pointer" >{{ option
                                         }}</h1>
                                     </div>
                                 </div>
