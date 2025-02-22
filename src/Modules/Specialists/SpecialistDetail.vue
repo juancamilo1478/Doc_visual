@@ -521,17 +521,17 @@ export default {
 
 
                     <div class="w-full rounded-2xl border mt-6 border-gray-300 bg-white">
-                        <div class="w-full p-8 font-poppins text-base">
-                            <div class="flex flex-wrap justify-between">
-                                <h1 class="font-bold mb-6">Valora tu especialista</h1>
-                                <button class="text-white rounded-2xl p-2 text-"
-                                    style="background-color: var(--blue-1);">Añadir tu opinión</button>
+                        <div class="w-full p-8 font-poppins text-sm md:text-base">
+                            <div class="flex flex-wrap justify-between ">
+                                <h1 class="font-bold mb-6 ">Valora tu especialista</h1>
+                                <button class="text-white rounded-2xl  px-1 md:px-2 text-xs md:text-base"
+                                    style="background-color: var(--blue-1); ">Añadir tu opinión</button>
                             </div>
                             <div class="font-poppins text-sm font-mono">
                                 <p>Valoración globa</p>
                                 <div class="flex flex-wrap">
                                     <svg v-for="n in (parseInt(specialist?.point?.toString() || '0', 10))"
-                                        class="ml-1 h-5 w-5 text-amber-200" viewBox="0 0 32 32" version="1.1"
+                                        class="ml-1 w-3 h-3 md:h-5 md:w-5 text-amber-200" viewBox="0 0 32 32" version="1.1"
                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                         xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
 
