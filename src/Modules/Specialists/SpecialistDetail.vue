@@ -25,7 +25,7 @@ export default {
             currentYear: null as number | null,
             daysInMonth: null as number | null,
 
-
+            selectdate:null as Date | null,
 
             exploreday: null as number | null,
             exploreMonth: null as number | null,
@@ -456,9 +456,9 @@ if (!todayExplorer) {
 
                 </div>
                 <!-- derecho -->
-                <div class="w-[50%]">
+                <div class="w-[50%] ">
                     <div
-                        class="w-[95%]  ml-auto   min-h-[60vh] border border-gray-300 bg-white rounded-2xl  font-poppins text-sm">
+                        class="w-[95%]  ml-auto   min-h-[60vh] border border-gray-300 bg-white rounded-2xl  font-poppins text-sm sticky top-5">
                         <h1 class="font-poppins font-bold m-6">{{ `Agendar tu cita con ${specialist?.name?.split(' ')[0]}` }}</h1>
                         <h2 class="font-poppins text-base mx-6">Servicio</h2>
                         <select v-model="service" id="specialist" class="border p-2 rounded-xl mx-6 mt-2 mb-7 ">
@@ -494,7 +494,7 @@ if (!todayExplorer) {
                                         :class="{ 'text-black': listDates[0].isValid, 'text-black/50': !listDates[0].isValid }">
                                         {{ listDates[0].day }}</h1>
                                     <div v-for="(data, index) in listDates[0].hours" :key="index"
-                                        v-if="listDates[0].isValid" class="border rounded-xl px-2 py-4 mb-2">
+                                        v-if="listDates[0].isValid" class="border rounded-xl px-2 py-4 mb-2 cursor-pointer">
                                         <h1>{{ data }}</h1>
                                     </div>
                                 </div>
@@ -510,7 +510,7 @@ if (!todayExplorer) {
                                         'text-black/50': !listDates[1].isValid
                                     }">{{ listDates[1].day }}</h1>
                                     <div v-for="(data, index) in listDates[1].hours" :key="index"
-                                        v-if="listDates[1].isValid" class="border rounded-xl px-2 py-4 mb-2">
+                                        v-if="listDates[1].isValid" class="border rounded-xl px-2 py-4 mb-2 cursor-pointer">
                                         <h1>{{ data }}</h1>
                                     </div>
                                 </div>
@@ -524,7 +524,7 @@ if (!todayExplorer) {
                                         :class="{ 'text-black': listDates[2].isValid, 'text-black/50': !listDates[2].isValid }">
                                         {{ listDates[2].day }}</h1>
                                     <div v-for="(data, index) in listDates[2].hours" :key="index"
-                                        v-if="listDates[2].isValid" class="border rounded-xl px-2 py-4 mb-2">
+                                        v-if="listDates[2].isValid" class="border rounded-xl px-2 py-4 mb-2 cursor-pointer">
                                         <h1>{{ data }}</h1>
                                     </div>
                                 </div>
