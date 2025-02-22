@@ -17,7 +17,7 @@ export interface Specialist {
     opinions:{text:string,score:number,user:string,fecha:string,lugar:string}[];
     // 🔹 Nueva propiedad: Horario del especialista
     schedule: {
-        [day: string]: string[]; // Ejemplo: { Monday: ["08:00", "14:00"], Tuesday: ["10:00", "16:00"] }
+        [day: string]: { hour: number; minute: number }[];
     };
 }
 

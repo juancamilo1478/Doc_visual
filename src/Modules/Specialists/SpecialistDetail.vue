@@ -25,7 +25,7 @@ export default {
             currentYear: null as number | null,
             daysInMonth: null as number | null,
 
-            selectdate:null as Date | null,
+            selectdate: null as Date | null,
 
             exploreday: null as number | null,
             exploreMonth: null as number | null,
@@ -36,7 +36,7 @@ export default {
                 month: number | 0;
                 year: number | 0;
                 isValid: boolean;
-                hours: string[];
+                hours: { hour: number; minute: number }[];
             }[]
 
         };
@@ -69,69 +69,74 @@ export default {
     methods: {
         getDayNameSpanish,
         getListDates() {
-  // Reiniciamos la lista
-  this.listDates = [];
+            // Reiniciamos la lista
+            this.listDates = [];
 
-  // Verificamos que exploreYear, exploreMonth y exploreday estén definidos
-  if (this.exploreYear != null && this.exploreMonth != null && this.exploreday != null && this.currentDay != null && this.currentMonth != null && this.currentYear != null) {
-    // Creamos un objeto Date a partir de la fecha de exploración
-    const todayExplorer = this.isToday(
-  this.exploreday,      // día de exploración
-  this.exploreMonth,    // mes de exploración
-  this.exploreYear,     // año de exploración
-  this.currentDay,      // día actual
-  this.currentMonth,    // mes actual
-  this.currentYear      // año actual
-);
+            // Verificamos que exploreYear, exploreMonth y exploreday estén definidos
+            if (this.exploreYear != null && this.exploreMonth != null && this.exploreday != null && this.currentDay != null && this.currentMonth != null && this.currentYear != null) {
+                // Creamos un objeto Date a partir de la fecha de exploración
+                const todayExplorer = this.isToday(
+                    this.exploreday,      // día de exploración
+                    this.exploreMonth,    // mes de exploración
+                    this.exploreYear,     // año de exploración
+                    this.currentDay,      // día actual
+                    this.currentMonth,    // mes actual
+                    this.currentYear      // año actual
+                );
 
-let startDate = new Date(
-  this.exploreYear, 
-  this.exploreMonth - 1, 
-  this.exploreday
-);
+                let startDate = new Date(
+                    this.exploreYear,
+                    this.exploreMonth - 1,
+                    this.exploreday
+                );
 
-if (!todayExplorer) {
-  // Si no es hoy, se le suma un día a startDate
-  startDate.setDate(startDate.getDate() + 1);
-}
-   
-    // Generamos 3 fechas consecutivas (por ejemplo, hoy y los 2 días siguientes)
-    
-    for (let i = 0; i < 3; i++) {
-      // Clonamos startDate y le sumamos i días
-      const currentDate = new Date(startDate);
-      currentDate.setDate(startDate.getDate() + i);
+                if (!todayExplorer) {
+                    // Si no es hoy, se le suma un día a startDate
+                    startDate.setDate(startDate.getDate() + 1);
+                }
 
-      const day = currentDate.getDate();
-      const month = currentDate.getMonth() + 1; // Ajustamos a 1-indexado
-      const year = currentDate.getFullYear();
+                // Generamos 3 fechas consecutivas (por ejemplo, hoy y los 2 días siguientes)
 
-      // Obtenemos el nombre del día usando tu función getDayName
-      const nameDay = getDayName(month, day, year);
-      const dataHours = this.specialist?.schedule[nameDay] ?? [];
-      // Agregamos el objeto con la fecha a la lista
-      this.listDates.push({
-        day,
-        month,
-        year,
-        isValid: isValidDate(day, month, year),
-        hours: dataHours,
-      
-      });
-    }
-    // Actualizamos los valores de explore* a la última fecha generada
-    // En este caso, la última fecha es startDate + 2 días (ya que el bucle va de 0 a 2)
-    const lastDate = new Date(startDate);
-    lastDate.setDate(startDate.getDate() + 2);
-    this.exploreday = lastDate.getDate();
-    this.exploreMonth = lastDate.getMonth() + 1;
-    this.exploreYear = lastDate.getFullYear();
+                for (let i = 0; i < 3; i++) {
+                    // Clonamos startDate y le sumamos i días
+                    const currentDate = new Date(startDate);
+                    currentDate.setDate(startDate.getDate() + i);
 
-  }
+                    const day = currentDate.getDate();
+                    const month = currentDate.getMonth() + 1; // Ajustamos a 1-indexado
+                    const year = currentDate.getFullYear();
 
-  console.log(this.listDates);
-  console.log(`datos dia ${this.currentDay} mes ${this.currentMonth} año ${this.currentYear}`);
-},
+                    // Obtenemos el nombre del día usando tu función getDayName
+                    const nameDay = getDayName(month, day, year);
+                    const dataHours = this.specialist?.schedule[nameDay] ?? [];
+                    // Agregamos el objeto con la fecha a la lista
+                    this.listDates.push({
+                        day,
+                        month,
+                        year,
+                        isValid: isValidDate(day, month, year),
+                        hours: dataHours,
+
+                    });
+                }
+                // Actualizamos los valores de explore* a la última fecha generada
+                // En este caso, la última fecha es startDate + 2 días (ya que el bucle va de 0 a 2)
+                const lastDate = new Date(startDate);
+                lastDate.setDate(startDate.getDate() + 2);
+                this.exploreday = lastDate.getDate();
+                this.exploreMonth = lastDate.getMonth() + 1;
+                this.exploreYear = lastDate.getFullYear();
+
+            }
+
+            console.log(this.listDates);
+            console.log(`datos dia ${this.currentDay} mes ${this.currentMonth} año ${this.currentYear}`);
+        },
+        getTimeString(hour: number, minutes: number): string {
+            const hourStr = hour.toString().padStart(2, '0');
+            const minutesStr = minutes.toString().padStart(2, '0');
+            return `${hourStr}:${minutesStr}`;
+        },
 
         getListDatesBackwards() {
             // Verificamos que ya exista una fecha de referencia en listDates[0]
@@ -163,17 +168,17 @@ if (!todayExplorer) {
                     isValid: isValidDate(prevDate.getDate(), prevDate.getMonth() + 1, prevDate.getFullYear()),
                     hours: dataHours,
                 });
-                
+
             }
             // Actualizamos los valores de explore con la fecha más antigua generada
-  if (this.listDates.length > 0) {
-    const earliest = this.listDates[0];
-    this.exploreday = earliest.day;
-    this.exploreMonth = earliest.month;
-    this.exploreYear = earliest.year;
-  }
+            if (this.listDates.length > 0) {
+                const earliest = this.listDates[0];
+                this.exploreday = earliest.day;
+                this.exploreMonth = earliest.month;
+                this.exploreYear = earliest.year;
+            }
 
-  console.log(this.listDates);
+            console.log(this.listDates);
 
         },
 
@@ -188,7 +193,23 @@ if (!todayExplorer) {
         ): boolean {
             return (day === compareDay && month === compareMonth && year === compareYear);
         },
-
+        isData(day: number, month: number, year: number,hour:number,minutes:number  ): boolean {
+            const date1 = new Date(
+                year,
+                month - 1,
+                day,
+                hour,
+                minutes
+            )
+            if(this.selectdate != null){
+                return date1.getFullYear() === this.selectdate.getFullYear() &&
+                date1.getMonth() === this.selectdate.getMonth() &&
+                date1.getDate() === this.selectdate.getDate() && date1.getHours() === this.selectdate.getHours() && date1.getMinutes() === this.selectdate.getMinutes() 
+            }else{
+                return false
+            }
+           
+        },
         getDaysInMonth(year: number, month: number): number {
             return new Date(year, month, 0).getDate();
         },
@@ -206,6 +227,24 @@ if (!todayExplorer) {
         }, setPanel(name: keyof typeof this.panels) {
             this.panels[name] = !this.panels[name];
         },
+        selectdata(day: number, month: number, year: number, hour: number, minute: number) {
+            const dateData = new Date(year, month - 1, day, hour, minute);
+            if (
+                this.selectdate != null &&
+                dateData.getFullYear() === this.selectdate.getFullYear() &&
+                dateData.getMonth() === this.selectdate.getMonth() &&
+                dateData.getDate() === this.selectdate.getDate() &&
+                dateData.getHours() === this.selectdate.getHours() &&
+                dateData.getMinutes() === this.selectdate.getMinutes()
+            ) {
+                this.selectdate = null;
+            } else {
+                this.selectdate = dateData;
+            }
+        },
+
+
+
         nextdate() {
             if (this.exploreday != null) {
 
@@ -494,8 +533,11 @@ if (!todayExplorer) {
                                         :class="{ 'text-black': listDates[0].isValid, 'text-black/50': !listDates[0].isValid }">
                                         {{ listDates[0].day }}</h1>
                                     <div v-for="(data, index) in listDates[0].hours" :key="index"
-                                        v-if="listDates[0].isValid" class="border rounded-xl px-2 py-4 mb-2 cursor-pointer">
-                                        <h1>{{ data }}</h1>
+                                        @click="selectdata(listDates[0].day, listDates[0].month, listDates[0].year,data.hour,data.minute)"
+                                        v-if="listDates[0].isValid"
+                                        :class="{ 'bg-[var(--blue-1)] text-white border-none': isData(listDates[0].day,listDates[0].month,listDates[0].year,data.hour,data.minute)   }"
+                                        class="border rounded-xl px-2 py-4 mb-2 cursor-pointer">
+                                        <h1>{{ getTimeString(data.hour, data.minute) }}</h1>
                                     </div>
                                 </div>
 
@@ -510,8 +552,10 @@ if (!todayExplorer) {
                                         'text-black/50': !listDates[1].isValid
                                     }">{{ listDates[1].day }}</h1>
                                     <div v-for="(data, index) in listDates[1].hours" :key="index"
-                                        v-if="listDates[1].isValid" class="border rounded-xl px-2 py-4 mb-2 cursor-pointer">
-                                        <h1>{{ data }}</h1>
+                                        @click="selectdata(listDates[1].day, listDates[1].month, listDates[1].year,data.hour,data.minute)"
+                                        v-if="listDates[1].isValid" :class="{ 'bg-[var(--blue-1)] text-white border-none': isData(listDates[1].day,listDates[1].month,listDates[1].year,data.hour,data.minute)   }"
+                                        class="border rounded-xl px-2 py-4 mb-2 cursor-pointer">
+                                        <h1>{{ getTimeString(data.hour, data.minute) }}</h1>
                                     </div>
                                 </div>
                                 <div class="  text-black p-4 rounded-lg text-center">
@@ -524,8 +568,10 @@ if (!todayExplorer) {
                                         :class="{ 'text-black': listDates[2].isValid, 'text-black/50': !listDates[2].isValid }">
                                         {{ listDates[2].day }}</h1>
                                     <div v-for="(data, index) in listDates[2].hours" :key="index"
-                                        v-if="listDates[2].isValid" class="border rounded-xl px-2 py-4 mb-2 cursor-pointer">
-                                        <h1>{{ data }}</h1>
+                                        @click="selectdata(listDates[2].day, listDates[2].month, listDates[2].year,data.hour,data.minute)"
+                                        v-if="listDates[2].isValid"  :class="{ 'bg-[var(--blue-1)] text-white border-none': isData(listDates[2].day,listDates[2].month,listDates[2].year,data.hour,data.minute)   }"
+                                        class="border rounded-xl px-2 py-4 mb-2 cursor-pointer">
+                                        <h1>{{ getTimeString(data.hour, data.minute) }}</h1>
                                     </div>
                                 </div>
                             </div>
