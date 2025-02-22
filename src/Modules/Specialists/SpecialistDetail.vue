@@ -72,24 +72,65 @@ export default {
             this.listDates = [];
             if (this.exploreMonth != null && this.exploreday != null && this.exploreYear != null) {
                 for (let index = 0; index < 3; index++) {
-                    console.log(this.exploreday)
-                    console.log(this.exploreMonth)
-                    console.log(this.exploreYear)
-                    const nameDay = getDayName(this.exploreMonth, this.exploreday + (index), this.exploreYear);
-                    const dataHours = this.specialist?.schedule[nameDay] ?? []
-                    this.listDates.push({
-                        day: this.exploreday+index,
-                        month: this.exploreMonth, // `getMonth()` devuelve de 0 a 11, por eso sumamos 1
-                        year: this.exploreYear,
-                        isValid: isValidDate(this.exploreday, this.exploreMonth, this.exploreYear),
-                        hours: dataHours
-                    });
-                }
+                    const nameDay = getDayName(this.exploreMonth, this.exploreday, this.exploreYear);
+                    const dataHours = this.specialist?.schedule[nameDay] ?? [];
 
+                    if (
+                        this.exploreday != null &&
+                        this.exploreMonth != null &&
+                        this.exploreYear != null &&
+                        this.currentDay != null &&
+                        this.currentMonth != null &&
+                        this.currentYear != null &&
+                        this.isToday(
+                            this.exploreday,
+                            this.exploreMonth,
+                            this.exploreYear,
+                            this.currentDay,
+                            this.currentMonth,
+                            this.currentYear
+                        )
+                    ) {
+                        // Si es el día de hoy, lo agregamos con la lógica correspondiente (por ejemplo, tal vez marcándolo de alguna forma)
+                        this.listDates.push({
+                            day: this.exploreday,
+                            month: this.exploreMonth,
+                            year: this.exploreYear,
+                            isValid: isValidDate(this.exploreday, this.exploreMonth, this.exploreYear),
+                            hours: dataHours
+                        });
+
+
+
+                    } else {
+                        // Si no es hoy, agregamos el día normalmente
+                        this.listDates.push({
+                            day: this.exploreday,
+                            month: this.exploreMonth,
+                            year: this.exploreYear,
+                            isValid: isValidDate(this.exploreday, this.exploreMonth, this.exploreYear),
+                            hours: dataHours
+                        });
+                       
+                    }
+                    this.exploreday = this.exploreday + 1;
+                        if (this.exploreday > 31) {
+                            this.exploreday = this.exploreday - 31;
+                            this.exploreMonth++;
+                            if (this.exploreMonth > 12) {
+                                this.exploreMonth = 1;
+                                this.exploreYear++;
+                            }
+                    }
+
+
+                }
             }
-            console.log(this.listDates)
-            console.log(`datps dia ${this.currentDay} mes ${this.currentMonth} a;o ${this.currentYear}`)
+            console.log(this.listDates);
+            console.log(`datos dia ${this.currentDay} mes ${this.currentMonth} año ${this.currentYear}`);
         },
+
+
         isToday(
             day: number,
             month: number,
@@ -118,6 +159,13 @@ export default {
         }, setPanel(name: keyof typeof this.panels) {
             this.panels[name] = !this.panels[name];
         },
+        nextdate() {
+            if (this.exploreday != null) {
+                 
+                this.getListDates()
+            }
+
+        }
     }
 }
 
@@ -361,7 +409,8 @@ export default {
                 </div>
                 <!-- derecho -->
                 <div class="w-[50%]">
-                    <div class="w-[95%]  ml-auto   min-h-[60vh] border border-gray-300 bg-white rounded-2xl  font-poppins text-sm">
+                    <div
+                        class="w-[95%]  ml-auto   min-h-[60vh] border border-gray-300 bg-white rounded-2xl  font-poppins text-sm">
                         <h1 class="font-poppins font-bold m-6">{{ `Agendar tu cita con ${specialist?.name?.split(' ')[0]}` }}</h1>
                         <h2 class="font-poppins text-base mx-6">Servicio</h2>
                         <select v-model="service" id="specialist" class="border p-2 rounded-xl mx-6 mt-2 mb-7 ">
@@ -372,58 +421,76 @@ export default {
                             </option>
                         </select>
                         <h1 class="mx-8 font-semibold text-base"> {{ monthName }}{{ currentYear }}</h1>
-                        <div class="flex   justify-between p-4  px-8" v-if="listDates.length && currentDay != null && currentMonth != null && currentYear != null">
+                        <div class="flex   justify-between p-4  px-8"
+                            v-if="listDates.length && currentDay != null && currentMonth != null && currentYear != null">
                             <!-- Flecha izquierda -->
-                            <button class="w-5 h-12 mt-3 flex items-center justify-center text-gray-600 hover:text-gray-900  cursor-pointer" v-if="!isToday(listDates[0].day, listDates[0].month, listDates[0].year, currentDay, currentMonth, currentYear)">
+                            <button
+                                class="w-5 h-12 mt-3 flex items-center justify-center text-gray-600 hover:text-gray-900  cursor-pointer"
+                                v-if="!isToday(listDates[0].day, listDates[0].month, listDates[0].year, currentDay, currentMonth, currentYear)">
                                 <img src="@/assets/svg/arrow.svg" alt="Icono"
-                                class="w-4 h-4 transition-transform ml-auto rotate-180">
+                                    class="w-4 h-4 transition-transform ml-auto rotate-180">
                             </button>
-                        
+
                             <!-- Grid de 3 columnas -->
                             <div class="w-full grid grid-cols-3 gap-4 ">
-                              <div class="  text-black p-4 rounded-lg text-center">
-                                <h1 class="text-[var(--blue-1)] pb-2 font-semibold" v-if="!isToday(listDates[0].day, listDates[0].month, listDates[0].year, currentDay, currentMonth, currentYear)">
-                                  {{ listDates[0].day }}
-                                </h1>
-                                <h1 v-else class="text-[var(--blue-1)] pb-2 font-semibold">Hoy</h1>
+                                <div class="  text-black p-4 rounded-lg text-center">
+                                    <h1 class="text-[var(--blue-1)] pb-2 font-semibold"
+                                        v-if="!isToday(listDates[0].day, listDates[0].month, listDates[0].year, currentDay, currentMonth, currentYear)">
+                                        {{ getDayNameSpanish(listDates[0].month, listDates[1].day, listDates[1].year) }}
+                                    </h1>
+                                    <h1 v-else class="text-[var(--blue-1)] pb-2 font-semibold">Hoy</h1>
 
-                                <h1 class="mb-5">{{ listDates[0].day }}</h1>
-                                <div v-for="(data, index) in listDates[0].hours" :key="index"  class="border rounded-xl px-2 py-4 mb-2" >
-                                    <h1>{{ data }}</h1>
+                                    <h1 class="mb-5">{{ listDates[0].day }}</h1>
+                                    <div v-for="(data, index) in listDates[0].hours" :key="index"
+                                        class="border rounded-xl px-2 py-4 mb-2">
+                                        <h1>{{ data }}</h1>
+                                    </div>
                                 </div>
-                              </div>
-                            
-                              <div class="  text-black p-4 rounded-lg text-center">
-                                <h1 class="text-[var(--blue-1)] pb-2 font-semibold">{{ getDayNameSpanish(listDates[1].month,listDates[1].day,listDates[1].year) }}</h1>
-                                <h1 class="mb-5">{{ listDates[1].day }}</h1>
-                                <div v-for="(data, index) in listDates[1].hours" :key="index"  class="border rounded-xl px-2 py-4 mb-2" >
-                                    <h1>{{ data }}</h1>
+
+                                <div class="  text-black p-4 rounded-lg text-center">
+                                    <h1 class="text-[var(--blue-1)] pb-2 font-semibold">{{
+                                        getDayNameSpanish(listDates[1].month, listDates[1].day, listDates[1].year) }}
+                                    </h1>
+                                    <h1 class="mb-5">{{ listDates[1].day }}</h1>
+                                    <div v-for="(data, index) in listDates[1].hours" :key="index"
+                                        class="border rounded-xl px-2 py-4 mb-2">
+                                        <h1>{{ data }}</h1>
+                                    </div>
                                 </div>
-                              </div>
-                              <div class="  text-black p-4 rounded-lg text-center">
-                                <h1 class="text-[var(--blue-1)] pb-2 font-semibold">{{ getDayNameSpanish(listDates[2].month,listDates[2].day,listDates[2].year) }}</h1>
-                                <h1 class="mb-5">{{ listDates[2].day }}</h1>
-                                <div v-for="(data, index) in listDates[1].hours" :key="index"  class="border rounded-xl px-2 py-4 mb-2" >
-                                    <h1>{{ data }}</h1>
+                                <div class="  text-black p-4 rounded-lg text-center">
+                                    <h1 class="text-[var(--blue-1)] pb-2 font-semibold">{{
+                                        getDayNameSpanish(listDates[2].month, listDates[2].day, listDates[2].year) }}
+                                    </h1>
+                                    <h1 class="mb-5">{{ listDates[2].day }}</h1>
+                                    <div v-for="(data, index) in listDates[1].hours" :key="index"
+                                        class="border rounded-xl px-2 py-4 mb-2">
+                                        <h1>{{ data }}</h1>
+                                    </div>
                                 </div>
-                              </div>
                             </div>
-                        
+
                             <!-- Flecha derecha -->
-                            <button class="w-5 h-12 mt-3 flex items-center justify-center text-gray-600 hover:text-gray-900 cursor-pointer ">
+                            <button
+                                class="w-5 h-12 mt-3 flex items-center justify-center text-gray-600 hover:text-gray-900 cursor-pointer "
+                                @click="nextdate">
                                 <img src="@/assets/svg/arrow.svg" alt="Icono"
                                     class="w-4 h-4 transition-transform ml-auto">
                             </button>
                         </div>
                         <h1 class="text-center font-bold text-[var(--blue-1)]">ver más horarios</h1>
                         <div class="w-full">
-                        <div class="flex gap-2 items-center bg-[var(--blue-1)] p-2 w-fit text-white rounded-xl shadow cursor-pointer m-auto my-8">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>
-                            <h1>Agendar cita</h1>
+                            <div
+                                class="flex gap-2 items-center bg-[var(--blue-1)] py-2 px-8 mb-10  w-fit text-white rounded-xl shadow cursor-pointer m-auto my-8">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="#ffffff">
+                                    <path
+                                        d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" />
+                                </svg>
+                                <h1 class="font-bold">Agendar cita</h1>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                   
+
                 </div>
             </div>
 
