@@ -280,7 +280,7 @@ export default {
         class="fixed inset-0 z-50 bg-black/50    flex justify-center items-center sm:flex md:flex lg:hidden"
         @click.self="setPanelMovile('schedule')">
         <!-- Contenedor del modal -->
-        <div class="bg-white w-[80%] max-w-[80% min-h-[80%] max-h-[80%]  rounded-2xl shadow-lg flex flex-col">
+        <div class="bg-white w-[90%] max-w-[90%] min-h-[80%] max-h-[80%]  rounded-2xl shadow-lg flex flex-col">
             <!-- Encabezado -->
             <div class="w-full">
                 <div class="w-full flex items-center px-2">
