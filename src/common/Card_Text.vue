@@ -45,10 +45,10 @@ watch(isVisible, (newVal) => {
 </script>
 
 <template>
-  <div class="flex justify-center items-center h-full">
+  <div class="flex  w-full md:w-auto justify-center items-center h-full">
     <div
       id="animated-number"
-      class="max-w-[350px] md:w-[250px] lg:w-md rounded-3xl opacity-0 transition-opacity duration-700 flex flex-col justify-center items-center text-center p-6"
+      class=" w-full  md:max-w-[350px] md:w-[250px] lg:w-md rounded-3xl opacity-0 transition-opacity duration-700 flex flex-col justify-center items-center text-center p-6"
       :class="isVisible ? 'opacity-100' : ''"
       style="background-color: var(--bluegray-1);  "
     >

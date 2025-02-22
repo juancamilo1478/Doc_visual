@@ -9,12 +9,12 @@ const items = ["Gracias a las nuevas lentes trifocales de Zeiss, puedo ver el mu
 
 <template>
     <div class="w-screen py-20 " :style="{ background: 'linear-gradient(to right, white, #c4d1e4)' }">
-        <h1 class="font-poppins w-full text-center pt-9 text-2xl font-light" style="color: var(--blue-1);">
+        <h1 class="font-poppins w-[90%] m-auto text-center pt-9 text-2xl font-light" style="color: var(--blue-1);">
             Historias de nuestros pacientes
         </h1>
 
-        <div class="w-full flex justify-center">
-            <h2 class="font-poppins lg:w-1/2   text-center py-4 text-xl md:text-2xl font-bold">
+        <div class="w-[90%] m-auto flex justify-center">
+            <h2 class="font-poppins lg:w-1/2   text-center py-4 text-base md:text-2xl font-bold">
                 Estos testimonios nos reafirman que estamos cuidando de la salud visual tanto de niños como de adultos.
             </h2>
         </div>
@@ -29,9 +29,9 @@ const items = ["Gracias a las nuevas lentes trifocales de Zeiss, puedo ver el mu
                     <div class="w-full flex justify-center items-center">
                         <div class="p-6 py-8 bg-white lg:text-lg rounded-3xl  font-poppins w-sm  m-auto  text-center   mx-5 "
                             style="border: 2px solid var(--gray-1);">
-                            <span class="text-2xl" style="color: var(--blue-1);">"</span>
+                            <span class="text-sm md:text-2xl" style="color: var(--blue-1);">"</span>
                             {{ item }}
-                            <span class="text-2xl md:text-2xl" style="color: var(--blue-1);">"</span>
+                            <span class="text-sm md:text-2xl" style="color: var(--blue-1);">"</span>
                         </div>
                     </div>
                 </SwiperSlide>

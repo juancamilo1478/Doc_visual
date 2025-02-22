@@ -18,7 +18,7 @@ export default{
 
                 <div class="px-6">
                     <a href="#">
-                        <img class="w-auto h-24" src="@/assets/images/LogoPng.png" alt="">
+                        <img class="w-auto  h-14 md:h-24  " src="@/assets/images/LogoPng.png" alt="">
                     </a>
 
                     <p class="max-w-sm mt-2   " style="color: var(--blue-1);">+ 57 300 4555666</p>
@@ -31,19 +31,19 @@ export default{
                     </div>
 
                     <a href="#"
-                        class="block mt-5 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-5 text-xs md:text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Optómetras
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3  text-xs md:text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Oftalmólogos
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-xs md:text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Ópticas
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-xs md:text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         IPS
                     </a>
                 </div>
@@ -57,19 +57,19 @@ export default{
                     </div>
 
                     <a href="#"
-                        class="block mt-5 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-5 text-xs md:text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Recursos
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-xs md:text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Agende su cita
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-xs md:text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Profesionales
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-xs md:text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Pacientes
                     </a>
 
@@ -81,11 +81,11 @@ export default{
                     </div>
 
                     <a href="#"
-                        class="block mt-5 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-5 text-xs md:text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Blog
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-xs md:text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Preguntas frecuentes
                     </a>
 
@@ -98,15 +98,15 @@ export default{
                     </div>
 
                     <a href="#"
-                        class="block mt-5 text-sm font-poppins text-black   duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-5 text-xs md:text-sm font-poppins text-black   duration-700  hover:text-gray-400  hover:underline">
                         Legal
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-xs md:text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Habla con soporte
                     </a>
                     <a href="#"
-                        class="block mt-3 text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
+                        class="block mt-3 text-xs md:text-sm font-poppins text-black duration-700  hover:text-gray-400  hover:underline">
                         Iniciar sesión Registrarme
                     </a>
 

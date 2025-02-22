@@ -18,11 +18,11 @@ export default defineComponent({
 
 </script>
 <template>
-    <div class="w-screen backdrop:text-amber-200">
-        <div class="w-full py-10">
-            <h1 class="w-full text-center font-poppins font-bold text-3xl " style="color: var(--blue-1);">Hacemos
+    <div class="w-screen  ">  
+        <div class="w-[90%] md:container m-auto  py-10">
+            <h1 class="w-full text-center font-poppins font-bold text-xl md:text-3xl " style="color: var(--blue-1);">Hacemos
                 visibles a los expertos</h1>
-            <div class="container m-auto flex flex-wrap justify-center md:justify-between gap-8 mt-20">
+            <div class="w-full m-auto flex flex-wrap justify-center md:justify-between gap-8 mt-10 md:mt-20">
 
                 <CardOption 
                 :image="OptometristaSosteniendo" 

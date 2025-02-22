@@ -10,8 +10,8 @@ export default {
 </script>
 
 <template>
-    <div class="w-full">
-        <h1 class="w-full   px-10 my-10 text-center font-poppins  font-light  text-2xl md:text-2xl"
+    <div class="w-[90%] container m-auto">
+        <h1 class="w-full   px-10 my-10 text-center font-poppins  font-light  text-xl md:text-2xl"
             style="color: var(--blue-1);">Cifras de los pacientes que han
             creido en nosotros</h1>
         <div class="flex flex-wrap justify-center gap-8   px-5 md:px-0">
