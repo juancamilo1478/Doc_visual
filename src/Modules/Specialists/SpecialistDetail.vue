@@ -299,10 +299,10 @@ export default {
                         class="w-[100%]  ml-auto   min-h-[60vh]   bg-white rounded-2xl  font-poppins text-sm sticky top-5">
                         <h1 class="font-poppins font-bold m-6">{{ `Agendar tu cita con ${specialist?.name?.split(' ')[0]}` }}</h1>
                         <h2 class="font-poppins text-base mx-6">Servicio</h2>
-                        <select v-model="service" id="specialist" class="border p-2 w-[80%] rounded-xl mx-6 mt-2 mb-7 ">
+                        <select v-model="service" id="specialist" class="border p-2 w-[80%] rounded-xl mx-6 mt-2 mb-7  text-xs">
                             <option disabled :value="null" class=" ">Selecciona un servicio</option>
                             <option v-for="(data, index) in specialist?.servicesCost" :key="index" :value="data"
-                                class="mx-6 ">
+                                class="  ">
                                 {{ data.nameService }} ${{ data.price }}
                             </option>
                         </select>
@@ -318,8 +318,8 @@ export default {
                             </button>
 
                             <!-- Grid de 3 columnas -->
-                            <div class="w-full grid grid-cols-3 gap-4 ">
-                                <div class="  text-black p-4 rounded-lg text-center">
+                            <div class="w-full grid grid-cols-3 gap-0 md:gap-4 ">
+                                <div class="  text-black p-4 rounded-lg text-center   sm:text-xs">
                                     <h1 class="text-[var(--blue-1)] pb-2 font-semibold"
                                         v-if="!isToday(listDates[0].day, listDates[0].month, listDates[0].year, currentDay, currentMonth, currentYear)">
                                         {{ getDayNameSpanish(listDates[0].month, listDates[0].day, listDates[0].year) }}
@@ -335,7 +335,7 @@ export default {
                                         @click="selectdata(listDates[0].day, listDates[0].month, listDates[0].year,data.hour,data.minute)"
                                         v-if="listDates[0].isValid"
                                         :class="{ 'bg-[var(--blue-1)] text-white border-none': isData(listDates[0].day,listDates[0].month,listDates[0].year,data.hour,data.minute)   }"
-                                        class="border rounded-xl px-2 py-4 mb-2 cursor-pointer">
+                                        class="border rounded-xl px-0 md:px-2 py-4 mb-2 cursor-pointer">
                                         <h1>{{ getTimeString(data.hour, data.minute) }}</h1>
                                     </div>
                                 </div>
@@ -353,7 +353,7 @@ export default {
                                     <div v-for="(data, index) in listDates[1].hours" :key="index"
                                         @click="selectdata(listDates[1].day, listDates[1].month, listDates[1].year,data.hour,data.minute)"
                                         v-if="listDates[1].isValid" :class="{ 'bg-[var(--blue-1)] text-white border-none': isData(listDates[1].day,listDates[1].month,listDates[1].year,data.hour,data.minute)   }"
-                                        class="border rounded-xl px-2 py-4 mb-2 cursor-pointer">
+                                        class="border rounded-xl px-0 md:px-2 py-4 mb-2 cursor-pointer">
                                         <h1>{{ getTimeString(data.hour, data.minute) }}</h1>
                                     </div>
                                 </div>
@@ -369,7 +369,7 @@ export default {
                                     <div v-for="(data, index) in listDates[2].hours" :key="index"
                                         @click="selectdata(listDates[2].day, listDates[2].month, listDates[2].year,data.hour,data.minute)"
                                         v-if="listDates[2].isValid"  :class="{ 'bg-[var(--blue-1)] text-white border-none': isData(listDates[2].day,listDates[2].month,listDates[2].year,data.hour,data.minute)   }"
-                                        class="border rounded-xl px-2 py-4 mb-2 cursor-pointer">
+                                        class="border rounded-xl px-0 md:px-2 py-4 mb-2 cursor-pointer">
                                         <h1>{{ getTimeString(data.hour, data.minute) }}</h1>
                                     </div>
                                 </div>
