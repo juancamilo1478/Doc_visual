@@ -265,7 +265,7 @@ export default {
     <div class="w-full bg-gradient-to-r from-gray-100 to-gray-50">
         <Navbar />
 
-        <button v-if="movilepanel.schedule" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 lg:hidden  bg-[var(--blue-1)] flex justify-center gap-2 text-white px-6 py-3 rounded container cursor-pointer" @click="setPanelMovile('schedule')">
+        <button v-if="!movilepanel.schedule" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 lg:hidden  bg-[var(--blue-1)] flex justify-center gap-2 text-white px-6 py-3 rounded container cursor-pointer" @click="setPanelMovile('schedule')">
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
             width="24px" fill="#ffffff">
             <path
@@ -274,8 +274,6 @@ export default {
         <h1 class="font-bold">Agendar cita</h1>
         </button>
         <!-- movile shedule -->
-
-
         <div v-else
         class="fixed inset-0 z-50 bg-black/50    flex justify-center items-center sm:flex md:flex lg:hidden"
         @click.self="setPanelMovile('schedule')">
@@ -411,17 +409,17 @@ export default {
 
         <!-- --------------------- -->
 
-        <div class="container m-auto">
+        <div class="w-[90%] md:container  m-auto">
             <div class="w-full border border-gray-300 my-8 rounded-4xl flex justify-center items-center bg-white">
-                <div class="flex space-x-6 items-center">
+                <div class="flex space-x-6 items-center px-10 md:px-0">
                     <div
-                        class="w-40 h-40 rounded-full  my-7 border border-white shadow-[5px_0px_0px_rgba(59,130,246,1)]  overflow-hidden">
+                        class="w-20   md:w-40  h-20 md:h-40 rounded-full  my-7 border border-white shadow-[5px_0px_0px_rgba(59,130,246,1)]  overflow-hidden">
                         <img :src="specialist?.perfilPhoto" alt="Avatar" class="w-full h-full object-cover">
                     </div>
-                    <div>
-                        <p class="mt-4 text-3xl font-semibold  font-poppins">{{ specialist?.name }}</p>
+                    <div class="w-[70%]">
+                        <p class="mt-4 text-xl md:text-3xl font-semibold  font-poppins">{{ specialist?.name }}</p>
                         <p class="  text-base font-normal   font-poppins ">{{ specialist?.title }}</p>
-                        <div class="flex mt-4 font-poppins text-base">
+                        <div class="flex mt-4 font-poppins text-sm md:text-base">
                             <p>{{ `Experiencia: ` }}<span class="font-bold"> {{ specialist?.expetience }} años </span>
                             </p>
                             <div class="flex ml-1">
@@ -460,7 +458,7 @@ export default {
             <!-- sobre mi -->
             <div class="w-full lg:flex">
                 <div class="w-[100%]  m-auto  lg:w-1/2   ">
-                    <div class="w-full rounded-2xl border border-gray-300 bg-white font-poppins text-base">
+                    <div class="w-full rounded-2xl border border-gray-300 bg-white font-poppins text-sm md:text-base">
                         <div class="w-full p-8 ">
                             <h1 class="font-bold">Sobre mí</h1>
                             <p class="text-sm mt-6">
