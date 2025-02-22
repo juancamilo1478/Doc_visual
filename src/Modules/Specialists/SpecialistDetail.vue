@@ -245,7 +245,9 @@ export default {
             }
         },
 
-
+        setPanelMovile(name: keyof typeof this.movilepanel) {
+            this.movilepanel[name] = !this.movilepanel[name];
+        },
 
         nextdate() {
             if (this.exploreday != null) {
@@ -262,6 +264,153 @@ export default {
 <template>
     <div class="w-full bg-gradient-to-r from-gray-100 to-gray-50">
         <Navbar />
+
+        <button v-if="movilepanel.schedule" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 lg:hidden  bg-[var(--blue-1)] flex justify-center gap-2 text-white px-6 py-3 rounded container cursor-pointer" @click="setPanelMovile('schedule')">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+            width="24px" fill="#ffffff">
+            <path
+                d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" />
+        </svg>
+        <h1 class="font-bold">Agendar cita</h1>
+        </button>
+        <!-- movile shedule -->
+
+
+        <div v-else
+        class="fixed inset-0 z-50 bg-black/50    flex justify-center items-center sm:flex md:flex lg:hidden"
+        @click.self="setPanelMovile('schedule')">
+        <!-- Contenedor del modal -->
+        <div class="bg-white w-[80%] max-w-[80% min-h-[80%] max-h-[80%]  rounded-2xl shadow-lg flex flex-col">
+            <!-- Encabezado -->
+            <div class="w-full">
+                <div class="w-full flex items-center px-2">
+                    <button @click="setPanelMovile('schedule')"
+                        class="p-2 text-lg font-poppins font-bold cursor-pointer">X</button>
+                    <h3 class="flex-1 text-center font-poppins">Servicio</h3>
+                     
+                </div>
+                <hr class="text-gray-200" />
+            </div>
+
+            <!-- Contenido desplazable -->
+            <div class="flex-1 overflow-auto p-4">
+                
+                <div
+                        class="w-[100%]  ml-auto   min-h-[60vh]   bg-white rounded-2xl  font-poppins text-sm sticky top-5">
+                        <h1 class="font-poppins font-bold m-6">{{ `Agendar tu cita con ${specialist?.name?.split(' ')[0]}` }}</h1>
+                        <h2 class="font-poppins text-base mx-6">Servicio</h2>
+                        <select v-model="service" id="specialist" class="border p-2 w-[80%] rounded-xl mx-6 mt-2 mb-7 ">
+                            <option disabled :value="null" class=" ">Selecciona un servicio</option>
+                            <option v-for="(data, index) in specialist?.servicesCost" :key="index" :value="data"
+                                class="mx-6 ">
+                                {{ data.nameService }} ${{ data.price }}
+                            </option>
+                        </select>
+                        <h1 class="mx-8 font-semibold text-base"> {{ monthName }}{{ currentYear }}</h1>
+                        <div class="flex   justify-between p-4  px-8"
+                            v-if="listDates.length && currentDay != null && currentMonth != null && currentYear != null">
+                            <!-- Flecha izquierda -->
+                            <button @click="getListDatesBackwards"
+                                class="w-5 h-12 mt-3 flex items-center justify-center text-gray-600 hover:text-gray-900  cursor-pointer"
+                                v-if="!isToday(listDates[0].day, listDates[0].month, listDates[0].year, currentDay, currentMonth, currentYear)">
+                                <img src="@/assets/svg/arrow.svg" alt="Icono"
+                                    class="w-4 h-4 transition-transform ml-auto rotate-180">
+                            </button>
+
+                            <!-- Grid de 3 columnas -->
+                            <div class="w-full grid grid-cols-3 gap-4 ">
+                                <div class="  text-black p-4 rounded-lg text-center">
+                                    <h1 class="text-[var(--blue-1)] pb-2 font-semibold"
+                                        v-if="!isToday(listDates[0].day, listDates[0].month, listDates[0].year, currentDay, currentMonth, currentYear)">
+                                        {{ getDayNameSpanish(listDates[0].month, listDates[0].day, listDates[0].year) }}
+                                    </h1>
+                                    <h1 class="  pb-2 font-semibold"
+                                        :class="{ 'text-[var(--blue-1)]': listDates[0].isValid, 'text-[var(--blue-1)]/50': !listDates[0].isValid }"
+                                        v-else>Hoy</h1>
+
+                                    <h1 class="mb-5"
+                                        :class="{ 'text-black': listDates[0].isValid, 'text-black/50': !listDates[0].isValid }">
+                                        {{ listDates[0].day }}</h1>
+                                    <div v-for="(data, index) in listDates[0].hours" :key="index"
+                                        @click="selectdata(listDates[0].day, listDates[0].month, listDates[0].year,data.hour,data.minute)"
+                                        v-if="listDates[0].isValid"
+                                        :class="{ 'bg-[var(--blue-1)] text-white border-none': isData(listDates[0].day,listDates[0].month,listDates[0].year,data.hour,data.minute)   }"
+                                        class="border rounded-xl px-2 py-4 mb-2 cursor-pointer">
+                                        <h1>{{ getTimeString(data.hour, data.minute) }}</h1>
+                                    </div>
+                                </div>
+
+                                <div class="  text-black p-4 rounded-lg text-center">
+                                    <h1 class="  pb-2 font-semibold"
+                                        :class="{ 'text-[var(--blue-1)]': listDates[1].isValid, 'text-[var(--blue-1)]/50': !listDates[1].isValid }">
+                                        {{
+                                            getDayNameSpanish(listDates[1].month, listDates[1].day, listDates[1].year) }}
+                                    </h1>
+                                    <h1 class="mb-5" :class="{
+                                        'text-black': listDates[1].isValid,
+                                        'text-black/50': !listDates[1].isValid
+                                    }">{{ listDates[1].day }}</h1>
+                                    <div v-for="(data, index) in listDates[1].hours" :key="index"
+                                        @click="selectdata(listDates[1].day, listDates[1].month, listDates[1].year,data.hour,data.minute)"
+                                        v-if="listDates[1].isValid" :class="{ 'bg-[var(--blue-1)] text-white border-none': isData(listDates[1].day,listDates[1].month,listDates[1].year,data.hour,data.minute)   }"
+                                        class="border rounded-xl px-2 py-4 mb-2 cursor-pointer">
+                                        <h1>{{ getTimeString(data.hour, data.minute) }}</h1>
+                                    </div>
+                                </div>
+                                <div class="  text-black p-4 rounded-lg text-center">
+                                    <h1 class="  pb-2 font-semibold"
+                                        :class="{ 'text-[var(--blue-1)]': listDates[2].isValid, 'text-[var(--blue-1)]/50': !listDates[2].isValid }">
+                                        {{
+                                            getDayNameSpanish(listDates[2].month, listDates[2].day, listDates[2].year) }}
+                                    </h1>
+                                    <h1 class="mb-5"
+                                        :class="{ 'text-black': listDates[2].isValid, 'text-black/50': !listDates[2].isValid }">
+                                        {{ listDates[2].day }}</h1>
+                                    <div v-for="(data, index) in listDates[2].hours" :key="index"
+                                        @click="selectdata(listDates[2].day, listDates[2].month, listDates[2].year,data.hour,data.minute)"
+                                        v-if="listDates[2].isValid"  :class="{ 'bg-[var(--blue-1)] text-white border-none': isData(listDates[2].day,listDates[2].month,listDates[2].year,data.hour,data.minute)   }"
+                                        class="border rounded-xl px-2 py-4 mb-2 cursor-pointer">
+                                        <h1>{{ getTimeString(data.hour, data.minute) }}</h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Flecha derecha -->
+                            <button
+                                class="w-5 h-12 mt-3 flex items-center justify-center text-gray-600 hover:text-gray-900 cursor-pointer "
+                                @click="nextdate">
+                                <img src="@/assets/svg/arrow.svg" alt="Icono"
+                                    class="w-4 h-4 transition-transform ml-auto">
+                            </button>
+                        </div>
+                        <h1 class="text-center font-bold text-[var(--blue-1)]">ver más horarios</h1>
+                        
+                    </div>
+
+              
+
+
+
+            </div>
+
+            <!-- Botón fijo en la parte inferior -->
+            <div class="w-full p-4 bg-white shadow-md rounded-2xl">
+                <div
+                class="flex gap-2 items-center bg-[var(--blue-1)] py-2 px-8 mb-10  w-fit text-white rounded-xl shadow cursor-pointer m-auto my-8">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                    width="24px" fill="#ffffff">
+                    <path
+                        d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" />
+                </svg>
+                <h1 class="font-bold">Agendar cita</h1>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- --------------------- -->
+
         <div class="container m-auto">
             <div class="w-full border border-gray-300 my-8 rounded-4xl flex justify-center items-center bg-white">
                 <div class="flex space-x-6 items-center">
@@ -497,7 +646,7 @@ export default {
 
                 </div>
                 <!-- derecho -->
-                <div class="w-[50%] ">
+                <div class="hidden lg:block w-[50%]">
                     <div
                         class="w-[95%]  ml-auto   min-h-[60vh] border border-gray-300 bg-white rounded-2xl  font-poppins text-sm sticky top-5">
                         <h1 class="font-poppins font-bold m-6">{{ `Agendar tu cita con ${specialist?.name?.split(' ')[0]}` }}</h1>
