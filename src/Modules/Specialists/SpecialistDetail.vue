@@ -37,8 +37,10 @@ export default {
                 year: number | 0;
                 isValid: boolean;
                 hours: { hour: number; minute: number }[];
-            }[]
-
+            }[],
+            movilepanel:{
+                schedule:false
+            }
         };
     }, created() {
         this.getSpecialistById();
@@ -307,19 +309,19 @@ export default {
                 </div>
             </div>
             <!-- sobre mi -->
-            <div class="w-full flex">
-                <div class="w-1/2  ">
-                    <div class="w-full rounded-2xl border border-gray-300 bg-white">
-                        <div class="w-full p-8 font-poppins text-base">
+            <div class="w-full lg:flex">
+                <div class="w-[100%]  m-auto  lg:w-1/2   ">
+                    <div class="w-full rounded-2xl border border-gray-300 bg-white font-poppins text-base">
+                        <div class="w-full p-8 ">
                             <h1 class="font-bold">Sobre mí</h1>
-                            <p>
+                            <p class="text-sm mt-6">
                                 {{ specialist?.description }}
                             </p>
-                            <h2 class="mt-8">
+                            <h2 class="mt-8 text-sm">
                                 Especialista en:
                             </h2>
                             <ul class="list-disc pl-5">
-                                <li v-for="(item, index) in specialist?.specialist" :key="index" class="text-base">
+                                <li v-for="(item, index) in specialist?.specialist" :key="index" class="text-sm">
                                     {{ item }}
                                 </li>
                             </ul>
@@ -328,7 +330,7 @@ export default {
                     <div class="w-full rounded-2xl border mt-6 border-gray-300 bg-white">
                         <div class="w-full p-8 font-poppins text-base">
                             <h1 class="font-bold">Consultorio</h1>
-                            <p class="mt-4">
+                            <p class="mt-4 text-sm">
                                 {{ specialist?.direction }}
                             </p>
 
@@ -362,9 +364,9 @@ export default {
                         <div class="w-full p-8 font-poppins text-base">
                             <h1 class="font-bold mb-6">Servicios y precios</h1>
                             <div v-for="(data, index) in specialist?.servicesCost" :key="index"
-                                class="font-poppins text-base font-mono">
+                                class="font-poppins text-sm font-mono">
                                 <p>{{ data.nameService }}</p>
-                                <p class="mb-2">${{ data.price }}</p>
+                                <p class="mb-2 mt-2">${{ data.price }}</p>
                                 <hr class="text-gray-300" />
                             </div>
                         </div>
@@ -378,7 +380,7 @@ export default {
                                 <button class="text-white rounded-2xl p-2 text-"
                                     style="background-color: var(--blue-1);">Añadir tu opinión</button>
                             </div>
-                            <div class="font-poppins text-base font-mono">
+                            <div class="font-poppins text-sm font-mono">
                                 <p>Valoración globa</p>
                                 <div class="flex flex-wrap">
                                     <svg v-for="n in (parseInt(specialist?.point?.toString() || '0', 10))"
@@ -500,8 +502,8 @@ export default {
                         class="w-[95%]  ml-auto   min-h-[60vh] border border-gray-300 bg-white rounded-2xl  font-poppins text-sm sticky top-5">
                         <h1 class="font-poppins font-bold m-6">{{ `Agendar tu cita con ${specialist?.name?.split(' ')[0]}` }}</h1>
                         <h2 class="font-poppins text-base mx-6">Servicio</h2>
-                        <select v-model="service" id="specialist" class="border p-2 rounded-xl mx-6 mt-2 mb-7 ">
-                            <option disabled :value="null" class="mx-6">Selecciona un servicio</option>
+                        <select v-model="service" id="specialist" class="border p-2 w-[80%] rounded-xl mx-6 mt-2 mb-7 ">
+                            <option disabled :value="null" class=" ">Selecciona un servicio</option>
                             <option v-for="(data, index) in specialist?.servicesCost" :key="index" :value="data"
                                 class="mx-6 ">
                                 {{ data.nameService }} ${{ data.price }}
@@ -600,20 +602,8 @@ export default {
 
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
         </div>
         <Footer_Color />
-
-
     </div>
 </template>
 <style>
