@@ -6,7 +6,7 @@
 
 <template>
     <div class="w-screen  bg-gradient-to-r from-gray-100 to-gray-50 font-poppins text-xs lg:text-base min-h-[90dvh] font-poppins ">
-        <div class="py-9  w-xl m-auto">
+        <div class="py-9  w-xl m-auto max-w-[90%]">
             <div class="container m-auto w-xl    overflow-hidden  rounded-2xl">
                 <img src="@/assets/images/doctortesting.jpg" alt="Imagen 1"
                     class="w-full h-auto object-cover object-top    " />
