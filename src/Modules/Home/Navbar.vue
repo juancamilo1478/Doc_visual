@@ -37,7 +37,8 @@
             :style="{ color: currentRoute === '/specialists' ? 'var(--blue-1)' : 'black' }">Salud visual y
             especialistas</a>
           <a
-            class="cursor-pointer px-2 py-1  font-poppins font-semibold text-sm md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Proposito</a>
+            class="cursor-pointer px-2 py-1  font-poppins font-semibold text-sm md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]" @click="goToAbout('purpose')"
+            :style="{ color: currentRoute === '/purpose' ? 'var(--blue-1)' : 'black' }">Proposito</a>
           <a
             class="cursor-pointer px-2 py-1 font-poppins font-semibold text-sm md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Recursos</a>
           <a
@@ -66,7 +67,8 @@
             :style="{ color: currentRoute === '/specialists' ? 'var(--blue-1)' : 'black' }">Salud visual y
             especialistas</a>
           <a
-            class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold   md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Proposito</a>
+            class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold   md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] " @click="goToAbout('purpose')"
+            :style="{ color: currentRoute === '/purpose' ? 'var(--blue-1)' : 'black' }">Proposito</a>
           <a
             class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold  md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Recursos</a>
           <a

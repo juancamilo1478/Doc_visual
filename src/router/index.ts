@@ -6,7 +6,7 @@ import Blog_Detail from '@/Modules/Blogs/Blog_Detail.vue';
 import Auth from '@/views/Auth/Auth.vue';
 import Specialists from '@/views/specialists/Specialists.vue';
 import SpecialistDetail from '@/Modules/Specialists/SpecialistDetail.vue';
-
+import Purpose from '@/views/Purpose/Purpose.vue';
 import Price from '@/views/Price/Price.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +50,10 @@ const router = createRouter({
       path:'/price',
       name:'price',
       component: Price 
+    },{
+      path:'/purpose',
+      name:'purpose',
+      component:Purpose
     }
 
   ],
