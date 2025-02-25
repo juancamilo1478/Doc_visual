@@ -125,7 +125,7 @@ export default{
         </div>
 
     </footer>
-    <FooterColor/>
+    <FooterColor color="#f3f4f6"/>
 
 
 
