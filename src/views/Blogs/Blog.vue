@@ -15,5 +15,5 @@ export default {
 <template>
     <Navbar />
     <Blogs_items />
-    <Footer_Color />
+    <Footer_Color color="#ffffff"/>
 </template>

@@ -1,11 +1,17 @@
 <script setup lang="ts">
+import { defineProps } from "vue";
 
+// Definir las props que recibe el componente
+defineProps<{
+    color: string; // Recibirá un array de colores
+}>();
 </script>
 <template>
     <div class="w-screen">
-        <div class="w-full flex justify-center" style="background-color: var(--gray-2);">
+        <div class="w-full flex justify-center"  :style="{background:color }">
             <div class="container">
-                <p class="py-6 mx-3   font-poppins text-sm md:text-base font-medium" style="color: var(--blue-1); " >2025 DocVisual® Todos los
+                <p class="py-6 mx-3   font-poppins text-sm md:text-base font-medium" style="color: var(--blue-1); ">2025
+                    DocVisual® Todos los
                     derechos reservados</p>
             </div>
 

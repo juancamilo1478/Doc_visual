@@ -31,7 +31,7 @@ const markdownHtml = blogDetail ? marked(blogDetail.text) : '';
         </div>
         
     </div>
-    <Footer_Color/>
+    <Footer_Color color="#ffffff"/>
 </template>
 <style scoped>
 .markdown-body {
