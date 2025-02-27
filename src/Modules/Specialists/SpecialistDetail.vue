@@ -767,22 +767,54 @@ export default {
                         class="w-[95%]  ml-auto   min-h-[60vh] border border-gray-300 bg-white rounded-2xl  font-poppins text-sm sticky top-5">
                         <h1 class="font-poppins font-bold m-6">{{ `Agendar tu cita con ${specialist?.name?.split(' ')[0]}` }}</h1>
                         <h2 class="font-poppins text-base mx-6">Servicio</h2>
-                        <select v-model="service" id="specialist" class="border p-2 w-[80%] rounded-xl mx-6 mt-2 mb-7 ">
-                            <option disabled :value="null" class=" ">Selecciona un servicio</option>
-                            <option v-for="(data, index) in specialist?.servicesCost" :key="index" :value="data"
-                                class="mx-6 ">
-                                {{ data.nameService }} ${{ data.price }}
-                            </option>
-                        </select>
+
+                        <div class="relative w-[80%] mx-6 mb-3">
+                            <!-- Ícono -->
+                            <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[var(--blue-1)]" fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            width="800px" height="800px" viewBox="0 0 45.822 45.822"
+                            xml:space="preserve">
+                       <g>
+                           <path d="M43.271,12.397c-0.721-4.972-5.053-8.721-10.076-8.721c-1.104,0-2,0.896-2,2s0.896,2,2,2c3.05,0,5.681,2.276,6.117,5.295
+                               l1.382,9.535c-1.603-0.972-3.472-1.573-5.478-1.573c-4.806,0-8.869,3.571-10.166,7.571H20.77c-1.299-4-5.361-7.571-10.166-7.571
+                               c-2.005,0-3.875,0.585-5.476,1.556l1.382-9.525c0.437-3.019,3.066-5.291,6.116-5.291c1.104,0,2-0.894,2-1.998s-0.896-1.999-2-1.999
+                               c-5.023,0-9.355,3.749-10.075,8.721c0,0-2.551,13.275-2.551,19.176c0,5.848,4.757,10.571,10.605,10.571
+                               c4.806,0,8.869-3.638,10.166-7.638h4.28c1.299,4,5.36,7.639,10.168,7.639c5.846,0,10.604-4.74,10.604-10.589
+                               C45.821,26.06,43.271,12.397,43.271,12.397z M10.604,38.178c-3.643,0-6.605-2.963-6.605-6.604c0-3.643,2.963-6.605,6.605-6.605
+                               s6.606,2.963,6.606,6.605C17.21,35.215,14.247,38.178,10.604,38.178z M35.219,38.178c-3.644,0-6.605-2.963-6.605-6.604
+                               c0-3.643,2.963-6.605,6.605-6.605c3.641,0,6.604,2.964,6.604,6.605C41.821,35.215,38.858,38.178,35.219,38.178z"/>
+                       </g>
+                       </svg>
+                        
+                          
+                            <!-- Select -->
+                            <select v-model="service" id="specialist" 
+                                    class="border p-2 pl-10 w-full rounded-sm flex appearance-none mt-2">
+                                <option v-for="(data, index) in specialist?.servicesCost" :key="index" :value="data"
+                                        > 
+                                        <option disabled :value="null" class=" ">Selecciona un servicio</option>
+                                        {{ data.nameService }} ${{ data.price }}
+                                </option>
+                            </select>
+                        </div>
+
 
                          
-                        <select v-model="selectpay" id="specialist" class="border p-2 w-[80%] rounded-xl mx-6   mb-7 ">
-                            <!-- <option disabled :value="null" class=" ">Selecciona un servicio</option> -->
-                            <option v-for="(data, index) in specialist?.typeconsultation" :key="index" :value="data"
-                                class="mx-6 ">
-                                {{ data  }}  
-                            </option>
-                        </select>
+
+                         
+                        <div class="relative w-[80%] mx-6 mb-7">
+                            <!-- Ícono -->
+                           
+                        
+                            <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[var(--blue-1)]"  xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px"    fill="currentColor"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M20,6h-4V4c0-1.1-0.9-2-2-2h-4C8.9,2,8,2.9,8,4v2H4C2.9,6,2,6.9,2,8v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V8 C22,6.9,21.1,6,20,6z M10,4h4v2h-4V4z M20,20H4V8h16V20z"/><polygon points="13,10 11,10 11,13 8,13 8,15 11,15 11,18 13,18 13,15 16,15 16,13 13,13"/></g></g></svg>
+                            <!-- Select -->
+                            <select v-model="selectpay" id="specialist" 
+                                    class="border p-2 pl-10 w-full rounded-sm flex appearance-none">
+                                <option v-for="(data, index) in specialist?.typeconsultation" 
+                                        :key="index" :value="data">
+                                    {{ data }}
+                                </option>
+                            </select>
+                        </div>
                         
 
                         <h1 class="mx-8 font-semibold text-base"> {{ monthName }}{{ currentYear }}</h1>
