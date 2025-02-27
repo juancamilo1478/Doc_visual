@@ -310,6 +310,24 @@ export default {
                                 {{ data.nameService }} ${{ data.price }}
                             </option>
                         </select>
+
+                        <select v-model="service"  
+                        class="border p-2 w-[80%] rounded-xl mx-6 mt-2 mb-7  text-xs">
+                        <option disabled :value="null" class=" ">Selecciona un servicio</option>
+                        <option v-for="(data, index) in specialist?.servicesCost" :key="index" :value="data"
+                            class="  ">
+                            {{ data.nameService }} ${{ data.price }}
+                        </option>
+                        </select>
+                         
+
+
+                        
+
+
+
+
+
                         <h1 class="mx-8 font-semibold text-base"> {{ monthName }}{{ currentYear }}</h1>
                         <div class="flex   justify-between p-4  px-8"
                             v-if="listDates.length && currentDay != null && currentMonth != null && currentYear != null">
@@ -499,13 +517,13 @@ export default {
                     </ul>
                 </div>
 
-                <div class="flex  gap-6 items-center px-10 md:px-0 my-7  ">
-                    <div    
-                        class=" border border-white shadow-[2px_0px_0px_3px_var(--blue-1)] w-[150px] h-[150px] rounded-full   overflow-hidden">
+                <div class="flex w-fit gap-6 items-center px-8 md:px-0 my-7  ">
+                    <div     
+                        class="w-[90px]  h-[80px] border border-white shadow-[2px_0px_0px_3px_var(--blue-1)] md:w-[150px] md:h-[150px] rounded-full   overflow-hidden">
                         <img :src="specialist?.perfilPhoto" alt="Avatar" class="  object-cover">
                     </div>
 
-                    <div class="w-[50%]  lg:w-[70%] ">
+                    <div class="w-fit ">
                         <p class="mt-4 text-xl md:text-3xl font-semibold  font-poppins">{{ specialist?.name }}</p>
                         <p class="  text-base font-normal   font-poppins ">{{ specialist?.title }}</p>
                         <div class=" flex mt-4 font-poppins text-sm md:text-base">

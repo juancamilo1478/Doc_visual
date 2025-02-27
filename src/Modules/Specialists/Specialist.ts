@@ -6,6 +6,7 @@ export interface Specialist {
     perfilPhoto: string;
     expetience: number;
     point: number;
+    typeconsultation:string[];
     services: string[];
     description: string;
     location: string;
