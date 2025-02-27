@@ -9,12 +9,15 @@ export interface Specialist {
     typeconsultation:string[];
     services: string[];
     description: string;
-    location: string;
     specialist: string[];
-    latitude: number;
-    longitude: number;
-    direction:string;
     gallery:string[]; 
+    locals: {  
+        name: string;
+        longitude: number;
+        latitude: number;
+        direction: string;
+        departament: string;
+    }[];
     servicesCost:{ nameService: string; price: number }[];
     social:{facebook:string,instagram:string,linkedin:string,youtube:string};
     opinions:{text:string,score:number,user:string,fecha:string,lugar:string}[];

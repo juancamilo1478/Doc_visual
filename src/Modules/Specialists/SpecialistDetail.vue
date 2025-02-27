@@ -5,7 +5,7 @@ import Navbar from '../Home/Navbar.vue';
 import Footer_Color from '@/common/Footer_Color.vue';
 import { getMonthName, getDayName, isValidDate, getDayNameSpanish } from '@/utils/DateUtils'
 import type { specialists } from './DataFilters/specialist';
-import { strict } from 'assert';
+ 
 export default {
     name: "specialist_detail",
     components: {
@@ -22,12 +22,12 @@ export default {
             panels: {
                 opinionsData: false
             },
-            selectpay: null as strict | null,
+            selectpay: null as string | null,
             currentDay: null as number | null,
             currentMonth: null as number | null,
             currentYear: null as number | null,
             daysInMonth: null as number | null,
-
+            localselect:null as {name:string,longitude:number,latitude:number,direction:string,departament:string} | null,
             selectdate: null as Date | null,
 
             exploreday: null as number | null,
@@ -183,7 +183,7 @@ export default {
                 this.exploreYear = earliest.year;
             }
 
-            console.log(this.listDates);
+           
 
         },
 
@@ -222,7 +222,8 @@ export default {
             // Buscar el especialista en el JSON por ID
             const data = SpecialistData.find(s => s.id === this.id) || null;
             this.specialist = data
-            this.selectpay = data?.typeconsultation[0]
+            this.selectpay = data?.typeconsultation?.[0] ?? '';
+            this.localselect = data?.locals[0] ?? null;
         },
         groupImages() {
             if (this.specialist != null) {
@@ -594,8 +595,9 @@ export default {
                     <div class="w-full rounded-2xl border mt-3 border-gray-300 bg-white">
                         <div class="w-full p-8 font-poppins text-base">
                             <h1 class="font-bold">Consultorio</h1>
+                            <p>{{localselect?.name}}</p>
                             <p class="mt-4 text-sm">
-                                {{ specialist?.direction }}
+                                {{ localselect?.direction }}
                             </p>
 
                         </div>
@@ -768,7 +770,7 @@ export default {
                         <h1 class="font-poppins font-bold m-6">{{ `Agendar tu cita con ${specialist?.name?.split(' ')[0]}` }}</h1>
                         <h2 class="font-poppins text-base mx-6">Servicio</h2>
 
-                        <div class="relative w-[80%] mx-6 mb-3">
+                        <div class="relative w-[90%] m-auto mb-3">
                             <!-- Ícono -->
                             <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[var(--blue-1)]" fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                             width="800px" height="800px" viewBox="0 0 45.822 45.822"
@@ -788,7 +790,7 @@ export default {
                           
                             <!-- Select -->
                             <select v-model="service" id="specialist" 
-                                    class="border p-2 pl-10 w-full rounded-sm flex appearance-none mt-2">
+                                    class="border p-2 pl-10 w-full rounded-xl flex appearance-none mt-2 border-gray-400">
                                 <option v-for="(data, index) in specialist?.servicesCost" :key="index" :value="data"
                                         > 
                                         <option disabled :value="null" class=" ">Selecciona un servicio</option>
@@ -801,14 +803,14 @@ export default {
                          
 
                          
-                        <div class="relative w-[80%] mx-6 mb-7">
+                        <div class="relative w-[90%] m-auto  mb-7">
                             <!-- Ícono -->
                            
                         
                             <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[var(--blue-1)]"  xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px"    fill="currentColor"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M20,6h-4V4c0-1.1-0.9-2-2-2h-4C8.9,2,8,2.9,8,4v2H4C2.9,6,2,6.9,2,8v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V8 C22,6.9,21.1,6,20,6z M10,4h4v2h-4V4z M20,20H4V8h16V20z"/><polygon points="13,10 11,10 11,13 8,13 8,15 11,15 11,18 13,18 13,15 16,15 16,13 13,13"/></g></g></svg>
                             <!-- Select -->
                             <select v-model="selectpay" id="specialist" 
-                                    class="border p-2 pl-10 w-full rounded-sm flex appearance-none">
+                                    class="border p-2 pl-10 w-full rounded-xl flex appearance-none border-gray-400">
                                 <option v-for="(data, index) in specialist?.typeconsultation" 
                                         :key="index" :value="data">
                                     {{ data }}
