@@ -494,16 +494,16 @@ export default {
                     </ul>
                 </div>
 
-                <div class="flex  gap-6 items-center px-10 md:px-0 my-7">
-                    <div
-                        class=" border border-white shadow-[2px_0px_0px_3px_var(--blue-1)] w-[160px] h-[150px] rounded-full   overflow-hidden">
+                <div class="flex  gap-6 items-center px-10 md:px-0 my-7  ">
+                    <div    
+                        class=" border border-white shadow-[2px_0px_0px_3px_var(--blue-1)] w-[150px] h-[150px] rounded-full   overflow-hidden">
                         <img :src="specialist?.perfilPhoto" alt="Avatar" class="  object-cover">
                     </div>
 
-                    <div class="w-[70%]">
+                    <div class="w-[50%] ">
                         <p class="mt-4 text-xl md:text-3xl font-semibold  font-poppins">{{ specialist?.name }}</p>
                         <p class="  text-base font-normal   font-poppins ">{{ specialist?.title }}</p>
-                        <div class="flex mt-4 font-poppins text-sm md:text-base">
+                        <div class=" flex mt-4 font-poppins text-sm md:text-base">
                             <p>{{ `Experiencia: ` }}<span class="font-bold"> {{ specialist?.expetience }} años </span>
                             </p>
                             <div class="flex ml-1">
