@@ -5,6 +5,7 @@ import Navbar from '../Home/Navbar.vue';
 import Footer_Color from '@/common/Footer_Color.vue';
 import { getMonthName, getDayName, isValidDate, getDayNameSpanish } from '@/utils/DateUtils'
 import type { specialists } from './DataFilters/specialist';
+import { strict } from 'assert';
 export default {
     name: "specialist_detail",
     components: {
@@ -21,6 +22,7 @@ export default {
             panels: {
                 opinionsData: false
             },
+            selectpay: null as strict | null,
             currentDay: null as number | null,
             currentMonth: null as number | null,
             currentYear: null as number | null,
@@ -218,7 +220,9 @@ export default {
         },
         getSpecialistById() {
             // Buscar el especialista en el JSON por ID
-            this.specialist = SpecialistData.find(s => s.id === this.id) || null;
+            const data = SpecialistData.find(s => s.id === this.id) || null;
+            this.specialist = data
+            this.selectpay = data?.typeconsultation[0]
         },
         groupImages() {
             if (this.specialist != null) {
@@ -311,14 +315,7 @@ export default {
                             </option>
                         </select>
 
-                        <select v-model="service"  
-                        class="border p-2 w-[80%] rounded-xl mx-6 mt-2 mb-7  text-xs">
-                        <option disabled :value="null" class=" ">Selecciona un servicio</option>
-                        <option v-for="(data, index) in specialist?.servicesCost" :key="index" :value="data"
-                            class="  ">
-                            {{ data.nameService }} ${{ data.price }}
-                        </option>
-                        </select>
+                      
                          
 
 
@@ -777,6 +774,17 @@ export default {
                                 {{ data.nameService }} ${{ data.price }}
                             </option>
                         </select>
+
+                         
+                        <select v-model="selectpay" id="specialist" class="border p-2 w-[80%] rounded-xl mx-6   mb-7 ">
+                            <!-- <option disabled :value="null" class=" ">Selecciona un servicio</option> -->
+                            <option v-for="(data, index) in specialist?.typeconsultation" :key="index" :value="data"
+                                class="mx-6 ">
+                                {{ data  }}  
+                            </option>
+                        </select>
+                        
+
                         <h1 class="mx-8 font-semibold text-base"> {{ monthName }}{{ currentYear }}</h1>
                         <div class="flex   justify-between p-4  px-8"
                             v-if="listDates.length && currentDay != null && currentMonth != null && currentYear != null">
