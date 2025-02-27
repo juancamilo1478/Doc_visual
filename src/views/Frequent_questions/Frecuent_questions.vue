@@ -17,5 +17,5 @@ export default{
     <Navbar/>
     <Header_questions/>
     <Questions/>
-    <Footer_Color />
+    <Footer_Color color="#FFFFFF"/>
 </template>

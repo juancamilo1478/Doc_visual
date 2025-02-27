@@ -1,5 +1,6 @@
 export interface Specialist {
     id: number;
+    web:string;
     name: string;
     title:string;
     perfilPhoto: string;
@@ -14,6 +15,7 @@ export interface Specialist {
     direction:string;
     gallery:string[]; 
     servicesCost:{ nameService: string; price: number }[];
+    social:{facebook:string,instagram:string,linkedin:string,youtube:string};
     opinions:{text:string,score:number,user:string,fecha:string,lugar:string}[];
     // 🔹 Nueva propiedad: Horario del especialista
     schedule: {

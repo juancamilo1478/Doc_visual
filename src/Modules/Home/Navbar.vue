@@ -79,7 +79,7 @@
           <a
             class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold   md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Pacientes</a>
           <a
-            class="text-sm cursor-pointer px-2 py-1 font-poppins   font-semibold  md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Inhouse</a>
+            class="text-sm cursor-pointer px-2 py-1 font-poppins   font-semibold  md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] "  @click="goToAbout('price')" :style="{ color: currentRoute === '/price' ? 'var(--blue-1)' : 'black' }">Inhouse</a>
           <a class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold   md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] "
             @click="goToAbout('blogs')"
             :style="{ color: currentRoute === '/blogs' ? 'var(--blue-1)' : 'black' }">Blog</a>

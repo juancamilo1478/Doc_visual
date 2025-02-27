@@ -8,6 +8,7 @@ import Specialists from '@/views/specialists/Specialists.vue';
 import SpecialistDetail from '@/Modules/Specialists/SpecialistDetail.vue';
 import Purpose from '@/views/Purpose/Purpose.vue';
 import Price from '@/views/Price/Price.vue';
+import panel_user from '@/views/Panel_User/panel_user.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -54,6 +55,10 @@ const router = createRouter({
       path:'/purpose',
       name:'purpose',
       component:Purpose
+    },{
+      path:'/paneluser',
+      name:'paneluser',
+      component:panel_user
     }
 
   ],

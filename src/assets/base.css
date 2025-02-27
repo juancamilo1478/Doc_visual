@@ -1,6 +1,7 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   --blue-1: #5f9fd5;  
+  --grayicon-1:#707176;
   --bluegray-1:#e7f1f9;
   --gray-1: #ececed;
   --gray-2:#f6f6f6;
