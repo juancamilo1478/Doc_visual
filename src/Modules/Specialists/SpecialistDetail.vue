@@ -257,6 +257,10 @@ export default {
             }
 
         },
+        getname(name:string):string{
+            const namearray = name.split(" ");
+            return  `${namearray[0].charAt(0)}. ${namearray[1].charAt(0)}`
+        }
 
     }
 }
@@ -501,7 +505,7 @@ export default {
                         <img :src="specialist?.perfilPhoto" alt="Avatar" class="  object-cover">
                     </div>
 
-                    <div class="w-[50%] ">
+                    <div class="w-[50%]  lg:w-[70%] ">
                         <p class="mt-4 text-xl md:text-3xl font-semibold  font-poppins">{{ specialist?.name }}</p>
                         <p class="  text-base font-normal   font-poppins ">{{ specialist?.title }}</p>
                         <div class=" flex mt-4 font-poppins text-sm md:text-base">
@@ -655,7 +659,7 @@ export default {
                                 <hr class="text-gray-300 my-3" />
                                 <!-- first data opinions -->
                                 <div class="font-poppins">
-                                    <h1 class="font-bold">{{ specialist?.opinions?.length ? specialist.opinions[0].user
+                                    <h1 class="font-bold">{{ specialist?.opinions?.length ? getname( specialist.opinions[0].user) 
                                         : 'Usuario desconocido' }}</h1>
                                     <div class="flex">
                                         <svg v-for="n in (parseInt(specialist?.opinions[0].score.toString() || '0', 10))"
@@ -692,7 +696,7 @@ export default {
 
                                 <div v-for="(data, index) in specialist?.opinions?.slice(1)" :key="index + 1"
                                     class="font-poppins" v-if="panels.opinionsData">
-                                    <h1 class="font-bold">{{ data.user.split(" ")[0].charAt(0) }}. {{ data.user.split(" ")[1].charAt(0)}}.</h1>
+                                    <h1 class="font-bold">{{ getname(data.user)}} </h1>
                                     <div class="flex">
                                         <svg v-for="n in (parseInt(data.score?.toString() || '0', 10))"
                                             class="ml-1 h-3 w-3 text-amber-200" viewBox="0 0 32 32" version="1.1"
