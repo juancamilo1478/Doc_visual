@@ -170,7 +170,7 @@ export default {
                 <hr class="w-full  my-3" />
 
 
-                <div class="min-h-64 bg-gray-300 flex items-center justify-center relative p-4 rounded-lg">
+                <div class="min-h-64 bg-gray-200 flex items-center justify-center relative p-4 rounded-lg">
                     <!-- Si no hay imágenes, muestra el icono -->
                     <label v-if="images.length === 0"
                         class="flex flex-col items-center justify-center cursor-pointer text-gray-500">
