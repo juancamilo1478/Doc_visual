@@ -103,10 +103,10 @@ export default {
                   class="h-20 transition-all duration-500"
                 >
               
-                <Panel_user_perfil v-if="panelselect === PanelType.PERFIL" />
-                <Panel_user_diarie v-if="panelselect === PanelType.DIARIE" />
-                <Panel_user_notifications v-if="panelselect === PanelType.NOTIFICATIONS" />
-                <Panel_user_client_review v-if="panelselect === PanelType.CLIENT_REVIEW"/>
+                <Panel_user_perfil v-if="panelselect === PanelType.PERFIL" class="max-h-[90vh] overflow-y-auto" />
+                <Panel_user_diarie v-if="panelselect === PanelType.DIARIE"  class="max-h-[90vh] overflow-y-auto" />
+                <Panel_user_notifications v-if="panelselect === PanelType.NOTIFICATIONS" class="max-h-[90vh] overflow-y-auto" />
+                <Panel_user_client_review v-if="panelselect === PanelType.CLIENT_REVIEW" class="max-h-[90vh] overflow-y-auto"/>
             </div>     
               </div>
         </main>
