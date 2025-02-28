@@ -16,7 +16,7 @@ export default{
 
         </div>
         <div class="w-[65%] h-40 bg-amber-400">
-            <h1>hola</h1>
+            <h1> </h1>
         </div>
     </div>
 </template>
