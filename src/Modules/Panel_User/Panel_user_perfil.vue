@@ -18,7 +18,16 @@ export default {
             images: ref<string[]>([]),
             isDragging: ref(false), // Controla el efecto visual al arrastrar
             errorMessage: '' as string,
-
+            services: '',
+            social: {
+                facebook: '',
+                linkedin: '',
+                instagram: '',
+                youtube: ''
+            },
+            web: '',
+            costo: '',
+            agenda: ''
         }
     },
     methods: {
@@ -90,22 +99,21 @@ export default {
     <div class="w-full font font-poppins">
 
 
-       
 
-        <div class="grid grid-cols-1 gap-6   sm:grid-cols-2   py-12 w-[90%] m-auto">
+
+        <div class="grid grid-cols-1 gap-6   sm:grid-cols-2   py-12 w-[90%] m-auto text-xs">
             <div>
-                <label class="text-gray-700 dark:text-gray-200" for="username">Nombre</label>
+                <label class="text-gray-700  " for="username">Nombre</label>
                 <input v-model="name" type="text"
-                    class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                    class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md      focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40   focus:outline-none focus:ring">
             </div>
 
             <div>
-                <label class="text-gray-700 dark:text-gray-200" for="emailAddress">Principales campos de acción</label>
+                <label class="text-gray-700  " for="emailAddress">Principales campos de acción</label>
                 <textarea id="actiontext" v-model="actiontext" rows="4" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md 
-                               dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 
+                                 
                                focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 
-                               dark:focus:border-blue-300 focus:outline-none focus:ring resize-none"
-                    placeholder="Escribe aquí..."></textarea>
+                                 focus:outline-none focus:ring resize-none" placeholder="Escribe aquí..."></textarea>
             </div>
 
 
@@ -119,27 +127,26 @@ export default {
                                    file:bg-blue-50 file:text-blue-700 
                                    hover:file:bg-blue-100">
                 <div v-if="imageUrl">
-                    <img :src="imageUrl" alt="Imagen seleccionada" class="w-32 h-32 rounded-lg shadow-md">
+                    <img :src="imageUrl" alt="Imagen seleccionada" class="w-32 h-auto rounded-lg shadow-md">
                 </div>
 
             </div>
 
             <!-- Vista previa de la imagen -->
             <div>
-                <label class="text-gray-700 dark:text-gray-200" for="emailAddress">Ubicación Consultorio</label>
+                <label class="text-gray-700  " for="emailAddress">Ubicación Consultorio</label>
                 <textarea id="actiontext" v-model="ubicationText" rows="4" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md 
-                               dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 
+                               
                                focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 
-                               dark:focus:border-blue-300 focus:outline-none focus:ring resize-none"
-                    placeholder="Escribe aquí..."></textarea>
+                                focus:outline-none focus:ring resize-none" placeholder="Escribe aquí..."></textarea>
             </div>
 
             <div>
-                <label class="text-gray-700 dark:text-gray-200" for="password">Especialidad</label>
+                <label class="text-gray-700  " for="password">Especialidad</label>
                 <select id="specialist" v-model="selectedSpecialist" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md 
-                               dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 
+                                
                                focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 
-                               dark:focus:border-blue-300 focus:outline-none focus:ring">
+                                focus:outline-none focus:ring">
                     <option value="" disabled>Selecciona una opción</option>
                     <option v-for="specialist in optionsSpecialist" :key="specialist" :value="specialist">
                         {{ specialist }}
@@ -148,20 +155,20 @@ export default {
             </div>
 
             <div>
-                <label class="text-gray-700 dark:text-gray-200" for="emailAddress">Ubicación 2</label>
+                <label class="text-gray-700  " for="emailAddress">Ubicación 2</label>
                 <textarea id="actiontext" v-model="ubicationText2" rows="4" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md 
-                               dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 
+                               
                                focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 
-                               dark:focus:border-blue-300 focus:outline-none focus:ring resize-none"
-                    placeholder="Escribe aquí..."></textarea>
+                               focus:outline-none focus:ring resize-none" placeholder="Escribe aquí..."></textarea>
             </div>
         </div>
-        <div>
+        <div class="text-xs">
 
 
             <!-- Zona de arrastrar y soltar -->
-            <div class="drop-zone w-[95%] m-auto border p-4  rounded-2xl" :class="{ 'drop-active': isDragging }"
-                @dragover.prevent="isDragging = true" @dragleave="isDragging = false" @drop="handleDrop">
+            <div class="drop-zone w-[90%] m-auto border border-gray-300 bg-white  p-4  rounded-2xl"
+                :class="{ 'drop-active': isDragging }" @dragover.prevent="isDragging = true"
+                @dragleave="isDragging = false" @drop="handleDrop">
                 <div class="flex justify-between">
                     <h1>Fotografías <span class="text-gray-400">4 fotografías de máximo 1.100 pixeles</span></h1>
                     <button @click="handleImageUploadmulti"
@@ -195,7 +202,69 @@ export default {
 
             </div>
 
-            <!-- Vista previa de imágenes -->
+            <div class="grid grid-cols-1 gap-6   sm:grid-cols-2   py-12 w-[90%] m-auto">
+                <div>
+                    <label class="text-gray-700  " for="emailAddress">Servicios </label>
+                    <textarea id="actiontext" v-model="services" rows="4" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md 
+                                    
+                                   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 
+                                  focus:outline-none focus:ring resize-none" placeholder="Escribe aquí..."></textarea>
+                </div>
+
+                <div class="w-full">
+                    <label class="text-gray-700  " for="emailAddress">Redes Sociales </label>
+                    <div class="w-full  border border-gray-100 rounded-2xl">
+                        <div class="flex items-center  justify-between p-3 bg-white space-x-3 ">
+                            <h1 class="whitespace-nowrap">Instagram:</h1>
+                            <input v-model="social.instagram" type="text"
+                                class="block min-w-[80%] px-4 py-1 text-gray-700 bg-gray-100 border border-gray-200 focus:border-[var(--blue-1)] focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-white space-x-3">
+                            <h1 class="whitespace-nowrap">Linkedin:</h1>
+                            <input v-model="social.linkedin" type="text"
+                                class="block min-w-[80%] px-4 py-1 text-gray-700 bg-gray-100 border border-gray-200 focus:border-[var(--blue-1)] focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-white space-x-3">
+                            <h1 class="whitespace-nowrap">Facebook:</h1>
+                            <input v-model="social.facebook" type="text"
+                                class="block min-w-[80%] px-4 py-1 text-gray-700 bg-gray-100 border border-gray-200 focus:border-[var(--blue-1)] focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-white space-x-3">
+                            <h1 class="whitespace-nowrap">Youtube:</h1>
+                            <input v-model="social.youtube" type="text"
+                                class="block min-w-[80%] px-4 py-1 text-gray-700 bg-gray-100 border border-gray-200 focus:border-[var(--blue-1)] focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-gray-700  " for="emailAddress">Página web </label>
+                    <textarea id="actiontext" v-model="web" rows="4" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md 
+                                    
+                                   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 
+                                  focus:outline-none focus:ring resize-none" placeholder="Escribe aquí..."></textarea>
+                </div>
+                <div>
+                    <label class="text-gray-700  " for="emailAddress">Costo consulta </label>
+                    <textarea id="actiontext" v-model="costo" rows="4" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md 
+                                    
+                                   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 
+                                  focus:outline-none focus:ring resize-none" placeholder="Escribe aquí..."></textarea>
+                </div>
+
+
+            </div>
+            <div class="w-[90%] m-auto flex">
+                <h1>Horarios de Agenda</h1>
+                <select v-model="agenda"  class="border p-2 w-[30%] rounded-xl mx-6 mt-2 mb-7  text-xs">
+                    <option  value="bogota1">
+                        Bogota 1                         
+                    </option>
+                    <option   value="bogota2">
+                        Bogota 2                      
+                    </option>
+                </select>
+            </div>
 
         </div>
         <div class="flex justify-end mt-6">
