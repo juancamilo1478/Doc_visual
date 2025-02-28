@@ -881,8 +881,8 @@ export default {
 
                             <!-- Select -->
                             <select v-model="localselect" id="specialist"
-                                class="border p-2 pl-10 w-full rounded-xl flex appearance-none border-gray-400">
-                                <option v-for="(data, index) in specialist?.locals" :key="index" :value="data">
+                                class="border p-2 pl-10 w-full rounded-xl flex appearance-none border-gray-400 ">
+                                <option v-for="(data, index) in specialist?.locals" :key="index" :value="data ">
                                     {{ data.name + "\n" + data.direction }}
                                 </option>
                             </select>

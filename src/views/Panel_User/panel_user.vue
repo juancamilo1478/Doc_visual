@@ -17,7 +17,7 @@ enum PanelType {
 export default {
     name: "PanelUser",
     setup() {
-        const isOpen = ref(false);
+        const isOpen = ref(true);
         const panelselect = ref<PanelType>(PanelType.PERFIL);
         const toggleSidebar = () => {
             isOpen.value = !isOpen.value;
@@ -102,6 +102,7 @@ export default {
                   :style="{   width: isOpen ? '80%' :  '100%'}"
                   class="h-20 transition-all duration-500"
                 >
+              
                 <Panel_user_perfil v-if="panelselect === PanelType.PERFIL" />
                 <Panel_user_diarie v-if="panelselect === PanelType.DIARIE" />
                 <Panel_user_notifications v-if="panelselect === PanelType.NOTIFICATIONS" />
