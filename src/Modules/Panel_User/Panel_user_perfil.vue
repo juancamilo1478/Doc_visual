@@ -53,7 +53,7 @@ export default {
                     if (img.width > 1100 || img.height > 1100) {
                         toast.error("La imagen tiene mas de 1100 pixeles", {
                             autoClose: 2000,
-                            
+
                         }); // ToastOptions
 
                         return;
@@ -90,9 +90,9 @@ export default {
     <div class="w-full font font-poppins">
 
 
-        <Toast />
+       
 
-        <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2 p-4 pt-12">
+        <div class="grid grid-cols-1 gap-6   sm:grid-cols-2   py-12 w-[90%] m-auto">
             <div>
                 <label class="text-gray-700 dark:text-gray-200" for="username">Nombre</label>
                 <input v-model="name" type="text"
