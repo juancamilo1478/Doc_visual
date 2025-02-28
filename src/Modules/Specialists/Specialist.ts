@@ -17,6 +17,7 @@ export interface Specialist {
         latitude: number;
         direction: string;
         departament: string;
+        phones:string[];
     }[];
     servicesCost:{ nameService: string; price: number }[];
     social:{facebook:string,instagram:string,linkedin:string,youtube:string};

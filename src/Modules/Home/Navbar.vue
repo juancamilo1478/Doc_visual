@@ -33,7 +33,7 @@
         <div class="flex flex-col items-center justify-center px-2 -mx-4">
 
           <a class="cursor-pointer   py-1 font-poppins font-semibold text-sm md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
-            @click="goToAbout('specialists')"
+            @click="goToAbout('/specialists')"
             :style="{ color: currentRoute === '/specialists' ? 'var(--blue-1)' : 'black' }">Salud visual y
             especialistas</a>
           <a
@@ -51,10 +51,10 @@
           <a
             class="cursor-pointer px-2 py-1 font-poppins font-semibold text-sm md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Inhouse</a>
           <a class="cursor-pointer px-2 py-1 font-poppins font-semibold text-sm md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
-            @click="goToAbout('blogs')"
+            @click="goToAbout('/blogs')"
             :style="{ color: currentRoute === '/blogs' ? 'var(--blue-1)' : 'black' }">Blog</a>
           <a class="cursor-pointer px-2 py-1 font-poppins font-semibold text-sm md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
-            @click="goToAbout('questions')">Preguntas frecuentes</a>
+            @click="goToAbout('/questions')">Preguntas frecuentes</a>
 
         </div>
       </div>
@@ -63,7 +63,7 @@
       <div class="hidden lg:flex items-center justify-between w-full py-4 bg-white">
         <div class="flex w-full max-w-screen-xl mx-auto justify-between px-4">
           <a class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold   md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]  "
-            @click="goToAbout('specialists')"
+            @click="goToAbout('/specialists')"
             :style="{ color: currentRoute === '/specialists' ? 'var(--blue-1)' : 'black' }">Salud visual y
             especialistas</a>
           <a
@@ -81,10 +81,10 @@
           <a
             class="text-sm cursor-pointer px-2 py-1 font-poppins   font-semibold  md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] "  @click="goToAbout('price')" :style="{ color: currentRoute === '/price' ? 'var(--blue-1)' : 'black' }">Inhouse</a>
           <a class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold   md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] "
-            @click="goToAbout('blogs')"
+            @click="goToAbout('/blogs')"
             :style="{ color: currentRoute === '/blogs' ? 'var(--blue-1)' : 'black' }">Blog</a>
           <a class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold   md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
-            @click="goToAbout('questions')"
+            @click="goToAbout('/questions')"
             :style="{ color: currentRoute === '/questions' ? 'var(--blue-1)' : 'black' }">Preguntas frecuentes</a>
 
         </div>
