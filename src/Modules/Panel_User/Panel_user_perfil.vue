@@ -1,6 +1,7 @@
 <script lang="ts">
 import { ref } from "vue";
 import { specialists } from '../Specialists/DataFilters/specialist';
+import { toast } from "vue3-toastify";
 export default {
     name: 'panel_user_perfil',
     data() {
@@ -16,6 +17,8 @@ export default {
             ubication2: '' as string | '',
             images: ref<string[]>([]),
             isDragging: ref(false), // Controla el efecto visual al arrastrar
+            errorMessage: '' as string,
+
         }
     },
     methods: {
@@ -27,8 +30,45 @@ export default {
         },
         handleImageUploadmulti(event: Event) {
             const files = (event.target as HTMLInputElement).files;
-            if (files) {
-                this.processFiles(files);
+            if (!files) return;
+
+
+
+            if (this.images.length >= 4) {
+                toast.error("Solo se aceptan 4 imagenes", {
+                    autoClose: 2000,
+                }); // ToastOptions
+
+
+                return;
+            }
+
+            for (const file of Array.from(files) as File[]) { // Especificamos que es un array de File
+                if (this.images.length >= 4) break; // No permitir más de 4 imágenes
+
+                const img = new Image();
+                img.src = URL.createObjectURL(file);
+
+                img.onload = () => {
+                    if (img.width > 1100 || img.height > 1100) {
+                        toast.error("La imagen tiene mas de 1100 pixeles", {
+                            autoClose: 2000,
+                            
+                        }); // ToastOptions
+
+                        return;
+                    }
+                    this.images.push(img.src);
+                };
+            }
+        },
+
+        processFiles(files: FileList) {
+            for (const file of Array.from(files) as File[]) { // Convertimos a array de tipo File
+                if (file.type.startsWith("image/")) {
+                    const url = URL.createObjectURL(file);
+                    this.images.push(url);
+                }
             }
         },
         handleDrop(event: DragEvent) {
@@ -38,14 +78,7 @@ export default {
                 this.processFiles(event.dataTransfer.files);
             }
         },
-        processFiles(files: FileList) {
-            for (const file of files) {
-                if (file.type.startsWith("image/")) {
-                    const url = URL.createObjectURL(file);
-                    this.images.push(url);
-                }
-            }
-        },
+
 
 
 
@@ -57,7 +90,7 @@ export default {
     <div class="w-full font font-poppins">
 
 
-
+        <Toast />
 
         <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2 p-4 pt-12">
             <div>
@@ -130,8 +163,9 @@ export default {
             <div class="drop-zone w-[95%] m-auto border p-4  rounded-2xl" :class="{ 'drop-active': isDragging }"
                 @dragover.prevent="isDragging = true" @dragleave="isDragging = false" @drop="handleDrop">
                 <div class="flex justify-between">
-                    <h1>Fotografías <span class="text-gray-400">4 fotografías de máximo 1.100 pixeles</span></h1> <button @click="handleImageUploadmulti"
-                        class="bg-[var(--blue-1)] text-white p-1 px-5 rounded-2xl cursor-pointer" >Añadir foto</button>
+                    <h1>Fotografías <span class="text-gray-400">4 fotografías de máximo 1.100 pixeles</span></h1>
+                    <button @click="handleImageUploadmulti"
+                        class="bg-[var(--blue-1)] text-white p-1 px-5 rounded-2xl cursor-pointer">Añadir foto</button>
                 </div>
                 <hr class="w-full  my-3" />
 
@@ -152,7 +186,8 @@ export default {
                     <!-- Galería de imágenes -->
                     <div v-if="images.length > 0" class="gallery flex flex-wrap gap-2 mt-2 w-full">
                         <div v-for="(image, index) in images" :key="index" class="w-[20%] h-auto">
-                            <img :src="image" alt="Imagen seleccionada" class="w-full h-full object-cover rounded-lg shadow-md" />
+                            <img :src="image" alt="Imagen seleccionada"
+                                class="w-full h-full object-cover rounded-lg shadow-md" />
                         </div>
                     </div>
                 </div>
