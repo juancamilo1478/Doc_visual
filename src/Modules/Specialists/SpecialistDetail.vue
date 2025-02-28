@@ -224,7 +224,7 @@ export default {
             this.specialist = data
             this.selectpay = data?.typeconsultation?.[0] ?? '';
             this.localselect = data?.locals[0] ?? null;
-            this.service = data?.servicesCost[0]?? null;
+            this.service = data?.servicesCost[0] ?? null;
         },
         groupImages() {
             if (this.specialist != null) {
@@ -310,9 +310,8 @@ export default {
                         <h2 class="font-poppins text-base mx-6">Servicio</h2>
                         <select v-model="service" id="specialist"
                             class="border p-2 w-[80%] rounded-xl mx-6 mt-2 mb-7  text-xs">
-                            
-                            <option v-for="(data, index) in specialist?.servicesCost" :key="index" :value="data"
-                                >
+
+                            <option v-for="(data, index) in specialist?.servicesCost" :key="index" :value="data">
                                 {{ data.nameService }} ${{ data.price }}
                             </option>
                         </select>
@@ -800,8 +799,8 @@ export default {
                             <select v-model="service" id="specialist"
                                 class="border p-2 pl-10 w-full rounded-xl flex appearance-none mt-2 border-gray-400">
                                 <option v-for="(data, index) in specialist?.servicesCost" :key="index" :value="data">
-                              
-                                {{ data.nameService }} ${{ data.price }}
+
+                                    {{ data.nameService }} ${{ data.price }}
                                 </option>
                             </select>
                         </div>
@@ -884,9 +883,10 @@ export default {
                             <select v-model="localselect" id="specialist"
                                 class="border p-2 pl-10 w-full rounded-xl flex appearance-none border-gray-400">
                                 <option v-for="(data, index) in specialist?.locals" :key="index" :value="data">
-                                    {{ data.name }},{{ data.direction }}
+                                    {{ data.name + "\n" + data.direction }}
                                 </option>
                             </select>
+
                         </div>
 
 
