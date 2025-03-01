@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { specialists } from '../Specialists/DataFilters/specialist';
 import { toast } from "vue3-toastify";
+import { getDayOfWeekName } from "@/utils/DateUtils";
 export default {
     name: 'panel_user_perfil',
     data() {
@@ -27,10 +28,38 @@ export default {
             },
             web: '',
             costo: '',
-            agenda: ''
+            agenda: '',
+            day: 1,
+            times: [{ hour: 8, minutes: 0 }, { hour: 9, minutes: 0 }, { hour: 10, minutes: 0 }, { hour: 11, minutes: 0 }, { hour: 12, minutes: 0 }, { hour: 13, minutes: 0 }, { hour: 14, minutes: 0 }, { hour: 14, minutes: 0 }, { hour: 15, minutes: 0 }, { hour: 16, minutes: 0 }, { hour: 17, minutes: 0 }, { hour: 18, minutes: 0 }, ],
+            timesSelects: [] as { hour: number; minutes: number }[]
         }
     },
     methods: {
+        formatTime(hour: number, minutes: number) {
+            let period = hour >= 12 ? "PM" : "AM";
+            let formattedHour = hour % 12 || 12; // Convierte 0 y 12 en 12
+            let formattedMinutes = minutes.toString().padStart(2, "0"); // Asegura dos dígitos
+
+            return `${formattedHour}:${formattedMinutes} ${period}`;
+        },
+        selectTimes(hour: number, minutes: number) {
+            const data = { hour: hour, minutes: minutes }
+            const index = this.timesSelects.findIndex(
+                t => t.hour === hour && t.minutes === minutes
+            );
+            if (index === -1) {
+                this.timesSelects.push(data); // Si no existe, lo agrega
+            } else {
+                this.timesSelects.splice(index, 1); // Si ya existe, lo elimina
+            }
+        },
+        isSelected(hour: number, minutes: number): boolean {
+            return this.timesSelects.some(t => t.hour === hour && t.minutes === minutes);
+        },
+        getNamethree(number: number) {
+            return getDayOfWeekName(number).slice(0, 3);
+        },
+
         handleImageUpload(event: Event) {
             const file = (event.target as HTMLInputElement).files?.[0];
             if (file) {
@@ -91,7 +120,7 @@ export default {
 
 
 
-    }
+    },
 
 }
 </script>
@@ -213,23 +242,23 @@ export default {
 
                 <div class="w-full">
                     <label class="text-gray-700  " for="emailAddress">Redes Sociales </label>
-                    <div class="w-full  border border-gray-100 rounded-2xl">
-                        <div class="flex items-center  justify-between p-3 bg-white space-x-3 ">
+                    <div class="w-full  border border-gray-100 rounded-2xl bg-white">
+                        <div class="flex items-center  justify-between p-3   space-x-3 ">
                             <h1 class="whitespace-nowrap">Instagram:</h1>
                             <input v-model="social.instagram" type="text"
-                                class="block min-w-[80%] px-4 py-1 text-gray-700 bg-gray-100 border border-gray-200 focus:border-[var(--blue-1)] focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+                                class="block min-w-[80%] px-4 py-1 text-gray-700  border  border-gray-200 bg-gray-100 focus:border-[var(--blue-1)] focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
                         </div>
-                        <div class="flex items-center justify-between p-3 bg-white space-x-3">
+                        <div class="flex items-center justify-between p-3  space-x-3">
                             <h1 class="whitespace-nowrap">Linkedin:</h1>
                             <input v-model="social.linkedin" type="text"
                                 class="block min-w-[80%] px-4 py-1 text-gray-700 bg-gray-100 border border-gray-200 focus:border-[var(--blue-1)] focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
                         </div>
-                        <div class="flex items-center justify-between p-3 bg-white space-x-3">
+                        <div class="flex items-center justify-between p-3   space-x-3">
                             <h1 class="whitespace-nowrap">Facebook:</h1>
                             <input v-model="social.facebook" type="text"
                                 class="block min-w-[80%] px-4 py-1 text-gray-700 bg-gray-100 border border-gray-200 focus:border-[var(--blue-1)] focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
                         </div>
-                        <div class="flex items-center justify-between p-3 bg-white space-x-3">
+                        <div class="flex items-center justify-between p-3   space-x-3">
                             <h1 class="whitespace-nowrap">Youtube:</h1>
                             <input v-model="social.youtube" type="text"
                                 class="block min-w-[80%] px-4 py-1 text-gray-700 bg-gray-100 border border-gray-200 focus:border-[var(--blue-1)] focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
@@ -254,23 +283,42 @@ export default {
 
 
             </div>
-            <div class="w-[90%] m-auto flex">
-                <h1>Horarios de Agenda</h1>
-                <select v-model="agenda"  class="border p-2 w-[30%] rounded-xl mx-6 mt-2 mb-7  text-xs">
-                    <option  value="bogota1">
-                        Bogota 1                         
+            <div class="w-[90%] m-auto flex items-center  ">
+                <h1 class="w-fit whitespace-nowrap text-xl">Horarios de Agenda</h1>
+                <select v-model="agenda" class="border border-gray-200 p-2 w-full rounded-xl mx-6 mt-2 m-auto  text-xs bg-white">
+                    <option value="bogota1">
+                        Bogota 1
                     </option>
-                    <option   value="bogota2">
-                        Bogota 2                      
+                    <option value="bogota2">
+                        Bogota 2
                     </option>
                 </select>
+                <div v-for="num in 7" :key="num" class="px-2 text-xl cursor-pointer  m-auto" @click="day = num" :class="{
+                    'text-[var(--blue-1)]': num === day,
+                    'text-black': num !== day
+                }">
+                    {{ getNamethree(num) }}
+                </div>
+            </div>
+
+
+
+            <div class="w-[90%] m-auto flex flex-wrap justify-between  mt-3">
+                <div v-for="(data, index) in times" :key="index"
+                    class="w-[15%] p-2 py-4 border border-gray-200 mb-3 rounded-2xl cursor-pointer"
+                    @click="selectTimes(data.hour, data.minutes)" :class="{
+                        'bg-[var(--blue-1)] text-white border-blue-500': isSelected(data.hour, data.minutes), // Activo
+                        'text-gray-800 bg-white ': !isSelected(data.hour, data.minutes) // Inactivo
+                    }">
+                    <h1 class="w-full text-center">{{ formatTime(data.hour, data.minutes) }}</h1>
+                </div>
+            </div>
+            <div class=" flex justify-end w-[90%] m-auto">
+                <button class="bg-[var(--blue-1)] py-2 px-8 mx-10 my-8 rounded-xl text-white">Guardar</button>
             </div>
 
         </div>
-        <div class="flex justify-end mt-6">
-            <button
-                class="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
-        </div>
+
 
 
 

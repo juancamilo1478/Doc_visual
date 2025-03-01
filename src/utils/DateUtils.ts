@@ -49,3 +49,14 @@ export function isValidDate(day: number, month: number, year: number): boolean {
         date.getDate() === day
     );
 }
+
+
+export function getDayOfWeekName(dayNumber: number): string {
+    const days = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+
+    if (dayNumber < 1 || dayNumber > 7) {
+        throw new Error("El número de día debe estar entre 1 (Lunes) y 7 (Domingo).");
+    }
+
+    return days[dayNumber - 1];
+}
