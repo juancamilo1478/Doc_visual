@@ -284,7 +284,7 @@ export default {
 
             </div>
             <div class="w-[90%] m-auto flex items-center  ">
-                <h1 class="w-fit whitespace-nowrap text-xl">Horarios de Agenda</h1>
+                <h1 class="w-fit whitespace-nowrap text-base">Horarios de Agenda</h1>
                 <select v-model="agenda" class="border border-gray-200 p-2 w-full rounded-xl mx-6 mt-2 m-auto  text-xs bg-white">
                     <option value="bogota1">
                         Bogota 1
@@ -293,7 +293,7 @@ export default {
                         Bogota 2
                     </option>
                 </select>
-                <div v-for="num in 7" :key="num" class="px-2 text-xl cursor-pointer  m-auto" @click="day = num" :class="{
+                <div v-for="num in 6" :key="num" class="px-2 text-base cursor-pointer  m-auto" @click="day = num" :class="{
                     'text-[var(--blue-1)]': num === day,
                     'text-black': num !== day
                 }">

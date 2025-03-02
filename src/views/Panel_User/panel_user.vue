@@ -38,7 +38,7 @@ export default {
 
 <template>
     <Navbar_panel />
-    <div class="flex  min-h-[90vh] bg-gradient-to-r from-gray-50 to-gray-100 font-poppins">
+    <div class="flex  min-h-[90vh] bg-gradient-to-r from-gray-50 to-gray-100 font-poppins text-base">
         <!-- Sidebar -->
         <aside :class="{
             'translate-x-0': isOpen,
@@ -59,7 +59,7 @@ export default {
                 <ul class="space-y-2">
                     <li class="animate-fade-in" style="animation-delay: 0.1s;">
                         <a  
-                        @click="panelselect = PanelType.PERFIL"   :style="{ fontWeight: panelselect === PanelType.PERFIL? 'bold' : 'normal' }" class="flex items-center p-3 text-white  text-xl  rounded-lg hover:bg-indigo-100    transition-colors duration-300 menu-item-hover">
+                        @click="panelselect = PanelType.PERFIL"   :style="{ fontWeight: panelselect === PanelType.PERFIL? 'bold' : 'normal' }" class="flex items-center p-3 text-white   rounded-lg hover:bg-indigo-100    transition-colors duration-300 menu-item-hover">
                             <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg> -->
@@ -68,19 +68,19 @@ export default {
                     </li>
                     <li class="animate-fade-in" style="animation-delay: 0.1s;">
                         <a @click="panelselect = PanelType.NOTIFICATIONS" :style="{ fontWeight: panelselect === PanelType.NOTIFICATIONS ? 'bold' : 'normal' }"
-                            class="flex items-center p-3 text-white  text-xl rounded-lg hover:bg-indigo-100    transition-colors duration-300 menu-item-hover">
+                            class="flex items-center p-3 text-white  rounded-lg hover:bg-indigo-100    transition-colors duration-300 menu-item-hover">
                             Notificaciones
                         </a>
                     </li>
                     <li class="animate-fade-in" style="animation-delay: 0.1s;">
                         <a  @click="panelselect = PanelType.CLIENT_REVIEW" :style="{ fontWeight: panelselect === PanelType.CLIENT_REVIEW ? 'bold' : 'normal' }"
-                            class="flex items-center p-3 text-white  text-xl  rounded-lg hover:bg-indigo-100    transition-colors duration-300 menu-item-hover">
+                            class="flex items-center p-3 text-white   rounded-lg hover:bg-indigo-100    transition-colors duration-300 menu-item-hover">
                             Clientes Reviews
                         </a>
                     </li>
                     <li class="animate-fade-in" style="animation-delay: 0.1s; ">
                         <a  @click="panelselect = PanelType.DIARIE"  :style="{ fontWeight: panelselect === PanelType.DIARIE ? 'bold' : 'normal' }"
-                            class="flex items-center p-3 text-white   text-xl rounded-lg hover:bg-indigo-100    transition-colors duration-300 menu-item-hover">
+                            class="flex items-center p-3 text-white   rounded-lg hover:bg-indigo-100    transition-colors duration-300 menu-item-hover">
                             Agenda
                         </a>
                     </li>
