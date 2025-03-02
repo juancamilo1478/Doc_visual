@@ -96,7 +96,7 @@ export default {
             if (filteredScores.length === 0) return 0; // Evita división por 0
 
             const sum = filteredScores.reduce((acc, value) => acc + value, 0);
-           
+
             return Math.round(sum / filteredScores.length); // Calcula el promedio y redondea
         },
         getScoreTotal(opinions: Opinion[]): number {
@@ -110,6 +110,12 @@ export default {
             const sum = totalScores.reduce((acc, value) => acc + value, 0);
             console.log(Math.round(sum / totalScores.length))
             return Math.round(sum / totalScores.length);
+        },
+        getScorePersonOpinion(opinion: Opinion): number {
+            if (!opinion || !opinion.score.length) return 0; // Si no hay datos, devuelve 0
+
+            const total = opinion.score.reduce((sum, item) => sum + item.score, 0);
+            return Math.round(total / opinion.score.length);
         },
         getListDates() {
             // Reiniciamos la lista
@@ -697,10 +703,11 @@ export default {
                                 <button class="text-white rounded-2xl  px-1 md:px-2 text-xs md:text-base"
                                     style="background-color: var(--blue-1); ">Añadir tu opinión</button>
                             </div>
-                            <hr class="text-gray-300 my-4 "/>
+                            <hr class="text-gray-300 my-4 " />
                             <div class="flex justify-between">
                                 <div class="font-poppins text-sm font-mono   m-auto ">
-                                    <p><span class="text-center text-[var(--blue-1)] ">{{ specialist?.opinions.length }}</span> opiniones</p>
+                                    <p class="text-center"><span class=" text-[var(--blue-1)] ">{{ specialist?.opinions.length
+                                    }}</span> opiniones</p>
                                     <p class="text-6xl text-center">{{ totalScore }}</p>
                                     <div class="flex flex-wrap">
                                         <svg v-for="n in 5" class="ml-1 w-3 h-3 md:h-5 md:w-5" :class="{
@@ -720,11 +727,11 @@ export default {
                                             </g>
                                         </svg>
                                     </div>
-                                  
+
 
                                 </div>
-                                <div class="  justify-center items-center ps-" >
-                                    
+                                <div class="  justify-center items-center ps-">
+
                                     <div class="flex flex-wrap mb-3 ">
                                         <svg v-for="n in 5" class="ml-1 w-3 h-3 md:h-5 md:w-5" :class="{
                                             'text-amber-400': n <= totalPointType.RECOMMENDATION,
@@ -831,33 +838,29 @@ export default {
                                     <h1 class="font-bold">{{ specialist?.opinions?.length ? getname(
                                         specialist.opinions[0].user)
                                         : 'Usuario desconocido' }}</h1>
-                                    <!-- <div class="flex">
-                                        <svg    v-for="n in (getScoreTotal(specialist?.opinions[0]?.flatMap(opinion => opinion.score) ?? []) || 0)"
-                                            class="ml-1 h-3 w-3 text-amber-200" viewBox="0 0 32 32" version="1.1"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-
-                                            <title>start-favorite</title>
-                                            <desc>Created with Sketch Beta.</desc>
-                                            <defs>
-
-                                            </defs>
-                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none"
-                                                fill-rule="evenodd" sketch:type="MSPage">
-                                                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
-                                                    transform="translate(-154.000000, -881.000000)" fill="#000000">
-                                                    <path fill="#e89f20"
-                                                        d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
-                                                        id="start-favorite" sketch:type="MSShapeGroup">
-
-                                                    </path>
+                                        
+                                    <div class="flex">
+                                        <svg v-for="n in 5" v-if="specialist?.opinions[0]"
+                                            class="ml-1 h-3 w-3 text-amber-200" :class="{
+                                                'text-amber-400': n <= getScorePersonOpinion(specialist?.opinions[0]),
+                                                'text-gray-300': n > getScorePersonOpinion(specialist?.opinions[0])
+                                            }" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                                <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                    fill-rule="evenodd" sketch:type="MSPage">
+                                                    <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
+                                                        transform="translate(-154.000000, -881.000000)" fill="currentColor">
+                                                        <path
+                                                            d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
+                                                            id="start-favorite" sketch:type="MSShapeGroup" />
+                                                    </g>
                                                 </g>
-                                            </g>
                                         </svg>
 
 
-                                    </div> -->
+
+                                    </div>
                                     <p>Localización: {{ specialist?.opinions[0].lugar }}</p>
                                     <p>Localización: {{ specialist?.opinions[0].text }}</p>
                                     <hr class="text-gray-300" v-if="panels.opinionsData" />
@@ -868,29 +871,23 @@ export default {
                                     class="font-poppins" v-if="panels.opinionsData">
                                     <h1 class="font-bold">{{ getname(data.user) }} </h1>
                                     <div class="flex">
-                                        <svg v-for="n in (parseInt(data.score?.toString() || '0', 10))"
-                                            class="ml-1 h-3 w-3 text-amber-200" viewBox="0 0 32 32" version="1.1"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-
-                                            <title>start-favorite</title>
-                                            <desc>Created with Sketch Beta.</desc>
-                                            <defs>
-
-                                            </defs>
-                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none"
-                                                fill-rule="evenodd" sketch:type="MSPage">
-                                                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
-                                                    transform="translate(-154.000000, -881.000000)" fill="#000000">
-                                                    <path fill="#e89f20"
-                                                        d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
-                                                        id="start-favorite" sketch:type="MSShapeGroup">
-
-                                                    </path>
+                                        <svg v-for="n in 5"
+                                            class="ml-1 h-3 w-3 text-amber-200" :class="{
+                                                'text-amber-400': n <= getScorePersonOpinion(data),
+                                                'text-gray-300': n > getScorePersonOpinion(data)
+                                            }" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                                <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                    fill-rule="evenodd" sketch:type="MSPage">
+                                                    <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
+                                                        transform="translate(-154.000000, -881.000000)" fill="currentColor">
+                                                        <path
+                                                            d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
+                                                            id="start-favorite" sketch:type="MSShapeGroup" />
+                                                    </g>
                                                 </g>
-                                            </g>
-                                        </svg>
+                                            </svg>
 
 
                                     </div>
