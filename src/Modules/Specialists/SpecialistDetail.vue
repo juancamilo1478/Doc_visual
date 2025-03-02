@@ -700,7 +700,7 @@ export default {
                         <div class="w-full p-8 font-poppins text-sm md:text-base">
                             <div class="flex flex-wrap justify-between ">
                                 <h1 class="font-bold mb-6 ">Valora tu especialista</h1>
-                                <button class="text-white rounded-2xl  px-1 md:px-2 text-xs md:text-base"
+                                <button class="text-white font-bold rounded-2xl  px-1 md:px-2 text-xs md:text-base"
                                     style="background-color: var(--blue-1); ">Añadir tu opinión</button>
                             </div>
                             <hr class="text-gray-300 my-4 " />
