@@ -1,11 +1,17 @@
 <script lang="ts">
 import SpecialistData from './Mocks/SpecialistDataMock.json'
-import type { Specialist } from './Specialist';
+import type { Specialist, Opinion } from './Specialist';
 import Navbar from '../Home/Navbar.vue';
 import Footer_Color from '@/common/Footer_Color.vue';
 import { getMonthName, getDayName, isValidDate, getDayNameSpanish } from '@/utils/DateUtils'
-import type { specialists } from './DataFilters/specialist';
 
+enum ScoreType {
+    RECOMMENDATION = "RECOMENDATION",
+    TREATMENT = "TREATMENT",
+    PERSONAL = "PERSONAL",
+    WAITING = "WAITING",
+    INSTALLATION = "INTALATION"
+}
 export default {
     name: "specialist_detail",
     components: {
@@ -19,6 +25,13 @@ export default {
             specialist: null as Specialist | null,
             groupedImages: [] as string[][],
             service: null as { nameService: string; price: number } | null,
+            totalPointType: {
+                RECOMMENDATION: 0,
+                TREATMENT: 0,
+                PERSONAL: 0,
+                WAITING: 0,
+                INSTALLATION: 0
+            },
             panels: {
                 opinionsData: false
             },
@@ -33,7 +46,7 @@ export default {
             exploreday: null as number | null,
             exploreMonth: null as number | null,
             exploreYear: null as number | null,
-
+            totalScore: 0,
             listDates: [] as {
                 day: number | 0;
                 month: number | 0;
@@ -71,8 +84,33 @@ export default {
         this.getListDates()
 
     },
+
     methods: {
         getDayNameSpanish,
+        getScore(type: ScoreType, scores: Opinion[]): number {
+            const filteredScores = scores
+                .flatMap(opinion => opinion.score) // Extrae todos los puntajes de cada opinión
+                .filter(score => score.type === type) // Filtra por el tipo solicitado
+                .map(score => score.score); // Obtiene solo los valores numéricos
+
+            if (filteredScores.length === 0) return 0; // Evita división por 0
+
+            const sum = filteredScores.reduce((acc, value) => acc + value, 0);
+           
+            return Math.round(sum / filteredScores.length); // Calcula el promedio y redondea
+        },
+        getScoreTotal(opinions: Opinion[]): number {
+            if (opinions.length === 0) return 0;
+            const totalScores = opinions
+                .flatMap(opinion => opinion.score) // Extrae todos los puntajes
+                .map(score => score.score); // Obtiene solo los valores numéricos
+
+            if (totalScores.length === 0) return 0; // Evita división por 0 si no hay puntajes
+
+            const sum = totalScores.reduce((acc, value) => acc + value, 0);
+            console.log(Math.round(sum / totalScores.length))
+            return Math.round(sum / totalScores.length);
+        },
         getListDates() {
             // Reiniciamos la lista
             this.listDates = [];
@@ -134,8 +172,7 @@ export default {
 
             }
 
-            console.log(this.listDates);
-            console.log(`datos dia ${this.currentDay} mes ${this.currentMonth} año ${this.currentYear}`);
+
         },
         getTimeString(hour: number, minutes: number): string {
             const hourStr = hour.toString().padStart(2, '0');
@@ -225,6 +262,16 @@ export default {
             this.selectpay = data?.typeconsultation?.[0] ?? '';
             this.localselect = data?.locals[0] ?? null;
             this.service = data?.servicesCost[0] ?? null;
+            if (data != null) {
+                this.totalScore = this.getScoreTotal(data?.opinions)
+                this.totalPointType.INSTALLATION = this.getScore(ScoreType.INSTALLATION, data?.opinions)
+                this.totalPointType.PERSONAL = this.getScore(ScoreType.PERSONAL, data?.opinions)
+                this.totalPointType.RECOMMENDATION = this.getScore(ScoreType.RECOMMENDATION, data?.opinions)
+                this.totalPointType.TREATMENT = this.getScore(ScoreType.TREATMENT, data?.opinions)
+                this.totalPointType.WAITING = this.getScore(ScoreType.WAITING, data?.opinions)
+
+            }
+
         },
         groupImages() {
             if (this.specialist != null) {
@@ -650,41 +697,142 @@ export default {
                                 <button class="text-white rounded-2xl  px-1 md:px-2 text-xs md:text-base"
                                     style="background-color: var(--blue-1); ">Añadir tu opinión</button>
                             </div>
-                            <div class="font-poppins text-sm font-mono">
-                                <p>Valoración globa</p>
-                                <div class="flex flex-wrap">
-                                    <svg v-for="n in (parseInt(specialist?.point?.toString() || '0', 10))"
-                                        class="ml-1 w-3 h-3 md:h-5 md:w-5 text-amber-200" viewBox="0 0 32 32"
-                                        version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-
-                                        <title>start-favorite</title>
-                                        <desc>Created with Sketch Beta.</desc>
-                                        <defs>
-
-                                        </defs>
-                                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
-                                            sketch:type="MSPage">
-                                            <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
-                                                transform="translate(-154.000000, -881.000000)" fill="#000000">
-                                                <path fill="#e89f20"
-                                                    d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
-                                                    id="start-favorite" sketch:type="MSShapeGroup">
-
-                                                </path>
+                            <hr class="text-gray-300 my-4 "/>
+                            <div class="flex justify-between">
+                                <div class="font-poppins text-sm font-mono   m-auto ">
+                                    <p><span class="text-center text-[var(--blue-1)] ">{{ specialist?.opinions.length }}</span> opiniones</p>
+                                    <p class="text-6xl text-center">{{ totalScore }}</p>
+                                    <div class="flex flex-wrap">
+                                        <svg v-for="n in 5" class="ml-1 w-3 h-3 md:h-5 md:w-5" :class="{
+                                            'text-amber-400': n <= totalScore,
+                                            'text-gray-300': n > totalScore
+                                        }" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                fill-rule="evenodd" sketch:type="MSPage">
+                                                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
+                                                    transform="translate(-154.000000, -881.000000)" fill="currentColor">
+                                                    <path
+                                                        d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
+                                                        id="start-favorite" sketch:type="MSShapeGroup" />
+                                                </g>
                                             </g>
-                                        </g>
-                                    </svg>
+                                        </svg>
+                                    </div>
+                                  
+
                                 </div>
+                                <div class="  justify-center items-center ps-" >
+                                    
+                                    <div class="flex flex-wrap mb-3 ">
+                                        <svg v-for="n in 5" class="ml-1 w-3 h-3 md:h-5 md:w-5" :class="{
+                                            'text-amber-400': n <= totalPointType.RECOMMENDATION,
+                                            'text-gray-300': n > totalPointType.RECOMMENDATION
+                                        }" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                fill-rule="evenodd" sketch:type="MSPage">
+                                                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
+                                                    transform="translate(-154.000000, -881.000000)" fill="currentColor">
+                                                    <path
+                                                        d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
+                                                        id="start-favorite" sketch:type="MSShapeGroup" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <h1 class="ms-5">¿Recomendarías a esta doctora?</h1>
+                                    </div>
+
+                                    <div class="flex flex-wrap mb-3">
+                                        <svg v-for="n in 5" class="ml-1 w-3 h-3 md:h-5 md:w-5" :class="{
+                                            'text-amber-400': n <= totalPointType.TREATMENT,
+                                            'text-gray-300': n > totalPointType.TREATMENT
+                                        }" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                fill-rule="evenodd" sketch:type="MSPage">
+                                                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
+                                                    transform="translate(-154.000000, -881.000000)" fill="currentColor">
+                                                    <path
+                                                        d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
+                                                        id="start-favorite" sketch:type="MSShapeGroup" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <h1 class="ms-5">Trato del doctor</h1>
+                                    </div>
+                                    <div class="flex flex-wrap mb-3">
+                                        <svg v-for="n in 5" class="ml-1 w-3 h-3 md:h-5 md:w-5" :class="{
+                                            'text-amber-400': n <= totalPointType.PERSONAL,
+                                            'text-gray-300': n > totalPointType.PERSONAL
+                                        }" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                fill-rule="evenodd" sketch:type="MSPage">
+                                                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
+                                                    transform="translate(-154.000000, -881.000000)" fill="currentColor">
+                                                    <path
+                                                        d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
+                                                        id="start-favorite" sketch:type="MSShapeGroup" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <h1 class="ms-5">Trato del personal en consulta</h1>
+                                    </div>
+                                    <div class="flex flex-wrap mb-3">
+                                        <svg v-for="n in 5" class="ml-1 w-3 h-3 md:h-5 md:w-5" :class="{
+                                            'text-amber-400': n <= totalPointType.WAITING,
+                                            'text-gray-300': n > totalPointType.WAITING
+                                        }" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                fill-rule="evenodd" sketch:type="MSPage">
+                                                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
+                                                    transform="translate(-154.000000, -881.000000)" fill="currentColor">
+                                                    <path
+                                                        d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
+                                                        id="start-favorite" sketch:type="MSShapeGroup" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <h1 class="ms-5">Espera en consulta</h1>
+                                    </div>
+                                    <div class="flex flex-wrap mb-3">
+                                        <svg v-for="n in 5" class="ml-1 w-3 h-3 md:h-5 md:w-5" :class="{
+                                            'text-amber-400': n <= totalPointType.INSTALLATION,
+                                            'text-gray-300': n > totalPointType.INSTALLATION
+                                        }" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                fill-rule="evenodd" sketch:type="MSPage">
+                                                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
+                                                    transform="translate(-154.000000, -881.000000)" fill="currentColor">
+                                                    <path
+                                                        d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
+                                                        id="start-favorite" sketch:type="MSShapeGroup" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <h1 class="ms-5">Estado de las instalaciones</h1>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div>
                                 <hr class="text-gray-300 my-3" />
                                 <!-- first data opinions -->
                                 <div class="font-poppins">
                                     <h1 class="font-bold">{{ specialist?.opinions?.length ? getname(
                                         specialist.opinions[0].user)
                                         : 'Usuario desconocido' }}</h1>
-                                    <div class="flex">
-                                        <svg v-for="n in (parseInt(specialist?.opinions[0].score.toString() || '0', 10))"
+                                    <!-- <div class="flex">
+                                        <svg    v-for="n in (getScoreTotal(specialist?.opinions[0]?.flatMap(opinion => opinion.score) ?? []) || 0)"
                                             class="ml-1 h-3 w-3 text-amber-200" viewBox="0 0 32 32" version="1.1"
                                             xmlns="http://www.w3.org/2000/svg"
                                             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -709,7 +857,7 @@ export default {
                                         </svg>
 
 
-                                    </div>
+                                    </div> -->
                                     <p>Localización: {{ specialist?.opinions[0].lugar }}</p>
                                     <p>Localización: {{ specialist?.opinions[0].text }}</p>
                                     <hr class="text-gray-300" v-if="panels.opinionsData" />
@@ -882,7 +1030,7 @@ export default {
                             <!-- Select -->
                             <select v-model="localselect" id="specialist"
                                 class="border p-2 pl-10 w-full rounded-xl flex appearance-none border-gray-400 ">
-                                <option v-for="(data, index) in specialist?.locals" :key="index" :value="data ">
+                                <option v-for="(data, index) in specialist?.locals" :key="index" :value="data">
                                     {{ data.name + "\n" + data.direction }}
                                 </option>
                             </select>
