@@ -359,16 +359,56 @@ export default {
 
                     <div
                         class="w-[100%]  ml-auto   min-h-[60vh]   bg-white rounded-2xl  font-poppins text-sm sticky top-5">
-                        <h1 class="font-poppins font-bold m-6">{{ `Agendar tu cita con ${specialist?.name?.split(' ')[0]}` }}</h1>
-                        <h2 class="font-poppins text-base mx-6">Servicio</h2>
-                        <select v-model="service" id="specialist"
-                            class="border p-2 w-[80%] rounded-xl mx-6 mt-2 mb-7  text-xs">
+                        <div class="relative w-[90%] m-auto mb-3">
+                            <!-- Ícono -->
+                            <img src="@/assets/images/iconconsulta.png"
+                                class="absolute left-3 top-1/2 transform -translate-y-1/2 w-8 h-8 p-1" alt="Icono">
 
-                            <option v-for="(data, index) in specialist?.servicesCost" :key="index" :value="data">
-                                {{ data.nameService }} ${{ data.price }}
-                            </option>
-                        </select>
 
+                            <!-- Select -->
+                            <select v-model="service" id="specialist"
+                                class="border p-2 pl-10 w-full rounded-xl flex appearance-none mt-2 border-gray-400">
+                                <option v-for="(data, index) in specialist?.servicesCost" :key="index" :value="data">
+
+                                    {{ data.nameService }} ${{ data.price }}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="relative w-[90%] m-auto  mb-3">
+                            <!-- Ícono -->
+
+                              <!-- Ícono -->
+                              <img src="@/assets/images/iconconsultorio.png"
+                              class="absolute left-3 top-1/2 transform -translate-y-1/2 w-8 h-8 p-1" alt="Icono">
+
+                            <!-- Select -->
+                            <select v-model="localselect" id="specialist"
+                                class="border p-2 pl-10 w-full rounded-xl flex appearance-none border-gray-400 ">
+                                <option v-for="(data, index) in specialist?.locals" :key="index" :value="data">
+                                    {{ data.name + "\n" + data.direction }}
+                                </option>
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="relative w-[90%] m-auto  mb-7">
+                            <!-- Ícono -->
+
+
+                            <img src="@/assets/images/icopnprepagada.png"
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-8 h-8 p-1" alt="Icono">
+                            <!-- Select -->
+                            <select v-model="selectpay" id="specialist"
+                                class="border p-2 pl-10 w-full rounded-xl flex appearance-none border-gray-400">
+                                <option v-for="(data, index) in specialist?.typeconsultation" :key="index"
+                                    :value="data">
+                                    {{ data }}
+                                </option>
+                            </select>
+                        </div>
 
 
 
@@ -497,8 +537,8 @@ export default {
                             <a style="color: var(--blue-1);" class="group cursor-pointer"
                                 :href="specialist?.social.facebook" target="_blank" rel="noopener noreferrer">
                                 <div
-                                    class="  w-8 h-8 bg-[var(--grayicon-1)] rounded-full flex items-center justify-center  hover:bg-[var(--blue-1)] transition shadow-lg">
-                                    <svg class="  w-5 h-5" fill="#ffffff" version="1.1"
+                                    class="  w-5 h-5 md:w-8 md:h-8 bg-[var(--grayicon-1)] rounded-full flex items-center justify-center  hover:bg-[var(--blue-1)] transition shadow-lg">
+                                    <svg class=" w-3 h-3 md:w-5 md:h-5" fill="#ffffff" version="1.1"
                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                         width="800px" height="800px" viewBox="0 0 512 512" xml:space="preserve">
 
@@ -521,8 +561,8 @@ export default {
                             <a style="color: var(--blue-1);" class="group cursor-pointer"
                                 :href="specialist?.social.instagram" target="_blank" rel="noopener noreferrer">
                                 <div
-                                    class="w-8 h-8 bg-[var(--grayicon-1)] rounded-full flex items-center justify-center  hover:bg-[var(--blue-1)] transition shadow-lg ">
-                                    <svg class="  w-5 h-5" fill="#ffffff" viewBox="0 0 24 24" aria-hidden="true">
+                                    class="w-5 h-5 md:w-8 md:h-8 bg-[var(--grayicon-1)] rounded-full flex items-center justify-center  hover:bg-[var(--blue-1)] transition shadow-lg ">
+                                    <svg class="  w-3 h-3 md:w-5 md:h-5" fill="#ffffff" viewBox="0 0 24 24" aria-hidden="true">
                                         <path fill-rule="evenodd"
                                             d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
                                             clip-rule="evenodd"></path>
@@ -536,8 +576,8 @@ export default {
                             <a style="color: var(--blue-1);" class="group cursor-pointer"
                                 :href="specialist?.social.linkedin" target="_blank" rel="noopener noreferrer">
                                 <div
-                                    class="w-8 h-8 bg-[var(--grayicon-1)] rounded-full flex items-center justify-center  hover:bg-[var(--blue-1)] shadow-lg transition">
-                                    <svg class="w-5 h-5" fill="#ffffff" width="800px" height="800px" viewBox="0 0 32 32"
+                                    class="w-5 h-5 md:w-8 md:h-8 bg-[var(--grayicon-1)] rounded-full flex items-center justify-center  hover:bg-[var(--blue-1)] shadow-lg transition">
+                                    <svg class="w-3 h-3 md:w-5 md:h-5" fill="#ffffff" width="800px" height="800px" viewBox="0 0 32 32"
                                         version="1.1" xmlns="http://www.w3.org/2000/svg">
                                         <title>linkedin</title>
                                         <path
@@ -554,8 +594,8 @@ export default {
                             <a style="color: var(--blue-1);" class="group cursor-pointer"
                                 :href="specialist?.social.youtube" target="_blank" rel="noopener noreferrer">
                                 <div
-                                    class="w-8 h-8 bg-[var(--grayicon-1)] rounded-full flex items-center justify-center shadow-lg hover:bg-[var(--blue-1)] transition">
-                                    <svg class="w-5 h-5" fill="#ffffff" viewBox="0 0 24 24" aria-hidden="true">
+                                    class="w-5 h-5 md:w-8 md:h-8 bg-[var(--grayicon-1)] rounded-full flex items-center justify-center shadow-lg hover:bg-[var(--blue-1)] transition">
+                                    <svg class="w-3 h-3 md:w-5 md:h-5" fill="#ffffff" viewBox="0 0 24 24" aria-hidden="true">
                                         <path fill-rule="evenodd"
                                             d="M10 15.5l6-3.5-6-3.5v7zM22 12s0 4.08-.69 6.02a3.27 3.27 0 01-2.31 2.31C17.08 21 12 21 12 21s-5.08 0-6.98-.67a3.27 3.27 0 01-2.31-2.31C2 16.08 2 12 2 12s0-4.08.69-6.02a3.27 3.27 0 012.31-2.31C6.92 3 12 3 12 3s5.08 0 6.98.67a3.27 3.27 0 012.31 2.31C22 7.92 22 12 22 12z"
                                             clip-rule="evenodd">
@@ -696,20 +736,21 @@ export default {
                     </div>
 
 
-                    <div class="w-full rounded-2xl border mt-3 border-gray-300 bg-white">
-                        <div class="w-full p-8 font-poppins text-sm md:text-base">
+                    <div class="w-full  rounded-2xl  border mt-3 border-gray-300 bg-white">
+                        <div class="w-full p-8 font-poppins text-xs md:text-base">
                             <div class="flex flex-wrap justify-between ">
                                 <h1 class="font-bold mb-6 ">Valora tu especialista</h1>
                                 <button class="text-white font-bold rounded-2xl  px-1 md:px-2 text-xs md:text-base"
                                     style="background-color: var(--blue-1); ">Añadir tu opinión</button>
                             </div>
                             <hr class="text-gray-300 my-4 " />
-                            <div class="flex justify-between">
+                            <div class="flex justify-between gap-2">
                                 <div class="font-poppins text-sm font-mono   m-auto ">
-                                    <p class="text-center"><span class=" text-[var(--blue-1)] ">{{ specialist?.opinions.length
-                                    }}</span> opiniones</p>
-                                    <p class="text-6xl text-center">{{ totalScore }}</p>
-                                    <div class="flex flex-wrap">
+                                    <p class="text-center"><span class=" text-[var(--blue-1)] ">{{
+                                        specialist?.opinions.length
+                                            }}</span> opiniones</p>
+                                    <p class="text-2xl md:text-6xl text-center">{{ totalScore }}</p>
+                                    <div class="flex    ">
                                         <svg v-for="n in 5" class="ml-1 w-3 h-3 md:h-5 md:w-5" :class="{
                                             'text-amber-400': n <= totalScore,
                                             'text-gray-300': n > totalScore
@@ -749,7 +790,7 @@ export default {
                                                 </g>
                                             </g>
                                         </svg>
-                                        <h1 class="ms-5">¿Recomendarías a esta doctora?</h1>
+                                        <h1 class="ms-5 flex-1 break-words">¿Recomendarías a esta doctora?</h1>
                                     </div>
 
                                     <div class="flex flex-wrap mb-3">
@@ -788,7 +829,7 @@ export default {
                                                 </g>
                                             </g>
                                         </svg>
-                                        <h1 class="ms-5">Trato del personal en consulta</h1>
+                                        <h1 class="ms-5 flex-1 break-words">Trato del personal en consulta</h1>
                                     </div>
                                     <div class="flex flex-wrap mb-3">
                                         <svg v-for="n in 5" class="ml-1 w-3 h-3 md:h-5 md:w-5" :class="{
@@ -826,7 +867,7 @@ export default {
                                                 </g>
                                             </g>
                                         </svg>
-                                        <h1 class="ms-5">Estado de las instalaciones</h1>
+                                        <h1 class="ms-5 flex-1 break-words">Estado de las instalaciones</h1>
                                     </div>
 
                                 </div>
@@ -838,24 +879,24 @@ export default {
                                     <h1 class="font-bold">{{ specialist?.opinions?.length ? getname(
                                         specialist.opinions[0].user)
                                         : 'Usuario desconocido' }}</h1>
-                                        
+
                                     <div class="flex">
                                         <svg v-for="n in 5" v-if="specialist?.opinions[0]"
                                             class="ml-1 h-3 w-3 text-amber-200" :class="{
                                                 'text-amber-400': n <= getScorePersonOpinion(specialist?.opinions[0]),
                                                 'text-gray-300': n > getScorePersonOpinion(specialist?.opinions[0])
                                             }" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-                                                <g id="Page-1" stroke="none" stroke-width="1" fill="none"
-                                                    fill-rule="evenodd" sketch:type="MSPage">
-                                                    <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
-                                                        transform="translate(-154.000000, -881.000000)" fill="currentColor">
-                                                        <path
-                                                            d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
-                                                            id="start-favorite" sketch:type="MSShapeGroup" />
-                                                    </g>
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                fill-rule="evenodd" sketch:type="MSPage">
+                                                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
+                                                    transform="translate(-154.000000, -881.000000)" fill="currentColor">
+                                                    <path
+                                                        d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
+                                                        id="start-favorite" sketch:type="MSShapeGroup" />
                                                 </g>
+                                            </g>
                                         </svg>
 
 
@@ -871,23 +912,22 @@ export default {
                                     class="font-poppins" v-if="panels.opinionsData">
                                     <h1 class="font-bold">{{ getname(data.user) }} </h1>
                                     <div class="flex">
-                                        <svg v-for="n in 5"
-                                            class="ml-1 h-3 w-3 text-amber-200" :class="{
-                                                'text-amber-400': n <= getScorePersonOpinion(data),
-                                                'text-gray-300': n > getScorePersonOpinion(data)
-                                            }" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-                                                <g id="Page-1" stroke="none" stroke-width="1" fill="none"
-                                                    fill-rule="evenodd" sketch:type="MSPage">
-                                                    <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
-                                                        transform="translate(-154.000000, -881.000000)" fill="currentColor">
-                                                        <path
-                                                            d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
-                                                            id="start-favorite" sketch:type="MSShapeGroup" />
-                                                    </g>
+                                        <svg v-for="n in 5" class="ml-1 h-3 w-3 text-amber-200" :class="{
+                                            'text-amber-400': n <= getScorePersonOpinion(data),
+                                            'text-gray-300': n > getScorePersonOpinion(data)
+                                        }" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                fill-rule="evenodd" sketch:type="MSPage">
+                                                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
+                                                    transform="translate(-154.000000, -881.000000)" fill="currentColor">
+                                                    <path
+                                                        d="M186,893.244 L174.962,891.56 L170,881 L165.038,891.56 L154,893.244 L161.985,901.42 L160.095,913 L170,907.53 L179.905,913 L178.015,901.42 L186,893.244"
+                                                        id="start-favorite" sketch:type="MSShapeGroup" />
                                                 </g>
-                                            </svg>
+                                            </g>
+                                        </svg>
 
 
                                     </div>
@@ -922,22 +962,8 @@ export default {
 
                         <div class="relative w-[90%] m-auto mb-3">
                             <!-- Ícono -->
-                            <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[var(--blue-1)]"
-                                fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px"
-                                viewBox="0 0 45.822 45.822" xml:space="preserve">
-                                <g>
-                                    <path
-                                        d="M43.271,12.397c-0.721-4.972-5.053-8.721-10.076-8.721c-1.104,0-2,0.896-2,2s0.896,2,2,2c3.05,0,5.681,2.276,6.117,5.295
-                               l1.382,9.535c-1.603-0.972-3.472-1.573-5.478-1.573c-4.806,0-8.869,3.571-10.166,7.571H20.77c-1.299-4-5.361-7.571-10.166-7.571
-                               c-2.005,0-3.875,0.585-5.476,1.556l1.382-9.525c0.437-3.019,3.066-5.291,6.116-5.291c1.104,0,2-0.894,2-1.998s-0.896-1.999-2-1.999
-                               c-5.023,0-9.355,3.749-10.075,8.721c0,0-2.551,13.275-2.551,19.176c0,5.848,4.757,10.571,10.605,10.571
-                               c4.806,0,8.869-3.638,10.166-7.638h4.28c1.299,4,5.36,7.639,10.168,7.639c5.846,0,10.604-4.74,10.604-10.589
-                               C45.821,26.06,43.271,12.397,43.271,12.397z M10.604,38.178c-3.643,0-6.605-2.963-6.605-6.604c0-3.643,2.963-6.605,6.605-6.605
-                               s6.606,2.963,6.606,6.605C17.21,35.215,14.247,38.178,10.604,38.178z M35.219,38.178c-3.644,0-6.605-2.963-6.605-6.604
-                               c0-3.643,2.963-6.605,6.605-6.605c3.641,0,6.604,2.964,6.604,6.605C41.821,35.215,38.858,38.178,35.219,38.178z" />
-                                </g>
-                            </svg>
+                            <img src="@/assets/images/iconconsulta.png"
+                                class="absolute left-3 top-1/2 transform -translate-y-1/2 w-8 h-8 p-1" alt="Icono">
 
 
                             <!-- Select -->
@@ -953,76 +979,9 @@ export default {
                         <div class="relative w-[90%] m-auto  mb-3">
                             <!-- Ícono -->
 
-                            <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[var(--blue-1)]"
-                                fill="currentColor" height="800px" width="800px" version="1.1" id="Layer_1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 512 512" xml:space="preserve">
-                                <g>
-                                    <g>
-                                        <path d="M199.021,43.436h-63.367c-5.633,0-10.199,4.566-10.199,10.199v63.367c0,5.633,4.566,10.199,10.199,10.199h63.367
-                                   c5.633,0,10.199-4.566,10.199-10.199V53.636C209.22,48.003,204.654,43.436,199.021,43.436z M188.822,106.803h-42.968V63.835
-                                   h42.968V106.803z" />
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <path d="M312.468,43.436h-63.367c-5.633,0-10.199,4.566-10.199,10.199v63.367c0,5.633,4.566,10.199,10.199,10.199h63.367
-                                   c5.633,0,10.199-4.566,10.199-10.199V53.636C322.667,48.003,318.101,43.436,312.468,43.436z M302.269,106.803H259.3V63.835h42.968
-                                   V106.803z" />
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <path d="M199.021,155.861h-63.367c-5.633,0-10.199,4.566-10.199,10.199v63.367c0,5.633,4.566,10.199,10.199,10.199h63.367
-                                   c5.633,0,10.199-4.566,10.199-10.199V166.06C209.22,160.427,204.654,155.861,199.021,155.861z M188.822,219.228h-42.968V176.26
-                                   h42.968V219.228z" />
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <path d="M312.468,155.861h-63.367c-5.633,0-10.199,4.566-10.199,10.199v63.367c0,5.633,4.566,10.199,10.199,10.199h63.367
-                                   c5.633,0,10.199-4.566,10.199-10.199V166.06C322.667,160.427,318.101,155.861,312.468,155.861z M302.269,219.228H259.3V176.26
-                                   h42.968V219.228z" />
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <path d="M199.021,268.286h-63.367c-5.633,0-10.199,4.566-10.199,10.199v63.367c0,5.633,4.566,10.199,10.199,10.199h63.367
-                                   c5.633,0,10.199-4.566,10.199-10.199v-63.367C209.22,272.852,204.654,268.286,199.021,268.286z M188.822,331.653h-42.968v-42.968
-                                   h42.968V331.653z" />
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <path
-                                            d="M367.636,315.347V10.199C367.636,4.566,363.07,0,357.437,0H90.685c-5.633,0-10.199,4.566-10.199,10.199v491.602
-                                   c0,5.633,4.566,10.199,10.199,10.199h266.753c0.396,0,0.824-0.042,1.267-0.113c3.47-0.559,6.578-2.516,8.76-5.272
-                                   c0.019-0.024,0.038-0.048,0.056-0.071c6.55-8.391,63.993-83.035,63.993-119.638C431.514,349.945,403.528,319.413,367.636,315.347z
-                                    M265.986,491.602H234.26v-31.193c0-5.633-4.566-10.199-10.199-10.199c-5.633,0-10.199,4.566-10.199,10.199v31.193h-31.726
-                                   v-85.383h83.85V491.602z M286.384,491.602V396.02c0-5.633-4.566-10.199-10.199-10.199H171.937
-                                   c-5.633,0-10.199,4.566-10.199,10.199v95.582h-60.854V20.398h246.355v295.537c-8.842,1.521-17.138,4.649-24.572,9.089v-46.539
-                                   c0-5.633-4.566-10.199-10.199-10.199h-63.367c-5.633,0-10.199,4.566-10.199,10.199v63.367c0,5.633,4.566,10.199,10.199,10.199
-                                   h47.37c-5.74,10.336-9.022,22.218-9.022,34.856c0,28.22,34.142,79.048,52.783,104.695H286.384z M302.269,288.684v42.968H259.3
-                                   v-42.968H302.269z M359.48,483.382c-22.642-30.698-51.632-76.609-51.632-96.475c0-28.471,23.162-51.635,51.633-51.635
-                                   c28.471,0,51.634,23.163,51.634,51.635C411.116,406.754,382.123,452.675,359.48,483.382z" />
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <path
-                                            d="M359.481,354.036c-18.125,0-32.871,14.745-32.871,32.871c0,18.125,14.746,32.871,32.871,32.871
-                                   s32.871-14.746,32.871-32.871S377.606,354.036,359.481,354.036z M359.482,399.379c-6.877,0-12.473-5.595-12.473-12.473
-                                   s5.595-12.473,12.473-12.473c6.877,0,12.473,5.594,12.473,12.473C371.955,393.784,366.359,399.379,359.482,399.379z" />
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <path
-                                            d="M224.061,418.526c-5.633,0-10.199,4.566-10.199,10.199v1.022c0,5.633,4.566,10.199,10.199,10.199
-                                   c5.633,0,10.199-4.566,10.199-10.199v-1.022C234.26,423.093,229.694,418.526,224.061,418.526z" />
-                                    </g>
-                                </g>
-                            </svg>
+                              <!-- Ícono -->
+                              <img src="@/assets/images/iconconsultorio.png"
+                              class="absolute left-3 top-1/2 transform -translate-y-1/2 w-8 h-8 p-1" alt="Icono">
 
                             <!-- Select -->
                             <select v-model="localselect" id="specialist"
@@ -1040,21 +999,8 @@ export default {
                             <!-- Ícono -->
 
 
-                            <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[var(--blue-1)]"
-                                xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px"
-                                viewBox="0 0 24 24" width="24px" fill="currentColor">
-                                <g>
-                                    <rect fill="none" height="24" width="24" />
-                                </g>
-                                <g>
-                                    <g>
-                                        <path
-                                            d="M20,6h-4V4c0-1.1-0.9-2-2-2h-4C8.9,2,8,2.9,8,4v2H4C2.9,6,2,6.9,2,8v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V8 C22,6.9,21.1,6,20,6z M10,4h4v2h-4V4z M20,20H4V8h16V20z" />
-                                        <polygon
-                                            points="13,10 11,10 11,13 8,13 8,15 11,15 11,18 13,18 13,15 16,15 16,13 13,13" />
-                                    </g>
-                                </g>
-                            </svg>
+                            <img src="@/assets/images/icopnprepagada.png"
+                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-8 h-8 p-1" alt="Icono">
                             <!-- Select -->
                             <select v-model="selectpay" id="specialist"
                                 class="border p-2 pl-10 w-full rounded-xl flex appearance-none border-gray-400">
