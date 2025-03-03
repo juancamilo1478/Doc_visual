@@ -30,7 +30,7 @@ export default {
             costo: '',
             agenda: '',
             day: 1,
-            times: [{ hour: 8, minutes: 0 }, { hour: 9, minutes: 0 }, { hour: 10, minutes: 0 }, { hour: 11, minutes: 0 }, { hour: 12, minutes: 0 }, { hour: 13, minutes: 0 }, { hour: 14, minutes: 0 }, { hour: 14, minutes: 0 }, { hour: 15, minutes: 0 }, { hour: 16, minutes: 0 }, { hour: 17, minutes: 0 }, { hour: 18, minutes: 0 }, ],
+            times: [{ hour: 8, minutes: 0 }, { hour: 9, minutes: 0 }, { hour: 10, minutes: 0 }, { hour: 11, minutes: 0 }, { hour: 12, minutes: 0 }, { hour: 13, minutes: 0 }, { hour: 14, minutes: 0 }, { hour: 14, minutes: 0 }, { hour: 15, minutes: 0 }, { hour: 16, minutes: 0 }, { hour: 17, minutes: 0 }, { hour: 18, minutes: 0 },],
             timesSelects: [] as { hour: number; minutes: number }[]
         }
     },
@@ -125,12 +125,12 @@ export default {
 }
 </script>
 <template>
-    <div class="w-full font font-poppins">
+    <div class="w-full font font-poppins bg-gray-100">
 
 
 
 
-        <div class="grid grid-cols-1     sm:grid-cols-2   py-12 w-[90%] m-auto text-xs">
+        <div class="grid grid-cols-1 gap-6   sm:grid-cols-2   py-12 w-[90%] m-auto">
             <div>
                 <label class="text-gray-700  " for="username">Nombre</label>
                 <input v-model="name" type="text"
@@ -283,9 +283,10 @@ export default {
 
 
             </div>
-            <div class="w-[90%] m-auto flex items-center  ">
+            <div class="w-[90%] m-auto flex flex-wrap justify-between mt-3 sm:flex-grow">
                 <h1 class="w-fit whitespace-nowrap text-base">Horarios de Agenda</h1>
-                <select v-model="agenda" class="border border-gray-200 p-2 w-full rounded-xl mx-6 mt-2 m-auto  text-xs bg-white">
+                <select v-model="agenda"
+                    class="border border-gray-200 p-2   rounded-xl mx-6   m-auto  text-xs bg-white w-[40%]">
                     <option value="bogota1">
                         Bogota 1
                     </option>
@@ -293,19 +294,20 @@ export default {
                         Bogota 2
                     </option>
                 </select>
-                <div v-for="num in 6" :key="num" class="px-2 text-base cursor-pointer  m-auto" @click="day = num" :class="{
-                    'text-[var(--blue-1)]': num === day,
-                    'text-black': num !== day
-                }">
+                <div v-for="num in 6" :key="num" class="px-2  text-base cursor-pointer  m-auto" @click="day = num"
+                    :class="{
+                        'text-[var(--blue-1)]': num === day,
+                        'text-black': num !== day
+                    }">
                     {{ getNamethree(num) }}
                 </div>
             </div>
 
 
 
-            <div class="w-[90%] m-auto flex flex-wrap justify-between  mt-3">
+            <div class="w-[90%] m-auto flex flex-wrap justify-between  mt-3 ">
                 <div v-for="(data, index) in times" :key="index"
-                    class="w-[15%] p-2 py-4 border border-gray-200 mb-3 rounded-2xl cursor-pointer"
+                    class="w-[15%] p-2 py-4 border border-gray-200 mb-3 rounded-2xl cursor-pointer text-[8px] md:text-xs"
                     @click="selectTimes(data.hour, data.minutes)" :class="{
                         'bg-[var(--blue-1)] text-white border-blue-500': isSelected(data.hour, data.minutes), // Activo
                         'text-gray-800 bg-white ': !isSelected(data.hour, data.minutes) // Inactivo
