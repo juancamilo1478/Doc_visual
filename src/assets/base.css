@@ -1,16 +1,19 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --blue-1: #5f9fd5;  
-  --grayicon-1:#707176;
-  --bluegray-1:#e7f1f9;
+  --blue-1: #5f9fd5;
+  --grayicon-1: #707176;
+  --bluegray-1: #e7f1f9;
   --gray-1: #ececed;
-  --gray-2:#f6f6f6;
+  --gray-2: #f6f6f6;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
+  min-height: 100%;
+  height: 100%;
   min-height: 100vh;
   background-color: white !important;
   color: black !important;
@@ -59,28 +62,68 @@ html, body {
 }
 
 /* Estilos con pesos específicos */
-.poppins-thin { font-family: "Poppins", sans-serif; font-weight: 100; }
-.poppins-light { font-family: "Poppins", sans-serif; font-weight: 300; }
-.poppins-regular { font-family: "Poppins", sans-serif; font-weight: 400; }
-.poppins-medium { font-family: "Poppins", sans-serif; font-weight: 500; }
-.poppins-bold { font-family: "Poppins", sans-serif; font-weight: 700; }
-.poppins-black { font-family: "Poppins", sans-serif; font-weight: 900; }
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+}
 
 /* Estilos en itálica */
-.poppins-thin-italic { font-family: "Poppins", sans-serif; font-weight: 100; font-style: italic; }
-.poppins-bold-italic { font-family: "Poppins", sans-serif; font-weight: 700; font-style: italic; }
-.poppins-black-italic { font-family: "Poppins", sans-serif; font-weight: 900; font-style: italic; }
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
 .markdown-body {
   background-color: white;
   color: black;
 }
 
 .markdown-body a {
-  color: #1d4ed8; /* Azul oscuro para enlaces */
+  color: #1d4ed8;
+  /* Azul oscuro para enlaces */
 }
 
 .markdown-body pre {
-  background-color: #f3f4f6; /* Fondo claro para bloques de código */
+  background-color: #f3f4f6;
+  /* Fondo claro para bloques de código */
   color: black;
 }
 
