@@ -130,7 +130,7 @@ export default {
 
 
 
-        <div class="grid grid-cols-1 gap-6   sm:grid-cols-2   py-12 w-[90%] m-auto text-xs">
+        <div class="grid grid-cols-1     sm:grid-cols-2   py-12 w-[90%] m-auto text-xs">
             <div>
                 <label class="text-gray-700  " for="username">Nombre</label>
                 <input v-model="name" type="text"

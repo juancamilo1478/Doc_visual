@@ -43,7 +43,8 @@ export default {
         <aside :class="{
             'translate-x-0': isOpen,
             '-translate-x-full': !isOpen,
-        }" class="bg-white   w-[20%]  min-h-[90vh] flex flex-col transition-transform duration-300 fixed">
+        }" 
+        class="bg-white w-[80%] md:w-[20%]    min-h-[90vh] flex flex-col transition-transform duration-300 absolute left-0 bottom-0 z-50">
             <div class="p-4 flex justify-end items-center  bg-[var(--blue-1)]">
 
                 <button @click="toggleSidebar"
@@ -92,7 +93,7 @@ export default {
         <main class="flex-1  max-h-dvh   ">
             <button @click="toggleSidebar" v-if="!isOpen"
                 class="p-8 text-[var(--blue-1)] hover:text-cyan-700 focus:outline-none   cursor-pointer absolute">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                <svg xmlns="http://www.w3.org/2000/svg" class=" h-8 w-8 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
