@@ -38,9 +38,9 @@ export default {
 }   
 </script>
 <template>
-    <div class="w-full flex items-stretch font-poppins" v-if="data?.length">
+    <div class="w-full block md:flex items-stretch font-poppins" v-if="data?.length">
         <!-- Columna Izquierda (30%) -->
-        <div class="w-[30%] h-auto flex flex-col min-h-96">
+        <div class="w-full   md:w-[30%] h-auto flex flex-col min-h-96">
             <div class="w-[90%] m-auto mt-8 border rounded-xl bg-white flex-1">
                 <div class="w-[90%] m-auto">
                     <h1 class="  font-bold my-5">Notificaciones</h1>
@@ -58,15 +58,15 @@ export default {
         </div>
 
         <!-- Columna Derecha (65%) -->
-        <div class="w-[65%] h-auto">
-            <div class="w-[85%] m-auto my-10">
+        <div class="w-full md:w-[65%] h-auto">
+            <div class="w-[90%] m-auto my-10">
                 <div v-if="NotificationSelect != null" class="w-full mb-6">
                     <div class="w-full border p-5 rounded-2xl bg-white mb-5">
                         <h1 class="font-bold">{{ NotificationSelect.title }}</h1>
                     </div>
-                    <div class="w-full border p-10 rounded-2xl bg-white min-h-96 flex flex-col">
-                        <div class="m-1 bg-gray-200 flex-1 flex items-center justify-center">
-                            <h1 class=" ">{{ NotificationSelect?.text }}</h1>
+                    <div class="w-full border p-5 md:p-10 rounded-2xl bg-white min-h-96 flex flex-col">
+                        <div class="my-1 bg-gray-200 flex-1 flex items-center justify-center">
+                            <h1 class=" m-3">{{ NotificationSelect?.text }}</h1>
                         </div>
                     </div>
                 </div>

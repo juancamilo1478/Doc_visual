@@ -38,7 +38,7 @@ export default {
 
 <template>
     <Navbar_panel />
-    <div class="flex  min-h-[90ddvh] bg-gradient-to-r from-gray-50 to-gray-100 font-poppins text-base">
+    <div class="flex  min-h-[90ddvh]  font-poppins text-base">
         <!-- Sidebar -->
         <aside :class="{
             'translate-x-0': isOpen,
@@ -90,7 +90,7 @@ export default {
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1  max-h-dvh   ">
+        <main class="flex-1  max-h-dvh    ">
             <button @click="toggleSidebar" v-if="!isOpen"
                 class="p-8 text-[var(--blue-1)] hover:text-cyan-700 focus:outline-none   cursor-pointer absolute">
                 <svg xmlns="http://www.w3.org/2000/svg" class=" h-8 w-8 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24"
@@ -98,16 +98,16 @@ export default {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
-            <div class=" w-full  flex justify-end transition-all duration-500">
+            <div class=" w-full  flex justify-end transition-all duration-500  ">
                 <div
                   :style="{   width: isOpen ? '80%' :  '100%'}"
-                  class="h-20 transition-all duration-500"
+                  class="h-20 transition-all duration-500 "
                 >
               
-                <Panel_user_perfil v-if="panelselect === PanelType.PERFIL" class="max-h-[90dvh] overflow-y-auto" />
-                <Panel_user_diarie v-if="panelselect === PanelType.DIARIE"  class="max-h-[90dvh] overflow-y-auto" />
-                <Panel_user_notifications v-if="panelselect === PanelType.NOTIFICATIONS" class="max-h-[90dvh] overflow-y-auto" />
-                <Panel_user_client_review v-if="panelselect === PanelType.CLIENT_REVIEW" class="max-h-[90dvh] overflow-y-auto"/>
+                <Panel_user_perfil v-if="panelselect === PanelType.PERFIL" class="max-h-[90dvh] min-h-[90dvh] overflow-y-auto bg-gradient-to-r from-gray-50 to-gray-100" />
+                <Panel_user_diarie v-if="panelselect === PanelType.DIARIE"  class="max-h-[90dvh] min-h-[90dvh]   overflow-y-auto bg-gradient-to-r from-gray-50 to-gray-100" />
+                <Panel_user_notifications v-if="panelselect === PanelType.NOTIFICATIONS" class="max-h-[90dvh] min-h-[90dvh] overflow-y-auto bg-gradient-to-r from-gray-50 to-gray-100" />
+                <Panel_user_client_review v-if="panelselect === PanelType.CLIENT_REVIEW" class="max-h-[90dvh] min-h-[90dvh] overflow-y-auto bg-gradient-to-r from-gray-50 to-gray-100"/>
             </div>     
               </div>
         </main>

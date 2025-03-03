@@ -17,10 +17,11 @@ export default {
 </script>
 
 <template>
-    <div class="w-full flex items-stretch" v-if="data.notifications.length">
+    <div class=" w-full flex items-stretch font-poppins text-xs md:text-base" v-if="data.notifications.length">
         <!-- Columna Izquierda (30%) -->
-        <div class="w-[30%] h-auto flex flex-col">
-            <div class="w-[90%] m-auto mt-8 border rounded-2xl bg-white flex-1">
+        <div class="hidden md:block w-[40%] md:w-[30%]   ">
+
+            <div class="w-[90%] m-auto mt-10 border rounded-2xl bg-white flex-1 min-h-[80vh]">
                 <h1 class="w-[90%] m-auto font-bold my-5">Valoraciones</h1>
                 <div v-for="(data, index) in data?.reviews" :key="index" class="w-[90%] m-auto mb-1">
                     <h1>{{ data.name }}</h1>
@@ -30,7 +31,7 @@ export default {
         </div>
     
         <!-- Columna Derecha (65%) -->
-        <div class="w-[65%] h-auto">
+        <div class="w-[100%]  md:w-[65%] h-auto">
             <div class="w-[85%] m-auto my-10">
                 <div v-for="(data, index) in data?.reviews" :key="index" class="w-full mb-6">
                     <Card_valoration :data="data" />
