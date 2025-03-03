@@ -37,7 +37,7 @@ export default {
 </script>
 
 <template>
-    <Navbar_panel />
+    <Navbar_panel :onAction="toggleSidebar" :isactive="isOpen"/>
     <div class="flex  min-h-[90ddvh]  font-poppins text-base">
         <!-- Sidebar -->
         <aside :class="{
@@ -91,13 +91,7 @@ export default {
 
         <!-- Main Content -->
         <main class="flex-1  max-h-dvh    ">
-            <button @click="toggleSidebar" v-if="!isOpen"
-                class="p-8 text-[var(--blue-1)] hover:text-cyan-700 focus:outline-none   cursor-pointer absolute">
-                <svg xmlns="http://www.w3.org/2000/svg" class=" h-8 w-8 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
+           
             <div class=" w-full  flex justify-end transition-all duration-500  ">
                 <div
                   :style="{   width: isOpen ? '80%' :  '100%'}"
