@@ -212,7 +212,7 @@ export default {
 }
 </script>
 <template>
-    <div class="w-full   text-xs md:text-base" v-if="listDates.length && listDates != null">
+    <div class="w-full   text-[9px] md:text-base" v-if="listDates.length && listDates != null">
         <div class=" w-[80%] md:w-[70%]  m-auto  mt-10">
             <h1 class="mx-3   font-semibold text-base"> {{ monthName }}-{{ currentYear }}</h1>
             <div class="flex justify-between    "
@@ -220,18 +220,18 @@ export default {
                 <div class="w-full  flex  relative justify-between ">
                     <div class="absolute top-0 left-0 w-full flex justify-between  ">
                         <!-- Flecha izquierda -->
-                        <button @click="getListDatesBackwards" class="w-12 h-12 mt-2 flex items-center justify-center text-gray-600 hover:text-gray-900 cursor-pointer 
+                        <button @click="getListDatesBackwards" class="w-12 h-12 mt-0 md:mt-2   flex items-center justify-center text-gray-600 hover:text-gray-900 cursor-pointer 
                         transition-opacity duration-300" :class="isToday(listDates[0].day, listDates[0].month, listDates[0].year, currentDay, currentMonth, currentYear)
                             ? 'opacity-0 invisible'
                             : 'opacity-100 visible'">
-                            <img src="@/assets/svg/arrow.svg" alt="Icono" class="w-6 h-6 rotate-180">
+                            <img src="@/assets/svg/arrow.svg" alt="Icono" class="w-4 h-4  md:w-6 md:h-6 rotate-180">
                         </button>
 
                         <!-- Flecha derecha -->
                         <button
-                            class="w-12 h-12 mt-2 flex items-center justify-center text-gray-600 hover:text-gray-900 cursor-pointer"
+                            class="w-12 h-12 mt-0 md:mt-2 flex items-center justify-center text-gray-600 hover:text-gray-900 cursor-pointer"
                             @click="nextdate">
-                            <img src="@/assets/svg/arrow.svg" alt="Icono" class="w-6 h-6">
+                            <img src="@/assets/svg/arrow.svg" alt="Icono" class="w-4 h-4  md:w-6 md:h-6">
                         </button>
                     </div>
                     <div class="  text-black p-4 rounded-lg text-center   w-[30%] ">
