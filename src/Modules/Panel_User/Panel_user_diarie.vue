@@ -214,7 +214,7 @@ export default {
 <template>
     <div class="w-full   text-[9px] md:text-base" v-if="listDates.length && listDates != null">
         <div class=" w-[80%] md:w-[70%]  m-auto  mt-10">
-            <h1 class="mx-3   font-semibold text-base"> {{ monthName }}-{{ currentYear }}</h1>
+            <h1 class="mx-3   font-semibold text-xs  md:text-base"> {{ monthName }}-{{ currentYear }}</h1>
             <div class="flex justify-between    "
                 v-if="listDates.length && currentDay != null && currentMonth != null && currentYear != null">
                 <div class="w-full  flex  relative justify-between ">
