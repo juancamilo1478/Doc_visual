@@ -30,7 +30,7 @@ export default {
             costo: '',
             agenda: '',
             day: 1,
-            times: [{ hour: 8, minutes: 0 }, { hour: 9, minutes: 0 }, { hour: 10, minutes: 0 }, { hour: 11, minutes: 0 }, { hour: 12, minutes: 0 }, { hour: 13, minutes: 0 }, { hour: 14, minutes: 0 }, { hour: 14, minutes: 0 }, { hour: 15, minutes: 0 }, { hour: 16, minutes: 0 }, { hour: 17, minutes: 0 }, { hour: 18, minutes: 0 },],
+            times: [{ hour: 8, minutes: 0 }, { hour: 9, minutes: 0 }, { hour: 10, minutes: 0 }, { hour: 11, minutes: 0 }, { hour: 12, minutes: 0 }, { hour: 13, minutes: 0 }, { hour: 14, minutes: 0 }, { hour: 15, minutes: 0 }, { hour: 16, minutes: 0 }, { hour: 17, minutes: 0 }, { hour: 18, minutes: 0 },{ hour: 19, minutes: 0 }],
             timesSelects: [] as { hour: number; minutes: number }[]
         }
     },
