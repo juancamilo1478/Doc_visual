@@ -234,7 +234,7 @@ export default {
                             <img src="@/assets/svg/arrow.svg" alt="Icono" class="w-4 h-4  md:w-6 md:h-6">
                         </button>
                     </div>
-                    <div class="  text-black p-4 rounded-lg text-center   w-[30%] ">
+                    <div class="  text-black p-4 rounded-lg text-center w-[28%]  md:w-[30%] ">
                         <h1 class="text-[var(--blue-1)] pb-2 font-semibold"
                             v-if="!isToday(listDates[0].day, listDates[0].month, listDates[0].year, currentDay, currentMonth, currentYear)">
                             {{ getDayNameSpanish(listDates[0].month, listDates[0].day, listDates[0].year) }}
@@ -254,7 +254,7 @@ export default {
                         </div>
                     </div>
 
-                    <div class="  text-black p-4 rounded-lg text-center w-[30%]">
+                    <div class="  text-black p-4 rounded-lg text-center  w-[28%]  md:w-[30%]">
                         <h1 class="  pb-2 font-semibold"
                             :class="{ 'text-[var(--blue-1)]': listDates[1].isValid, 'text-[var(--blue-1)]/50': !listDates[1].isValid }">
                             {{
@@ -271,7 +271,7 @@ export default {
                             <h1>{{ getTimeString(data.hour, data.minute) }}</h1>
                         </div>
                     </div>
-                    <div class="  text-black p-4 rounded-lg text-center w-[30%]">
+                    <div class="  text-black p-4 rounded-lg text-center  w-[28%]  md:w-[30%]">
                         <h1 class="  pb-2 font-semibold"
                             :class="{ 'text-[var(--blue-1)]': listDates[2].isValid, 'text-[var(--blue-1)]/50': !listDates[2].isValid }">
                             {{
