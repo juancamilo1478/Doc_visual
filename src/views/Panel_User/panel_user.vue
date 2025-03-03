@@ -38,13 +38,13 @@ export default {
 
 <template>
     <Navbar_panel />
-    <div class="flex  min-h-[90vh] bg-gradient-to-r from-gray-50 to-gray-100 font-poppins text-base">
+    <div class="flex  min-h-[90ddvh] bg-gradient-to-r from-gray-50 to-gray-100 font-poppins text-base">
         <!-- Sidebar -->
         <aside :class="{
             'translate-x-0': isOpen,
             '-translate-x-full': !isOpen,
         }" 
-        class="bg-white w-[80%] md:w-[20%]    min-h-[90vh] flex flex-col transition-transform duration-300 absolute left-0 bottom-0 z-50">
+        class="bg-white w-[80%] md:w-[20%]    min-h-[90dvh] flex flex-col transition-transform duration-300 absolute left-0 bottom-0 z-50">
             <div class="p-4 flex justify-end items-center  bg-[var(--blue-1)]">
 
                 <button @click="toggleSidebar"
@@ -104,10 +104,10 @@ export default {
                   class="h-20 transition-all duration-500"
                 >
               
-                <Panel_user_perfil v-if="panelselect === PanelType.PERFIL" class="max-h-[90vh] overflow-y-auto" />
-                <Panel_user_diarie v-if="panelselect === PanelType.DIARIE"  class="max-h-[90vh] overflow-y-auto" />
-                <Panel_user_notifications v-if="panelselect === PanelType.NOTIFICATIONS" class="max-h-[90vh] overflow-y-auto" />
-                <Panel_user_client_review v-if="panelselect === PanelType.CLIENT_REVIEW" class="max-h-[90vh] overflow-y-auto"/>
+                <Panel_user_perfil v-if="panelselect === PanelType.PERFIL" class="max-h-[90dvh] overflow-y-auto" />
+                <Panel_user_diarie v-if="panelselect === PanelType.DIARIE"  class="max-h-[90dvh] overflow-y-auto" />
+                <Panel_user_notifications v-if="panelselect === PanelType.NOTIFICATIONS" class="max-h-[90dvh] overflow-y-auto" />
+                <Panel_user_client_review v-if="panelselect === PanelType.CLIENT_REVIEW" class="max-h-[90dvh] overflow-y-auto"/>
             </div>     
               </div>
         </main>
