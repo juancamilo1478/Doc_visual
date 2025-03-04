@@ -257,7 +257,7 @@ export default {
 
 
             <!-- ------- -->
-            <div class="hidden lg:flex  mx-28  flex-wrap justify-between   my-10">
+            <!-- <div class="hidden lg:flex  mx-28  flex-wrap justify-between   my-10">
 
                 <div class="px-6    rounded-2xl flex flex-col justify-center" @click="selectSpecialist('Optómetra')"
                     :class="isSpecialistSelected('Optómetra') ? 'selectCard' : 'bg-gray-200'">
@@ -281,7 +281,7 @@ export default {
                     <h1 class="font-poppins text-base mx-2 font-semibold">Optometría</h1>
                     <h1 class="font-poppins text-base mx-2 font-semibold">Pediátrica</h1>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="container m-auto px-2 min-h-svh">
             <div class="lg:flex     ">
