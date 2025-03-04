@@ -48,7 +48,7 @@ export default {
                 <div class="w-full p-4 bg-white border border-gray-400 ">
                     <div class="w-full  py-3 cursor-pointer">
                         <h2 class="text-[var(--blue-1)] font-semibold">Mi cuenta</h2>
-                        <hr class="mt-3" />
+                          <hr class="text-gray-300" />
                     </div>
                     <div class="w-full  py-3 cursor-pointer">
                         <h2>Plan Fidelización</h2>
