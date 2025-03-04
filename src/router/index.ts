@@ -9,6 +9,7 @@ import SpecialistDetail from '@/Modules/Specialists/SpecialistDetail.vue';
 import Purpose from '@/views/Purpose/Purpose.vue';
 import Price from '@/views/Price/Price.vue';
 import panel_user from '@/views/Panel_User/panel_user.vue';
+import My_account from '@/views/My_account/My_account.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -59,6 +60,11 @@ const router = createRouter({
       path:'/paneluser',
       name:'paneluser',
       component:panel_user
+    },
+    {
+      path:'/accountuser',
+      name:'accountuser',
+      component:  My_account
     }
 
   ],

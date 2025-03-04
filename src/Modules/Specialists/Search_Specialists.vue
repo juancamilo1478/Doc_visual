@@ -93,7 +93,7 @@ export default {
 }
 </script>
 <template>
-    <div class="w-screen bg-gradient-to-r from-gray-100 to-gray-50">
+    <div class="w-full bg-gradient-to-r from-gray-100 to-gray-50">
         <div class="container m-auto px-2 pt-10">
             <h1 class="w-full text-center font-poppins text-2xl" style="color: var(--blue-1);">Especialistas en salud
                 visual a la mano</h1>
