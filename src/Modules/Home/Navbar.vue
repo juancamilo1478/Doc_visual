@@ -37,7 +37,7 @@
             :style="{ color: currentRoute === '/specialists' ? 'var(--blue-1)' : 'black' }">Salud visual y
             especialistas</a>
           <a
-            class="cursor-pointer px-2 py-1  font-poppins font-semibold text-sm md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]" @click="goToAbout('purpose')"
+            class="cursor-pointer px-2 py-1  font-poppins font-semibold text-sm md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]" @click="goToAbout('/purpose')"
             :style="{ color: currentRoute === '/purpose' ? 'var(--blue-1)' : 'black' }">Proposito</a>
           <a
             class="cursor-pointer px-2 py-1 font-poppins font-semibold text-sm md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Recursos</a>
@@ -47,7 +47,7 @@
           <a class="cursor-pointer px-2 py-1 font-poppins font-semibold text-sm md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
             @click="goToAbout('/auth')">Profesionales</a>
           <a
-            class="cursor-pointer px-2 py-1 font-poppins font-semibold text-sm md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Pacientes</a>
+            class="cursor-pointer px-2 py-1 font-poppins font-semibold text-sm md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]" @click="goToAbout('/accountuser')" :style="{ color: currentRoute === '/accountuser' ? 'var(--blue-1)' : 'black' }" >Pacientes</a>
           <a
             class="cursor-pointer px-2 py-1 font-poppins font-semibold text-sm md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]">Inhouse</a>
           <a class="cursor-pointer px-2 py-1 font-poppins font-semibold text-sm md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5]"
@@ -67,7 +67,7 @@
             :style="{ color: currentRoute === '/specialists' ? 'var(--blue-1)' : 'black' }">Salud visual y
             especialistas</a>
           <a
-            class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold   md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] " @click="goToAbout('purpose')"
+            class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold   md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] " @click="goToAbout('/purpose')"
             :style="{ color: currentRoute === '/purpose' ? 'var(--blue-1)' : 'black' }">Proposito</a>
           <a
             class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold  md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Recursos</a>
@@ -77,9 +77,9 @@
           <a class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold   md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] "
             @click="goToAbout('/auth')">Profesionales</a>
           <a
-            class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold   md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] ">Pacientes</a>
+            class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold   md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] " @click="goToAbout('/accountuser')" :style="{ color: currentRoute === '/accountuser' ? 'var(--blue-1)' : 'black' }"   >Pacientes</a>
           <a
-            class="text-sm cursor-pointer px-2 py-1 font-poppins   font-semibold  md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] "  @click="goToAbout('price')" :style="{ color: currentRoute === '/price' ? 'var(--blue-1)' : 'black' }">Inhouse</a>
+            class="text-sm cursor-pointer px-2 py-1 font-poppins   font-semibold  md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] "  @click="goToAbout('/price')" :style="{ color: currentRoute === '/price' ? 'var(--blue-1)' : 'black' }">Inhouse</a>
           <a class="text-sm cursor-pointer px-2 py-1 font-poppins font-semibold   md:text-md text-black transition-colors duration-300 transform rounded-lg hover:!text-[#5f9fd5] "
             @click="goToAbout('/blogs')"
             :style="{ color: currentRoute === '/blogs' ? 'var(--blue-1)' : 'black' }">Blog</a>
@@ -99,6 +99,7 @@
 </template>
 
 <script setup lang="ts">
+
 import { ref, computed, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 const route = useRoute();
