@@ -38,8 +38,8 @@ export default {
                     ' text-[var(--blue-1)]': modal === MyAcconutTypesModal.INIT,
 
                 }">
-                    <div class="flex w-[80%]    gap-4 justify-start my-4 cursor-pointer"
-                        @click="setModal(MyAcconutTypesModal.INIT)">
+                <div class="flex w-[80%] gap-4 justify-start my-4 cursor-pointer items-center"
+                @click="setModal(MyAcconutTypesModal.INIT)">
                         <svg class="w-6 h-6   " :class="{ 'text-[var(--blue-1)]': modal === MyAcconutTypesModal.INIT }"
                             :style="{ color: modal === MyAcconutTypesModal.INIT ? 'var(--blue-1)' : '#6a7282' }"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
@@ -54,7 +54,7 @@ export default {
                     ' text-[var(--blue-1)]': modal === MyAcconutTypesModal.MYDATES,
 
                 }"  >
-                    <div class="flex w-[80%]  gap-4 justify-start my-4 cursor-pointer "
+                    <div class="flex w-[80%]  gap-4 justify-start my-4 cursor-pointer items-center"
                         @click="setModal(MyAcconutTypesModal.MYDATES)"   >
                         <svg class="w-6 h-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"   :class="{ 'text-[var(--blue-1)]': modal === MyAcconutTypesModal.MYDATES }"
                             :style="{ color: modal === MyAcconutTypesModal.MYDATES? 'var(--blue-1)' : '#6a7282' }"
@@ -70,7 +70,7 @@ export default {
                     ' text-[var(--blue-1)]': modal === MyAcconutTypesModal.SPECIALISTS,
 
                 }">
-                    <div class="flex w-[80%]   gap-4 justify-start my-4 cursor-pointer" 
+                    <div class="flex w-[80%]   gap-4 justify-start my-4 cursor-pointer items-center" 
                         @click="setModal(MyAcconutTypesModal.SPECIALISTS)">
                         <svg class="w-6 h-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" :class="{ 'text-[var(--blue-1)]': modal === MyAcconutTypesModal.SPECIALISTS }"
                             :style="{ color: modal === MyAcconutTypesModal.SPECIALISTS? 'var(--blue-1)' : '#6a7282' }"
@@ -86,7 +86,7 @@ export default {
                     ' text-[var(--blue-1)]': modal === MyAcconutTypesModal.NOTIFICATIONS,
 
                 }">
-                    <div class="flex w-[80%]   gap-4 justify-start my-4 cursor-pointer"
+                    <div class="flex w-[80%]   gap-4 justify-start my-4 cursor-pointer items-center"
                         @click="setModal(MyAcconutTypesModal.NOTIFICATIONS)">
                         <svg class="w-6 h-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" :class="{ 'text-[var(--blue-1)]': modal === MyAcconutTypesModal.NOTIFICATIONS}"
                             :style="{ color: modal === MyAcconutTypesModal.NOTIFICATIONS ? 'var(--blue-1)' : '#6a7282' }"
