@@ -6,7 +6,7 @@ export default {
 <template>
     <div class="w-full  ">
         <div class="w-full">
-            <h1 class="text-4xl p-2 font-semibold w-[90%] m-auto my-6">Notificaciones</h1>
+            <h1 class="text-2xl  p-2 font-semibold w-[90%] m-auto my-6">Notificaciones</h1>
             <hr class="text-gray-300" />
         </div>
         <div class="w-full h-full flex flex-col justify-center items-center mt-10">

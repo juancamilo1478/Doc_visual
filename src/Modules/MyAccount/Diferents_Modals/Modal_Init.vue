@@ -39,7 +39,7 @@ export default {
     <div class="w-full h-full overflow-y-auto ">
      
         <div class="w-full ">
-            <h1 class="text-4xl p-2 font-semibold w-[90%] m-auto my-6">Mi cuenta</h1>
+            <h1 class="text-2xl p-2 font-semibold w-[90%] m-auto my-6">Mi cuenta</h1>
             <hr class="text-gray-300" />
         </div>
         <h1 class=" text-center p-2   w-[90%] m-auto my-6">¡Hola Mónica!</h1>
