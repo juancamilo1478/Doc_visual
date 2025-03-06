@@ -45,22 +45,22 @@ export default {
         <h1 class=" text-center p-2   w-[90%] m-auto my-6">¡Hola Mónica!</h1>
         <div class="w-[90%] m-auto flex">
             <div class="w-[50%]   p-5  ">
-                <div class="w-full p-4 bg-white border border-gray-400 ">
+                <div class="w-full p-4 bg-white border border-gray-200 ">
                     <div class="w-full  py-3 cursor-pointer">
                         <h2 class="text-[var(--blue-1)] font-semibold">Mi cuenta</h2>
                           <hr class="text-gray-300" />
                     </div>
                     <div class="w-full  py-3 cursor-pointer">
                         <h2>Plan Fidelización</h2>
-                        <hr class="mt-3" />
+                        <hr class="mt-3 text-gray-300" />
                     </div>
                     <div class="w-full  py-3 cursor-pointer ">
                         <h2>Mis favoritos</h2>
-                        <hr class="mt-3" />
+                        <hr class="mt-3 text-gray-300" />
                     </div>
                     <div class="w-full  py-3 cursor-pointer">
                         <h2>Pagos</h2>
-                        <hr class="mt-3" />
+                        <hr class="mt-3 text-gray-300" />
                     </div>
                     <div class="w-full   py-6 cursor-pointer text-[var(--blue-1)] font-semibold">
                         <h2>Cerrar sesión</h2>
@@ -70,7 +70,7 @@ export default {
             </div>
             <div class="w-[50%]  ">
                 <div class="m-5  ">
-                    <div class="w-full bg-white py-10 border rounded-2xl text-gray-400">
+                    <div class="w-full bg-white py-10 border rounded-2xl border-gray-200 text-gray-400">
                         <div class="w-[90%] m-auto flex justify-between">
                             <h1 class="font-semibold text-black">Información personal </h1>
                             <button class="cursor-pointer text-[var(--blue-1)]">
@@ -79,12 +79,12 @@ export default {
                         </div>
                         <div class="w-[90%] m-auto flex  my-1   ">
                             <input v-model="name" type="text" placeholder="Nombre"
-                                class="w-1/2 p-2 border border-gray-300 rounded-md me-1">
+                                class="w-1/2 p-2 border border-gray-200 rounded-md me-1">
                             <input v-model="lastname" type="text" placeholder="apellido"
-                                class="w-1/2 p-2 border border-gray-300 rounded-md">
+                                class="w-1/2 p-2 border border-gray-200 rounded-md">
                         </div>
                         <div class="w-[90%] m-auto flex  my-2   ">
-                            <select v-model="genre" class="w-full p-2 border border-gray-300 rounded-md">
+                            <select v-model="genre" class="w-full p-2 border border-gray-200 rounded-md">
                                 <option v-for="num in Object.values(optionsGenre)" :key="num" :value="num">
                                     {{ genreLabels[num] }}
                                 </option>
@@ -93,21 +93,21 @@ export default {
                         <h1 class="w-[90%] m-auto text-black font-semibold">Fecha de nacimiento</h1>
                         <div class="w-[90%] m-auto flex my-1 gap-2">
                             <!-- Select para día -->
-                            <select v-model="day" class="w-1/3 p-2 border border-gray-300 rounded-md">
+                            <select v-model="day" class="w-1/3 p-2 border border-gray-200 rounded-md">
                                 <option v-for="d in days" :key="d" :value="d">
                                     {{ d }}
                                 </option>
                             </select>
 
                             <!-- Select para mes -->
-                            <select v-model="month" class="w-1/3 p-2 border border-gray-300 rounded-md">
+                            <select v-model="month" class="w-1/3 p-2 border border-gray-200 rounded-md">
                                 <option v-for="(m, index) in months" :key="index" :value="index + 1">
                                     {{ m }}
                                 </option>
                             </select>
 
                             <!-- Select para año -->
-                            <select v-model="year" class="w-1/3 p-2 border border-gray-300 rounded-md">
+                            <select v-model="year" class="w-1/3 p-2 border border-gray-200 rounded-md">
                                 <option v-for="y in years" :key="y" :value="y">
                                     {{ y }}
                                 </option>
@@ -127,7 +127,7 @@ export default {
 
                     <!-- -------------------------------------- -->
 
-                    <div class="w-full bg-white py-10 border rounded-2xl text-gray-400 mt-4">
+                    <div class="w-full bg-white py-10 border rounded-2xl border-gray-200 text-gray-400 mt-4">
                         <div class="w-[90%] m-auto flex justify-between">
                             <h1 class="font-semibold text-black">Información de seguridad </h1>
                             <button class="cursor-pointer text-[var(--blue-1)]">
