@@ -1,9 +1,15 @@
 <script setup lang="ts">
-defineProps<{
+import { useRouter } from 'vue-router';
+const props = defineProps<{
     image: string;
     option: string;
     link: string;
 }>();
+const router = useRouter();
+
+const navigate = () => {
+    router.push(props.link);
+};
 </script>
 <template>
     
@@ -21,7 +27,7 @@ defineProps<{
     
             <div class="flex flex-col items-center px-6 pb-6">
                 <img class="object-cover w-auto h-36 md:h-56 max-w-full" :src="image" alt="Imagen de opción">
-                <button class="w-[75%]  md:w-full font-poppins font-semibold text-sm md:text-xl py-2 tracking-wide text-white transition-colors duration-300 transform rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80" style="background: var(--blue-1);">
+                <button class="cursor-pointer w-[75%]  md:w-full font-poppins font-semibold text-sm md:text-xl py-2 tracking-wide text-white transition-colors duration-300 transform rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80" style="background: var(--blue-1);" @click="navigate">
                     Pedir cita ahora
                 </button>
             </div>

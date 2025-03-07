@@ -27,25 +27,25 @@ export default defineComponent({
                 <CardOption 
                 :image="OptometristaSosteniendo" 
                 :option="'Optometría'" 
-                :link="'/optometria'"
+                :link="'/specialists?filter=Optómetra'"
                  />
 
 
                 <CardOption 
                 :image="womman" 
                 :option="'Oftalmología'" 
-                :link="'/optometria'" />
+                :link="'/specialists?filter=Oftalmología'" />
 
                 <CardOption 
                 :image="terapia" 
                 :option="'Terapia Visual'" 
-                :link="'/optometria'" />
+                :link="'/specialists?filter=Terapia visual (Ortóptica)'" />
 
 
                 <CardOption 
                 :image="niñaImage" 
                 :option="'Optometría Pedriatica'" 
-                :link="'/optometria'" />
+                :link="'/specialists?filter=Pediátrica'" />
 
 
             </div>

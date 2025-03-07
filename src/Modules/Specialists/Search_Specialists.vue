@@ -96,7 +96,22 @@ export default {
 
         }
 
+    },
+    mounted() {
+    const query = this.$route.query;
+
+    if (query.filter) {
+        // Asegurar que el valor sea un array de strings y excluir valores nulos
+        const newFilter = Array.isArray(query.filter)
+            ? query.filter.filter((f): f is string => typeof f === "string") // Filtra solo los strings
+            : typeof query.filter === "string"
+            ? [query.filter]
+            : [];
+
+        this.filterSpecialty = newFilter;
+        this.searchItems()
     }
+}
 }
 </script>
 <template>
@@ -168,7 +183,7 @@ export default {
                                     :value="option"
                                     class="w-5 h-5 mx-2 colorvar pointer-events-none accent-[var(--blue-1)]">
                                 <h1 class="mt-auto cursor-pointer">{{ option
-                                }}</h1>
+                                    }}</h1>
                             </div>
                         </div>
                     </div>
@@ -207,7 +222,7 @@ export default {
                                     :value="option"
                                     class="w-5 h-5 mx-2 colorvar pointer-events-none accent-[var(--blue-1)]">
                                 <h1 class="mt-auto cursor-pointer">{{ option
-                                }}</h1>
+                                    }}</h1>
                             </div>
                         </div>
                     </div>
@@ -247,7 +262,7 @@ export default {
                                     :value="option"
                                     class="w-5 h-5 mx-2 colorvar pointer-events-none accent-[var(--blue-1)]">
                                 <h1 class="mt-auto cursor-pointer">{{ option
-                                    }}</h1>
+                                }}</h1>
                             </div>
                         </div>
                     </div>
@@ -264,7 +279,7 @@ export default {
 
 
             <!-- ------- -->
-              <div class="hidden lg:flex  mx-28  flex-wrap justify-between   my-10" v-if="buttonsActive">
+            <div class="hidden lg:flex  mx-28  flex-wrap justify-between   my-10" v-if="buttonsActive">
 
                 <div class="px-6    rounded-2xl flex flex-col justify-center" @click="selectSpecialist('Optómetra')"
                     :class="isSpecialistSelected('Optómetra') ? 'selectCard' : 'bg-gray-200'">
@@ -278,17 +293,17 @@ export default {
                 </div>
 
                 <div class=" px-6 bg-gray-200 rounded-2xl flex flex-col justify-center "
-                    @click="selectSpecialist('Terapia Visual (Ortóptica)')"
-                    :class="isSpecialistSelected('Terapia Visual (Ortóptica)') ? 'selectCard' : 'bg-gray-200'">
+                    @click="selectSpecialist('Terapia visual (Ortóptica)')"
+                    :class="isSpecialistSelected('Terapia visual (Ortóptica)') ? 'selectCard' : 'bg-gray-200'">
                     <h1 class="font-poppins text-base mx-2 font-semibold">Terapia Visual</h1>
                 </div>
                 <div class="p-1 px-6 bg-gray-200 rounded-2xl flex flex-col justify-center"
-                    @click="selectSpecialist('Optometría Integral')"
-                    :class="isSpecialistSelected('Optometría Integral') ? 'selectCard' : 'bg-gray-200'">
+                    @click="selectSpecialist('Pediátrica')"
+                    :class="isSpecialistSelected('Pediátrica') ? 'selectCard' : 'bg-gray-200'">
                     <h1 class="font-poppins text-base mx-2 font-semibold">Optometría</h1>
                     <h1 class="font-poppins text-base mx-2 font-semibold">Pediátrica</h1>
                 </div>
-            </div>  
+            </div>
         </div>
         <div class="container m-auto px-2 min-h-svh">
             <div class="lg:flex     ">
@@ -329,7 +344,7 @@ export default {
                                             :checked="isSpecialistSelected(option)" :value="option"
                                             class="w-5 h-5 mx-2 colorvar pointer-events-none accent-[var(--blue-1)]">
                                         <h1 class="mt-auto cursor-pointer">{{ option
-                                        }}</h1>
+                                            }}</h1>
                                     </div>
                                 </div>
                             </Transition>
@@ -352,13 +367,13 @@ export default {
                                             :checked="isSpecialistSelected(option)" :value="option"
                                             class="w-5 h-5 mx-2 colorvar pointer-events-none accent-[var(--blue-1)]">
                                         <h1 class="mt-auto cursor-pointer" @click="selectSpecialist(option)">{{ option
-                                        }}</h1>
+                                            }}</h1>
                                     </div>
                                 </div>
                             </Transition>
                         </div>
 
-                      
+
 
                         <div class="w-full">
                             <div class="w-full flex items-center px-2" @click="setPanel('panelLocation')">
@@ -377,7 +392,7 @@ export default {
                                             :checked="isSpecialistSelected(option)" :value="option"
                                             class="w-5 h-5 mx-2 colorvar pointer-events-none accent-[var(--blue-1)]">
                                         <h1 class="mt-auto cursor-pointer">{{ option
-                                        }}</h1>
+                                            }}</h1>
                                     </div>
                                 </div>
                             </Transition>
