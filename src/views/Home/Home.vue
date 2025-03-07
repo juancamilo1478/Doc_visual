@@ -8,8 +8,8 @@
     <Figures />
     <Bulleting />
     <Footer />
-    <div class="fixed bottom-4 right-4 w-12 h-auto  bg-white cursor-pointer  rounded-full z-30 shadow-lg  ">
-        <a href="https://wa.me/+573186060813" target="_blank" class="fixed bottom-4 right-4 w-20 h-auto bg-white cursor-pointer rounded-full z-30 shadow-lg">
+    <div class="fixed bottom-4 right-4 w-18 h-auto  bg-white cursor-pointer  rounded-full z-30 shadow-lg  ">
+        <a href="https://wa.me/+573186060813" target="_blank" class="fixed bottom-4 right-4 w-16 h-auto bg-white cursor-pointer rounded-full z-30 shadow-lg">
             <svg fill="#25d366" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308 308" xml:space="preserve">
                 <g id="XMLID_468_">
