@@ -312,7 +312,28 @@ export default {
                                     class="w-full pl-10 pr-3 py-2 mx-2  rounded-full    border border-gray-400 focus:ring-2 focus:ring-blue-500 font-poppins my-10" />
                             </div>
                         </div>
+                        <div class="w-full">
+                            <div class="w-full flex items-center px-2" @click="setPanel('panelSpecialty')">
+                                <h1 class="text-base font-medium font-poppins max-w-[80%]">Especialidad</h1>
+                                <img src="@/assets/svg/arrow.svg" alt="Icono"
+                                    class="w-4 h-4 transition-transform ml-auto"
+                                    :class="{ 'rotate-90': panels.panelSpecialty }">
+                            </div>
+                            <hr class="my-4 px-3 text-gray-400" />
+                            <Transition name="fade">
+                                <div v-if="panels.panelSpecialty">
 
+                                    <div v-for="(option, index) in optionsSpecialist" :key="index"
+                                        @click="selectSpecialist(option)" class="flex w-full my-2">
+                                        <input type="checkbox" :id="'checkbox-' + index"
+                                            :checked="isSpecialistSelected(option)" :value="option"
+                                            class="w-5 h-5 mx-2 colorvar pointer-events-none accent-[var(--blue-1)]">
+                                        <h1 class="mt-auto cursor-pointer">{{ option
+                                        }}</h1>
+                                    </div>
+                                </div>
+                            </Transition>
+                        </div>
 
                         <div class="w-full ">
                             <div class="w-full flex items-center px-2" @click="setPanel('panelService')">
@@ -337,28 +358,7 @@ export default {
                             </Transition>
                         </div>
 
-                        <div class="w-full">
-                            <div class="w-full flex items-center px-2" @click="setPanel('panelSpecialty')">
-                                <h1 class="text-base font-medium font-poppins max-w-[80%]">Especialidad</h1>
-                                <img src="@/assets/svg/arrow.svg" alt="Icono"
-                                    class="w-4 h-4 transition-transform ml-auto"
-                                    :class="{ 'rotate-90': panels.panelSpecialty }">
-                            </div>
-                            <hr class="my-4 px-3 text-gray-400" />
-                            <Transition name="fade">
-                                <div v-if="panels.panelSpecialty">
-
-                                    <div v-for="(option, index) in optionsSpecialist" :key="index"
-                                        @click="selectSpecialist(option)" class="flex w-full my-2">
-                                        <input type="checkbox" :id="'checkbox-' + index"
-                                            :checked="isSpecialistSelected(option)" :value="option"
-                                            class="w-5 h-5 mx-2 colorvar pointer-events-none accent-[var(--blue-1)]">
-                                        <h1 class="mt-auto cursor-pointer">{{ option
-                                        }}</h1>
-                                    </div>
-                                </div>
-                            </Transition>
-                        </div>
+                      
 
                         <div class="w-full">
                             <div class="w-full flex items-center px-2" @click="setPanel('panelLocation')">
