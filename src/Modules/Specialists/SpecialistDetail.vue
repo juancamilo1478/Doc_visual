@@ -4,7 +4,7 @@ import type { Specialist, Opinion } from './Specialist';
 import Navbar from '../Home/Navbar.vue';
 import Footer_Color from '@/common/Footer_Color.vue';
 import { getMonthName, getDayName, isValidDate, getDayNameSpanish } from '@/utils/DateUtils'
-
+import MapLeafet from './MapLeafet.vue';
 enum ScoreType {
     RECOMMENDATION = "RECOMENDATION",
     TREATMENT = "TREATMENT",
@@ -17,7 +17,7 @@ export default {
     components: {
         Navbar,
         Footer_Color,
-
+        MapLeafet
     },
     data() {
         return {
@@ -74,7 +74,7 @@ export default {
             const lastMonthName = getMonthName(lastMonth);
             return firstMonth === lastMonth ? firstMonthName : `${firstMonthName} - ${lastMonthName}`;
         }
-       
+
     },
 
     mounted() {
@@ -707,7 +707,7 @@ export default {
                             <p class="mt-4 text-sm">
                                 {{ localselect?.direction }}
                             </p>
-
+                            <MapLeafet v-if="localselect != null"   :description="localselect?.direction" :latitude="localselect?.latitude" :longitude="localselect.longitude"/>
                         </div>
                     </div>
 
@@ -1023,10 +1023,10 @@ export default {
                         </div>
 
                         <h1 class="mx-4 mb-3  font-semibold text-base"> {{ monthName }}-{{ currentYear }}</h1>
-                       
+
                         <div class="   relative     "
                             v-if="listDates.length && currentDay != null && currentMonth != null && currentYear != null">
-                        
+
 
                             <div class="absolute top-0 left-0 w-full flex justify-between  ">
                                 <!-- Flecha izquierda -->
@@ -1034,13 +1034,13 @@ export default {
                         transition-opacity duration-300" :class="isToday(listDates[0].day, listDates[0].month, listDates[0].year, currentDay, currentMonth, currentYear)
                             ? 'opacity-0 invisible'
                             : 'opacity-100 visible'">
-                            <img src="@/assets/svg/arrow.svg" alt="Icono"
-                            class="w-4 h-4 transition-transform   rotate-180">
+                                    <img src="@/assets/svg/arrow.svg" alt="Icono"
+                                        class="w-4 h-4 transition-transform   rotate-180">
                                 </button>
 
                                 <!-- Flecha derecha -->
                                 <button
-                                      class="w-12 h-12 mt-2 flex items-center justify-center text-gray-600 hover:text-gray-900 cursor-pointer"
+                                    class="w-12 h-12 mt-2 flex items-center justify-center text-gray-600 hover:text-gray-900 cursor-pointer"
                                     @click="nextdate">
                                     <img src="@/assets/svg/arrow.svg" alt="Icono"
                                         class="w-4 h-4 transition-transform  ">
