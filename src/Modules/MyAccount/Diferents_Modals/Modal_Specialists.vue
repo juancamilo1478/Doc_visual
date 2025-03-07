@@ -9,6 +9,6 @@ export default{
 </script>
 <template>
     <div class="w-full h-full overflow-y-auto">
-        <Search_Specialists />
+        <Search_Specialists :buttons-active="false" />
     </div>
 </template>

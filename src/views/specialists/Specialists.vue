@@ -14,7 +14,7 @@ export default {
 <template>
 <div class="w-screen">
 <Navbar/>
-<Search_Specialists/>
+<Search_Specialists :buttons-active="true" />
 <Footer_Color color="#FFFFFF"/> 
 </div>
 
