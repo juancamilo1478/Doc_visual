@@ -7,7 +7,7 @@ import 'vue3-toastify/dist/index.css';
  
 
 
-
+console.log('xD')
 
 
 const app = createApp(App)
